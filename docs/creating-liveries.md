@@ -9,6 +9,11 @@ nav_order: 3
 
 Everything for a single livery lives on the **Edit liveries** page, organized into four tabs: **Textures**, **Thumbnails**, **Details**, and **Model**.
 
+- **Textures:** defines the texture images used in your livery, including texture "flags" used by the SDK when compiling images into game assets.
+- **Thumbnails:** defines the thumbnail images used in the MSFS livery selection user interface.
+- **Details:** defines the parameters which populate the `aircraft.cfg` (monolithic aircraft) or `livery.cfg` (modular aircraft); this includes items such as the livery name, ATC ID, etc.
+- **Model:** a placeholder tab for future functionality in the MSFS Livery Toolkit.
+
 1. TOC
 {:toc}
 
