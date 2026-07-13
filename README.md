@@ -11,7 +11,7 @@ Supports MSFS 2020 and 2024, across all three package structures (2020 monolithi
 
 **AI-Assisted Architecture:** Because I lacked the coding experience to build a full Windows application from scratch, I used a personally funded Claude Pro subscription to bridge the gap.
 
-**Human-Driven Logic:** This is not unthinking "AI slop." Every workflow step, simulator profile rule, and configuration logic choice was explicitly designed by me based on real flight-sim SDK behavior and manually verified at every milestone.
+**Human-Driven Logic:** This is not unthinking "AI slop." Every workflow step, simulator profile rule, and configuration logic choice was explicitly designed by me based on real flight-sim SDK behavior and manually verified at every milestone. Countless man-hours have gone into this project, even with Claude writing the code.
 
 **Always Free:** Leveraging these modern tools made it possible to build a polished desktop utility in my spare time and release it completely free to the flight simulation community. I will never monetize this app (besides entirely optional donations) or lock functionality behind a paid-for tier.
 
