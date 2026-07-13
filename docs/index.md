@@ -7,7 +7,7 @@ nav_order: 1
 # MSFS Livery Toolkit
 {: .fs-9 }
 
-Create Microsoft Flight Simulator liveries — scaffold, paint, and compile sim-ready assets from one free Windows app.
+Create Microsoft Flight Simulator liveries - scaffold, paint, and compile sim-ready assets from one free Windows app.
 {: .fs-6 .fw-300 }
 
 [Download the latest release](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
@@ -19,9 +19,9 @@ Create Microsoft Flight Simulator liveries — scaffold, paint, and compile sim-
 
 The toolkit takes you through the whole livery pipeline:
 
-1. **Create** — pick an installed base aircraft, and the app detects its profile (2020 monolithic, 2024 monolithic, or 2024 modular) and scaffolds a correct, sim-ready livery package.
-2. **Work** — choose which of the base's textures to repaint, generate correctly-sized blank canvases *or* extract the base's own compiled textures back to editable PNGs, and edit each texture's compile flags.
-3. **Compile** — turn your PNG artwork into sim-ready DDS/KTX2 using the official MSFS SDK, regenerate `layout.json`, and launch the sim to test.
+1. **Create:** pick an installed base aircraft, and the app detects its profile (2020 monolithic, 2024 monolithic, or 2024 modular) and scaffolds a correct, sim-ready livery package.
+2. **Work:** choose which of the base's textures to repaint, generate correctly-sized blank canvases *or* extract the base's own compiled textures back to editable PNGs, and edit each texture's compile flags.
+3. **Compile:** turn your PNG artwork into sim-ready DDS/KTX2 using the official MSFS SDK, build a full package ready to use in your community folder, then regenerate `layout.json` and launch the sim to test.
 
 A project is a single deployable package that can hold one or many liveries sharing the same base aircraft.
 
