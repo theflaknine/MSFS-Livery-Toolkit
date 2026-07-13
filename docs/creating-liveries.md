@@ -18,15 +18,15 @@ Everything for a single livery lives on the **Edit liveries** page, organized in
 
 When you add a livery or add textures to an existing one, the texture selector helps you pick which maps to repaint. Complex add-on aircraft can contain hundreds of texture files, so the selector does the untangling for you:
 
-- **Unified fallback scan** — flattens every texture the aircraft can reach through its `texture.cfg` fallback chains into one list, even across shared folders or entirely separate sibling aircraft directories. When the same filename exists in several folders, the highest-resolution copy is offered.
-- **Instance-count badges** — a badge (e.g. ×3) shows how many base folders a file appears in. Heavily-reused files are usually primary exterior maps.
-- **Filters and quick-select** — sort by name, type, resolution, or instance count; live text filtering; and one-click category toggles (e.g. "Albedo only").
-- **Smart pre-selection** — the first livery in a brand-new project defaults to Albedo only. The app also remembers your texture choices and custom fallback paths per base aircraft, globally, so returning to an aircraft you've painted before pre-selects your usual layout. Later liveries in a project mirror the most recently edited one.
-- **Manual add** — for an unusual path the scan can't find, type the filename, resolution, and texture type to force-add it.
+- **Unified fallback scan:** flattens every texture the aircraft can reach through its `texture.cfg` fallback chains into one list, even across shared folders or entirely separate sibling aircraft directories. When the same filename exists in several folders, the highest-resolution copy is offered.
+- **Instance-count badges:** a badge (e.g. ×3) shows how many base folders a file appears in. A higher instance count suggests a texture file that is probably used for liveries, since multiple copies of it exist withing the base aircraft package. Single-instance textures are more likely to be a common/shared asset - less likely to be needed in a livery.
+- **Filters and quick-select:** sort by name, type, resolution, or instance count; live text filtering; and one-click category toggles (e.g. "Albedo only").
+- **Smart pre-selection:** the first livery in a brand-new project defaults to Albedo only. The app also remembers your texture choices and custom fallback paths per base aircraft, globally, so returning to an aircraft you've painted before pre-selects your usual layout. Later liveries in a project mirror the most recently edited one.
+- **Manual add:** if you have a need for a texture file that is not found in the base aircraft scan, you can manually enter the filename, resolution, and texture type to force-add it.
 
 ### Fallback selector
 
-A dedicated, reorderable checklist controls the exact folder order the sim searches for missing textures (`fallback.1`, `fallback.2`, …), written into the livery's `texture.cfg`. The app suggests a baseline you can freely adjust with per-row **Move up / Move down** buttons. If the automatic scan can't find a path (for example a cross-SimObject reference several folders away), add it as a **manual** fallback entry — it even accepts a pasted full `fallback.N=...` line and trims it to just the path.
+A dedicated, reorderable checklist controls the exact folder order the sim searches for missing textures (`fallback.1`, `fallback.2`, …), written into the livery's `texture.cfg`. The app suggests a baseline you can freely adjust with per-row **Move up / Move down** buttons. If the automatic scan can't find a path (for example a cross-SimObject reference several folders away), add it as a **manual** fallback entry - it even accepts a pasted full `fallback.N=...` line and trims it to just the path.
 
 ## Texture types and compile flags
 
