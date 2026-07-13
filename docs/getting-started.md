@@ -28,10 +28,13 @@ If either is missing, the Home page shows a **"Let's get you set up"** banner wi
 ## Creating a project
 
 {: .warning }
-A paragraph
+A warning paragraph
 
 {: .highlight }
-A paragraph
+A highlight paragraph
+
+{: .important }
+An important paragraph
 
 {: .note }
 > **Important note:** Currently the process below only supports locally installed aircraft, not those in the MSFS 2024 "Virtual File System", this means marketplace and stock aircraft are not yet supported. This is on the roadmap though.
