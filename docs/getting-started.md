@@ -27,6 +27,9 @@ If either is missing, the Home page shows a **"Let's get you set up"** banner wi
 
 ## Creating a project
 
+{: .warning }
+A paragraph
+
 {: .highlight }
 A paragraph
 
