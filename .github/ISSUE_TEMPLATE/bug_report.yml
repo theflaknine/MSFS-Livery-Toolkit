@@ -1,0 +1,62 @@
+name: Bug report
+description: Something isn't working as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting a bug. The details below help a lot in tracking it down.
+  - type: input
+    id: version
+    attributes:
+      label: Toolkit version
+      description: Shown in the About panel (top-right of the app).
+      placeholder: e.g. v0.1.93
+    validations:
+      required: true
+  - type: dropdown
+    id: generation
+    attributes:
+      label: Sim generation
+      options:
+        - MSFS 2020
+        - MSFS 2024
+        - Both / not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: Aircraft profile (if known)
+      options:
+        - 2020 Monolithic
+        - 2024 Monolithic
+        - 2024 Modular
+        - Not sure
+  - type: input
+    id: aircraft
+    attributes:
+      label: Base aircraft
+      description: The add-on and aircraft you were working with.
+      placeholder: e.g. JustFlight BAe 146
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What went wrong, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open project …
+        2. Go to …
+        3. Click …
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or log
+      description: Drag in a screenshot, and the build log if the issue is about compiling.

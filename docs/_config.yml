@@ -1,0 +1,21 @@
+title: MSFS Livery Toolkit
+description: >-
+  Create Microsoft Flight Simulator liveries — scaffold, paint, and compile
+  sim-ready assets from one free Windows app.
+
+# just-the-docs is a GitHub-Pages-supported remote theme, so this site builds
+# natively on Pages with no GitHub Actions workflow required.
+remote_theme: just-the-docs/just-the-docs
+
+color_scheme: dark
+search_enabled: true
+
+# Links shown in the top-right of every page.
+aux_links:
+  Download: https://github.com/theflaknine/MSFS-Livery-Toolkit/releases
+  Report an issue: https://github.com/theflaknine/MSFS-Livery-Toolkit/issues
+aux_links_new_tab: true
+
+# jekyll-remote-theme is on the GitHub Pages allowed-plugins list.
+plugins:
+  - jekyll-remote-theme

@@ -1,0 +1,8 @@
+# Jekyll local build output (only relevant if you preview the docs locally)
+docs/_site/
+docs/.jekyll-cache/
+docs/.jekyll-metadata
+
+# OS cruft
+Thumbs.db
+.DS_Store

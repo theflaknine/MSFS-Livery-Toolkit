@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://theflaknine.github.io/MSFS-Livery-Toolkit/
+    about: The user guide may already answer your question.
+  - name: Download the latest release
+    url: https://github.com/theflaknine/MSFS-Livery-Toolkit/releases
+    about: Make sure you're on the newest version before reporting a bug.
