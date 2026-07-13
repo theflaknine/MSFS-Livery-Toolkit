@@ -27,9 +27,8 @@ If either is missing, the Home page shows a **"Let's get you set up"** banner wi
 
 ## Creating a project
 
-> #### Important Note
-> Currently the process below only supports locally installed aircraft, not those in the MSFS 2024 "Virtual File System".  This means Marketplace and stock aircraft are not yet supported, however this IS on the roadmap.
-
+{: .note }
+> **Important note:** Currently the process below only supports locally installed aircraft, not those in the MSFS 2024 "Virtual File System", this means marketplace and stock aircraft are not yet supported. This is on the roadmap though.
 
 On the **Home** page:
 1. Click **Discover aircraft** to populate the base-aircraft list, then pick one. Search by title, manufacturer, or folder name. A colour-coded **profile badge** shows whether it's 2020 Mono, 2024 Mono, or 2024 Modular. *Note we are referring to non-modular aircraft as "monolithic" since, hence the label "mono".*
