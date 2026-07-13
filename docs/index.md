@@ -39,3 +39,13 @@ A project is a single deployable package that can hold one or many liveries shar
 - Microsoft Flight Simulator 2020 and/or 2024
 - The matching MSFS SDK (installed through the sim's Dev Mode)
 - [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator/releases)
+
+## How it was built
+
+- **Hobbyist Built:** I am a livery painter, not a professional software developer. This toolkit was built to automate the tedious backend chores of package layout so we can all spend more time creating.
+- **AI-Assisted Architecture:** Because I lacked the coding experience to build a full Windows application from scratch, I used a personally funded Claude Pro subscription to bridge the gap.
+- **Human-Driven Logic:** This is not unthinking "AI slop." Every workflow step, simulator profile rule, and configuration logic choice was explicitly designed by me based on real flight-sim SDK behavior and manually verified at every milestone. Countless man-hours have gone into this project, even with Claude writing the code.
+- **Always Free:** Leveraging these modern tools made it possible to build a polished desktop utility in my spare time and release it completely free to the flight simulation community. I will never monetize this app (besides entirely optional donations) or lock functionality behind a paid-for tier.
+
+## Support the project
+I’ve funded this project out of my own pocket with a Claude Pro subscription. I will never monetize this application or offer a premium tier - I’m developing it as a perpetually free tool for the livery painting community. However, to keep enhancing and developing it, I would be grateful for any donations via my [Buy Me a Coffee](https://buymeacoffee.com/flaknine) page.
