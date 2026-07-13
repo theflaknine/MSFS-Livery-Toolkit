@@ -43,7 +43,7 @@ Because there is a real person behind every single design decision, project mile
 
 ## Help keep the development lights on
 
-I've funded this project out of my own pocket with a Claude Pro subscription. I will never monetize this application or offer a premium tier — I'm developing it as a perpetually free tool for the livery painting community. However, to keep enhancing and developing it, I would be grateful for any donations via my [Buy Me a Coffee](https://buymeacoffee.com/flaknine) page.
+I've funded this project out of my own pocket with a Claude Pro subscription. I will never monetize this application or offer a premium tier - I'm developing it as a perpetually free tool for the livery painting community. However, to keep enhancing and developing it, I would be grateful for any donations via my [Buy Me a Coffee](https://buymeacoffee.com/flaknine) page.
 
 ---
 
