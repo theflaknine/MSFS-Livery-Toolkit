@@ -27,10 +27,10 @@ A project is a single deployable package that can hold one or many liveries shar
 
 ## Get started
 
-- [Getting started](getting-started) — first-run setup and creating your first project
-- [Creating liveries](creating-liveries) — textures, flags, and painting
-- [Compiling](compiling) — building and testing your package
-- [Configuration](configuration) — SDK paths, source folders, and settings
+- [Getting started](getting-started): first-run setup and creating your first project
+- [Creating liveries](creating-liveries): textures, flags, and painting
+- [Compiling](compiling): building and testing your package
+- [Configuration](configuration): SDK paths, source folders, and settings
 
 ## Requirements
 
