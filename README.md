@@ -1,14 +1,14 @@
 # MSFS Livery Toolkit
 
-A free Windows tool for creating **Microsoft Flight Simulator** liveries — scaffold a livery, prepare and flag its artwork, and compile sim-ready assets, all from one app.
+A free Windows tool for creating **Microsoft Flight Simulator** liveries; scaffold a livery, prepare and flag its artwork, and compile sim-ready assets, all from one app.
 
 Supports MSFS 2020 and 2024, across all three package structures (2020 monolithic / DDS, 2024 monolithic / KTX2, and 2024 modular / KTX2).
 
-> This repository is the **public home** for the toolkit — downloads, issue tracking, and documentation. The application source is maintained privately.
+> This repository is the **public home** for the toolkit, including downloads, issue tracking, and documentation. The application source is maintained privately.
 
 ## Download
 
-Grab the latest portable release from the [**Releases**](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases) page. No installer — unzip and run.
+Grab the latest portable release from the [**Releases**](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases) page. No installer, simply unzip and run `MsfsLiveryToolkit.App.exe`. You'll probably get a Windows warning about an unsigned exe, so you'll need to click More Info > Run Anyway to proceed, if you are comfortable to do so. See **https://theflaknine.github.io/MSFS-Livery-Toolkit/trust-and-safety.html** for more details on unsigned applications.
 
 **Requirements**
 - Windows 11 (64-bit)
