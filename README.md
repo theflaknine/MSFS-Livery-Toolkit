@@ -39,3 +39,7 @@ Please [open an issue](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues
 ## Third-party components
 
 The app bundles a small number of open-source components, listed in its in-app **About** panel. Notably, texture extraction uses [`ooz`](https://github.com/powzix/ooz) (GPL-3) as a separate bundled program; its complete source and license ship inside every release package.
+
+## License
+
+See [LICENSE.md](LICENSE.md).
