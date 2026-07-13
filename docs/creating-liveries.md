@@ -54,13 +54,14 @@ Once your selection is confirmed, the workspace is populated with correctly-size
 - **Generate placeholders:** blank, correctly-sized canvases labelled with the filename and resolution. If you plan to use images generated from a paintkit this is the recommended approach.
 - **Extract from base:** decode the base aircraft's *own already-compiled* texture back into an editable PNG, a real head start when no paintkit exists. This handles both 2020 DDS and 2024 KTX2, including MSFS's Oodle-compressed KTX2 variant that defeats most other tools. When a texture exists as more than one compiled copy in the base, you choose which instance to extract.
 
-Each texture row also has a **Clear image** action (an eraser) that removes just the source PNG while keeping the texture entry, so you can swap a placeholder for an extracted image or vice versa.
-
 {: .important }
 > **Your artwork is protected.** The tool never automatically overwrites an existing image file in your workspace - neither a placeholder nor an extracted image will wipe out artwork you've already put there. Once you replace a placeholder with your own painting, it is safe.
+
+On each texture row an **Edit source artwork** action (pencil icon) will be available if the application can find a Photoshop, Gimp or Affinity artwork file where the filename matches the PNG (excluding the file extension). By default the application will check for paintkit artwork files in the same folder as the PNG images, however you can specify another folder at the top of the **Textures** panel.
+
+Each texture row also has a **Clear image** action (eraser icon) that removes just the source PNG while keeping the texture entry, so you can swap a placeholder for an extracted image or vice versa.  It is also possible to fully remove a texture from the livery using the **Remove texture** action (trashcan icon) - this will remove the texture slot from your livery and remove the PNG from disk. You will receive a confirmation prompt when using **Clear image** or **Remove texture**.
 
 ## Registration details and thumbnails
 
 - **Details tab:** edit every sim-supported `[fltsim.N]` field (tail number, ATC callsign, title, and more). Fields that differ from the base default show a clear indicator and can be reverted instantly.
 - **Thumbnails tab:** a built-in viewer that tracks the exact files and dimensions your sim generation requires. Auto-generate baseline icons, or use **Replace…** to drop in a real image (a size mismatch warns but still lets you proceed). Manually-added thumbnails are never overwritten.
-- **Model tab** — reserved for a future mesh-decal feature; not yet functional.
