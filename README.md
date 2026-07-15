@@ -26,7 +26,8 @@ Grab the latest portable release from the [**Releases**](https://github.com/thef
 - Windows 11 (64-bit)
 - Microsoft Flight Simulator 2020 and/or 2024
 - The matching MSFS SDK (installed via the sim's Dev Mode) — needed to compile textures
-- [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator/releases)
+
+(MSFSLayoutGenerator, which the app also needs, is now **bundled** with the app — nothing to download. You can still point the app at your own copy in Config if you prefer.)
 
 ## Documentation
 
@@ -38,7 +39,10 @@ Please [open an issue](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues
 
 ## Third-party components
 
-The app bundles a small number of open-source components, listed in its in-app **About** panel. Notably, texture extraction uses [`ooz`](https://github.com/powzix/ooz) (GPL-3) as a separate bundled program; its complete source and license ship inside every release package.
+The app bundles a small number of open-source components, listed in its in-app **About** panel. Two worth noting:
+
+- [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator) by Brandon Filer (MIT) — regenerates `layout.json`; bundled unmodified and called as a separate program, with its MIT license included alongside it.
+- [`ooz`](https://github.com/powzix/ooz) (GPL-3) — used by texture extraction as a separate bundled program; its complete source and license ship inside every release package.
 
 ## License
 

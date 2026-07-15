@@ -11,7 +11,7 @@ The **Settings** page holds the settings the toolkit needs to find your aircraft
 ## SDK and tool paths
 
 - **MSFS 2020 SDK** and **MSFS 2024 SDK:** the app auto-detects the default install locations; set at least one, matching the aircraft you intend to build for.
-- **MSFSLayoutGenerator:** used to regenerate `layout.json` on every build. [Download it here](https://github.com/HughesMDflyer4/MSFSLayoutGenerator/releases).
+- **MSFSLayoutGenerator:** used to regenerate `layout.json` on every build. A copy is **bundled with the app and used automatically** — you don't need to download or set anything. Set a path here only if you want to use your own copy (e.g. a [newer release](https://github.com/HughesMDflyer4/MSFSLayoutGenerator/releases)).
 
 ## Steam vs. MS Store
 

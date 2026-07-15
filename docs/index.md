@@ -38,7 +38,8 @@ A project is a single deployable package that can hold one or many liveries shar
 - Windows 11 (64-bit)
 - Microsoft Flight Simulator 2020 and/or 2024
 - The matching MSFS SDK (installed through the sim's Dev Mode)
-- [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator/releases)
+
+(MSFSLayoutGenerator, which the app also needs, is now **bundled** — nothing to download.)
 
 ## How it was built
 
