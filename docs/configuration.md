@@ -17,6 +17,10 @@ The **Settings** page holds the settings the toolkit needs to find your aircraft
 
 A toggle that tells the toolkit which storefront copy of MSFS to drive. It controls the `-forcesteam` flag passed to the SDK build tool, and which copy the Compile page's **Launch** action starts on a machine with both installed.
 
+## 16-bit textures ##
+
+When extracting source artwork from an aircraft KTX2 or DDS file, this option ensures that if the source files have 16-bit color depth then that detail is preserved in the corresponding PNG file. It is recommended to leave this option on.
+
 ## Defaults
 
 - **Default creator name:** pre-fills the manifest `creator` field and, for modular aircraft, the `liveries\<creator>` folder name. Editable per livery afterwards.
@@ -25,7 +29,11 @@ A toggle that tells the toolkit which storefront copy of MSFS to drive. It contr
 
 ## Aircraft source folders
 
-The list of folders scanned for base aircraft. Add them with **Add folder…**, or click **Detect Community folders** to find your Community / add-on-linker locations automatically.
+The list of folders scanned for base aircraft. Add them with **Add folder…**. Note that your MSFS Community folders should be detected automatically, there is no need to manually add them.
+
+## Texture exclude list
+
+This list excludes matching text strings from the Texture Selector, to filter out textures that are unlikely to be required for livery artists, for example texture files containing the string "tire" or "gauge". You may edit this list as required, and reset to default if needed.
 
 ## About
 
