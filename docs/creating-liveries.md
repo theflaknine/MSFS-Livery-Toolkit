@@ -34,6 +34,14 @@ When you add a livery or add textures to an existing one, the texture selector h
 
 A reorderable checklist controls the exact folder order the sim searches for missing textures (`fallback.1`, `fallback.2`, …), written into the livery's `texture.cfg`. The app suggests a baseline you can freely adjust with per-row **Move up / Move down** buttons. If the automatic scan can't find a path (for example a cross-SimObject reference several folders away), add it as a **manual** fallback entry - it even accepts a pasted full `fallback.N=...` line and trims it to just the path.
 
+### Fallback checker
+
+![Fallback checker](assets/images/fallback-checker.png)
+The **Check fallback** button is available on the **Liveries** page and from the **Edit fallback** panel. It will analyse the livery's images and texture fallbacks to ensure MSFS will find every texture the aircraft requires. Textures will be listed in one of three states:
+- **Missing** (pink): the simulator will not be able to find this texture because no texture fallback path contains that file - the texture will appear as pink checkerboard in the sim. This indicates you have not set your texture fallbacks correctly.
+- **In livery** (green): the texture is included with your livery.
+- **In aircrafft** (blue): the texture can be found by the texture fallbacks. Use the **Resolved via** column to see which fallback path found it.
+
 ## Texture types and compile flags
 
 The toolkit classifies each texture using the official SDK **metadata** from the base aircraft - never by filename. So a file named `..._ALBEDO.PNG` that actually carries alpha transparency is correctly treated as a Decal/Transparent map.
