@@ -21,6 +21,7 @@ Everything for a single livery lives on the **Edit liveries** page, organized in
 
 ## The texture selector
 
+![Texture selector](assets/images/texture-selector.png)
 When you add a livery or add textures to an existing one, the texture selector helps you pick which textures to include in your livery (i.e. which images you want to repaint). Complex add-on aircraft can contain hundreds of texture files, so the selector does the untangling for you:
 
 - **Unified fallback scan:** flattens every texture the aircraft can reach through its `texture.cfg` fallback chains into one list, even across shared folders or entirely separate sibling aircraft directories. When the same filename exists in several folders, the highest-resolution copy is offered.
