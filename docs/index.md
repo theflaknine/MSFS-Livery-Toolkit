@@ -4,6 +4,8 @@ layout: default
 nav_order: 1
 ---
 
+![MSFS Livery Toolkit — create, paint, and compile MSFS liveries with no config files and no command line](assets/images/hero.png)
+
 # MSFS Livery Toolkit
 {: .fs-9 }
 
