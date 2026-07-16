@@ -8,11 +8,8 @@ nav_order: 1
   <img src="{{ '/assets/images/hero.png' | relative_url }}" alt="MSFS Livery Toolkit — create, paint, and compile MSFS liveries with no config files and no command line">
 </div>
 
-# MSFS Livery Toolkit
-{: .fs-9 }
-
-Create Microsoft Flight Simulator liveries - scaffold, paint, and compile sim-ready assets from one free Windows app.
-{: .fs-6 .fw-300 }
+<h1 class="sr-only">MSFS Livery Toolkit</h1>
+<p class="sr-only">Create Microsoft Flight Simulator liveries - scaffold, paint, and compile sim-ready assets from one free Windows app.</p>
 
 [Download the latest release](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View on GitHub](https://github.com/theflaknine/MSFS-Livery-Toolkit){: .btn .fs-5 .mb-4 .mb-md-0 }
@@ -61,6 +58,18 @@ I’ve funded this project out of my own pocket with a Claude Pro subscription. 
 <style>
 /* Home landing page (layout: minimal) only. */
 body { overflow-x: hidden; }
+
+/* Keep the h1 + tagline for SEO and screen readers (the hero image's text
+   is invisible to both), but hide them visually — the hero image shows them. */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* Full-bleed hero: break out of the centered content column to viewport width. */
 .home-hero {
