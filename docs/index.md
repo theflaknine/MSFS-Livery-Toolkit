@@ -21,7 +21,7 @@ nav_order: 1
 <a class="home-card" href="{{ '/creating-liveries.html' | relative_url }}"><span class="home-card-title">Creating liveries</span><span class="home-card-desc">Choosing textures, editing compile flags, and painting your livery.</span></a>
 <a class="home-card" href="{{ '/compiling.html' | relative_url }}"><span class="home-card-title">Compiling</span><span class="home-card-desc">Building your package and testing it in the sim.</span></a>
 <a class="home-card" href="{{ '/configuration.html' | relative_url }}"><span class="home-card-title">Configuration</span><span class="home-card-desc">SDK paths, aircraft source folders, and settings.</span></a>
-<a class="home-card" href="{{ '/trust-and-safety.html' | relative_url }}"><span class="home-card-title">Trust &amp; safety</span><span class="home-card-desc">What the app does on your machine — and what it never does.</span></a>
+<a class="home-card" href="{{ '/trust-and-safety.html' | relative_url }}"><span class="home-card-title">Trust &amp; safety</span><span class="home-card-desc">What the app does on your machine, and what it never does.</span></a>
 <a class="home-card" href="{{ '/ai-assisted-development.html' | relative_url }}"><span class="home-card-title">AI-assisted development</span><span class="home-card-desc">How this toolkit was designed, built, and verified.</span></a>
 </div>
 
