@@ -35,6 +35,8 @@ On the **Home** page:
 5. Click **Create**. This makes an empty project with no liveries yet.
 6. Switch to **Liveries** and click **Add livery** to build your first one.
 
+![Discovering aircraft](assets/images/discover-aircraft.png)
+
 ## The two locations of a project
 
 Every project lives in two places on disk:
