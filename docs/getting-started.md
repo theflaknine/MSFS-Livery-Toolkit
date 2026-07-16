@@ -28,11 +28,11 @@ If either is missing, the Home page shows a **"Let's get you set up"** banner wi
 ## Creating a project
 
 On the **Home** page:
-1. (Optional) If you want to include stock or Marketplace aircraft you must first mount the MSFS Virtual File System (VFS). View MSFS SDK documentation [here](https://docs.flightsimulator.com/msfs2024/html/2_DevMode/Menus/Tools/The_Virtual_File_System.htm) for instructions. Aircraft located in the VFS will display a green "VFS" badge at the next step.
+1. (Optional) If you want to include stock or Marketplace aircraft you must first mount the MSFS Virtual File System (VFS). View MSFS SDK documentation [here](https://docs.flightsimulator.com/msfs2024/html/2_DevMode/Menus/Tools/The_Virtual_File_System.htm) for instructions. Aircraft located in the VFS will display a green "VFS" badge at the next step.   
+2. Click **Discover aircraft** to populate the base-aircraft list, then pick one. Search by title, manufacturer, or folder name. A colour-coded **profile badge** shows whether it's 2020 Mono, 2024 Mono, or 2024 Modular. *Note we are referring to non-modular aircraft as "monolithic" since, hence the label "mono".*
     
     ![Discovering aircraft](assets/images/discover-aircraft.png)
     
-2. Click **Discover aircraft** to populate the base-aircraft list, then pick one. Search by title, manufacturer, or folder name. A colour-coded **profile badge** shows whether it's 2020 Mono, 2024 Mono, or 2024 Modular. *Note we are referring to non-modular aircraft as "monolithic" since, hence the label "mono".*
 3. Name your project.
 4. Confirm the **output location**. The app suggests a folder name following MSFS naming conventions (`<company>-aircraft-<name>-livery-<project>`), but it's fully editable, and a live preview shows the exact path that will be created. You can optionally choose to create the output folder as a sibling folder of the base aircraft folder.
 5. Click **Create**. This makes an empty project with no liveries yet.
