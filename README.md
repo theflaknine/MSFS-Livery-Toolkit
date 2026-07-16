@@ -27,7 +27,7 @@ Grab the latest portable release from the [**Releases**](https://github.com/thef
 - Microsoft Flight Simulator 2020 and/or 2024
 - The matching MSFS SDK (installed via the sim's Dev Mode) — needed to compile textures
 
-(MSFSLayoutGenerator, which the app also needs, is now **bundled** with the app — nothing to download. You can still point the app at your own copy in Config if you prefer.)
+(MSFSLayoutGenerator, which the app also needs, is now **bundled** with the app - nothing to download. You can still point the app at your own copy in Config if you prefer.)
 
 ## Documentation
 
