@@ -23,6 +23,7 @@ nav_order: 1
 <a class="home-card" href="{{ '/configuration.html' | relative_url }}"><span class="home-card-title">Configuration</span><span class="home-card-desc">SDK paths, aircraft source folders, and settings.</span></a>
 <a class="home-card" href="{{ '/trust-and-safety.html' | relative_url }}"><span class="home-card-title">Trust &amp; safety</span><span class="home-card-desc">What the app does on your machine, and what it never does.</span></a>
 <a class="home-card" href="{{ '/ai-assisted-development.html' | relative_url }}"><span class="home-card-title">AI-assisted development</span><span class="home-card-desc">How this toolkit was designed, built, and verified.</span></a>
+<a class="home-card" href="{{ '/changelog.html' | relative_url }}"><span class="home-card-title">Changelog</span><span class="home-card-desc">What's new in each release, pulled live from GitHub.</span></a>
 </div>
 
 ---
