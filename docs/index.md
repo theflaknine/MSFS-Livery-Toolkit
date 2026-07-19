@@ -18,13 +18,13 @@ nav_order: 1
 
 ## Key features
 
-<div class="feature-grid">
-<div class="feature-card"><span class="feature-title">Automated livery scaffolding</span><span class="feature-desc">Detects your aircraft's profile and builds a correct, sim-ready package structure for you.</span></div>
-<div class="feature-card"><span class="feature-title">One-click texture extraction</span><span class="feature-desc">Decodes compiled KTX2/DDS art back into editable PNGs, even Oodle-compressed files other tools can't open.</span></div>
-<div class="feature-card"><span class="feature-title">One-click UV wireframes</span><span class="feature-desc">Generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></div>
-<div class="feature-card"><span class="feature-title">One-click compile &amp; package</span><span class="feature-desc">Builds a sim-ready package with the official MSFS SDK — no command line.</span></div>
-<div class="feature-card"><span class="feature-title">Automatic aircraft discovery</span><span class="feature-desc">Scans your Community folder and configured source folders — no manual browsing.</span></div>
-</div>
+<ul class="feature-list">
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery scaffolding</strong> — detects your aircraft's profile and builds a correct, sim-ready package structure for you.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong> — decodes compiled KTX2/DDS art back into editable PNGs, even Oodle-compressed files other tools can't open.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click UV wireframes</strong> — generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click compile &amp; package</strong> — builds a sim-ready package with the official MSFS SDK, no command line.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automatic aircraft discovery</strong> — scans your Community folder and configured source folders, no manual browsing.</span></li>
+</ul>
 
 <div class="home-cards">
 <a class="home-card" href="{{ '/getting-started.html' | relative_url }}"><span class="home-card-title">Getting started</span><span class="home-card-desc">First-run setup and creating your first project.</span></a>
@@ -122,25 +122,36 @@ body { overflow-x: hidden; }
 .home-card-title { font-weight: 600; font-size: 1.05rem; color: #eef1fa; }
 .home-card-desc  { font-size: .9rem; line-height: 1.4; color: #a6abca; }
 
-/* Key-features strip: glanceable capability callouts, distinct from the .home-card nav
-   links above (no hover-lift, no href - an accent-gold left border marks these as "read",
-   not "click", matching the hero image's own gold/blue palette). */
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1rem;
+/* Key-features list: glanceable capability callouts, deliberately NOT boxed cards like
+   .home-card below - a plain list with a small accent-gold checkmark badge per row and a
+   hairline divider between rows reads as "read this quickly" rather than "click this". */
+.feature-list {
+  list-style: none;
   margin: 1.25rem 0 2.5rem;
+  padding: 0;
+  max-width: 760px;
 }
-.feature-card {
+.feature-list li {
   display: flex;
-  flex-direction: column;
-  gap: .35rem;
-  padding: 1.1rem 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-left: 3px solid #e5b94a;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.025);
+  align-items: flex-start;
+  gap: .75rem;
+  padding: .8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-.feature-title { font-weight: 600; font-size: 1rem; color: #eef1fa; }
-.feature-desc  { font-size: .85rem; line-height: 1.4; color: #a6abca; }
+.feature-list li:last-child { border-bottom: none; }
+.feature-mark {
+  flex: none;
+  width: 22px; height: 22px;
+  margin-top: .1rem;
+  border-radius: 50%;
+  background: rgba(229, 185, 74, 0.14);
+  color: #e5b94a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  font-weight: 700;
+}
+.feature-text { font-size: .95rem; line-height: 1.5; color: #a6abca; }
+.feature-text strong { color: #eef1fa; font-weight: 600; }
 </style>
