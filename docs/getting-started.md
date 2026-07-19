@@ -14,7 +14,7 @@ nav_order: 2
 
 ## Download and installation
 
-Grab the latest portable release using the button above. There is no installer, simply unzip and run `MsfsLiveryToolkit.App.exe`. You'll probably get a Windows warning about an unsigned exe, so you'll need to click **More Info > Run Anyway** to proceed, if you are comfortable to do so. See **https://theflaknine.github.io/MSFS-Livery-Toolkit/trust-and-safety.html** for more details on unsigned applications.
+Grab the latest portable release using the button above. There is no installer: unzip the download, then double-click **MSFS Livery Toolkit** at the top of the extracted folder to start the app. Everything else the app needs lives in the `app` subfolder next to it — you don't need to open that folder or run anything inside it. You'll probably get a Windows warning about an unsigned app, so you'll need to click **More Info > Run Anyway** to proceed, if you are comfortable to do so. See **https://theflaknine.github.io/MSFS-Livery-Toolkit/trust-and-safety.html** for more details on unsigned applications.
 
 ## First-run setup
 
