@@ -45,16 +45,6 @@ A few things worth knowing about it:
 - **Its complete source code ships inside every release**, alongside the license — you don't have to trust a compiled binary blindly; you (or anyone) can read exactly what it does, or rebuild it yourself from that source and compare.
 - **It's used narrowly**, only when you explicitly choose "Extract from base" on a texture that needs it. Every other feature in the app never touches it.
 
-## Verifying a download
-
-Every [release](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases) includes a SHA-256 hash of the zip in its release notes. To check your download matches, open PowerShell in the folder you downloaded it to and run:
-
-```powershell
-Get-FileHash .\MsfsLiveryToolkit-v<version>.zip -Algorithm SHA256
-```
-
-Compare the output against the hash published on that release's page. If they match, you have exactly the file that was published — unmodified, byte for byte.
-
 ## About the source code
 
 The application's source isn't public — this is still a small, early hobby project, not something ready for outside contributions yet. What *is* public and welcomes scrutiny: this documentation, the [issue tracker](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues), and every third-party component the app bundles (listed with its license in the in-app **About** panel). If something here doesn't add up or you'd like more detail on a specific behavior, please open an issue — happy to answer.
