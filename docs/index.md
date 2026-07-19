@@ -5,11 +5,11 @@ nav_order: 1
 ---
 
 <div class="home-hero">
-  <img src="{{ '/assets/images/hero.png' | relative_url }}" alt="MSFS Livery Toolkit — create, paint, and compile MSFS liveries with no config files and no command line">
+  <img src="{{ '/assets/images/hero.png' | relative_url }}" alt="MSFS Livery Toolkit: create, paint, and compile MSFS liveries with no config files and no command line">
 </div>
 
 <h1 class="sr-only">MSFS Livery Toolkit</h1>
-<p class="sr-only">Create Microsoft Flight Simulator liveries - scaffold, paint, and compile sim-ready assets from one free Windows app.</p>
+<p class="sr-only">Create Microsoft Flight Simulator liveries - create, paint, and compile sim-ready assets from one free Windows app.</p>
 
 [Download the latest beta release](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View on GitHub](https://github.com/theflaknine/MSFS-Livery-Toolkit){: .btn .fs-5 .mb-4 .mb-md-0 }
@@ -19,11 +19,11 @@ nav_order: 1
 ## Key features
 
 <ul class="feature-list">
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery scaffolding</strong> — detects your aircraft's profile and builds a correct, sim-ready package structure for you.</span></li>
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong> — decodes compiled KTX2/DDS art back into editable PNGs, even Oodle-compressed files other tools can't open.</span></li>
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click UV wireframes</strong> — generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></li>
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click compile &amp; package</strong> — builds a sim-ready package with the official MSFS SDK, no command line.</span></li>
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automatic aircraft discovery</strong> — scans your Community folder and configured source folders, no manual browsing.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery setup</strong>: detects your aircraft's profile and builds a correct, sim-ready package structure for you.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong>: decodes compiled KTX2/DDS art back into editable PNGs, even Oodle-compressed files other tools can't open.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click compile &amp; package</strong>: builds a sim-ready package with the official MSFS SDK, no command line.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automatic aircraft discovery</strong>: scans your Community folder and configured source folders, no manual browsing.</span></li>
 </ul>
 
 <div class="home-cards">
@@ -71,7 +71,7 @@ I’ve funded this project out of my own pocket with a Claude Pro subscription. 
 body { overflow-x: hidden; }
 
 /* Keep the h1 + tagline for SEO and screen readers (the hero image's text
-   is invisible to both), but hide them visually — the hero image shows them. */
+   is invisible to both), but hide them visually - the hero image shows them. */
 .sr-only {
   position: absolute;
   width: 1px; height: 1px;
@@ -124,11 +124,14 @@ body { overflow-x: hidden; }
 
 /* Key-features list: glanceable capability callouts, deliberately NOT boxed cards like
    .home-card below - a plain list with a small accent-gold checkmark badge per row and a
-   hairline divider between rows reads as "read this quickly" rather than "click this". */
+   hairline divider between rows reads as "read this quickly" rather than "click this".
+   !important on the bullet-killing rules: just-the-docs' own .main-content ul/li rules are
+   more specific than a bare class selector, so a plain "list-style: none" here loses the
+   cascade and the browser-default bullet shows up alongside the checkmark badge. */
 .feature-list {
-  list-style: none;
+  list-style: none !important;
   margin: 1.25rem 0 2.5rem;
-  padding: 0;
+  padding: 0 !important;
   max-width: 760px;
 }
 .feature-list li {
@@ -137,7 +140,9 @@ body { overflow-x: hidden; }
   gap: .75rem;
   padding: .8rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  list-style: none !important;
 }
+.feature-list li::marker { content: ""; }
 .feature-list li:last-child { border-bottom: none; }
 .feature-mark {
   flex: none;
@@ -152,6 +157,6 @@ body { overflow-x: hidden; }
   font-size: .75rem;
   font-weight: 700;
 }
-.feature-text { font-size: .95rem; line-height: 1.5; color: #a6abca; }
+.feature-text { font-size: 1.1rem; line-height: 1.55; color: #a6abca; }
 .feature-text strong { color: #eef1fa; font-weight: 600; }
 </style>
