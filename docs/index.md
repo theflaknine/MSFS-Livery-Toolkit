@@ -18,12 +18,12 @@ nav_order: 1
 
 ## Key features
 
-<ul class="feature-list">
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery setup</strong>: scans your installed aircraft, detects the profile, and builds a correct, sim-ready package structure for you.</span></li>
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong>: decodes compiled KTX2/DDS art back into editable PNGs, even specially compressed files other tools can't open.</span></li>
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></li>
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click compile &amp; package</strong>: builds a sim-ready package with the official MSFS SDK, no command line.</span></li>
-</ul>
+<div class="feature-list">
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery setup</strong>: scans your installed aircraft, detects the profile, and builds a correct, sim-ready package structure for you.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong>: decodes compiled KTX2/DDS art back into editable PNGs, even specially compressed files other tools can't open.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click compile &amp; package</strong>: builds a sim-ready package with the official MSFS SDK, no command line.</span></div>
+</div>
 
 <div class="home-cards">
 <a class="home-card" href="{{ '/getting-started.html' | relative_url }}"><span class="home-card-title">Getting started</span><span class="home-card-desc">First-run setup and creating your first project.</span></a>
@@ -124,25 +124,22 @@ body { overflow-x: hidden; }
 /* Key-features list: glanceable capability callouts, deliberately NOT boxed cards like
    .home-card below - a plain list with a small accent-gold checkmark badge per row and a
    hairline divider between rows reads as "read this quickly" rather than "click this".
-   !important on the bullet-killing rules: just-the-docs' own .main-content ul/li rules are
-   more specific than a bare class selector, so a plain "list-style: none" here loses the
-   cascade and the browser-default bullet shows up alongside the checkmark badge. */
+   Plain <div> rows, NOT <ul>/<li> - just-the-docs' own .main-content ul/li rules kept
+   beating a "list-style: none" reset (even with !important), leaving a stray bullet next
+   to the checkmark badge. Divs have no native list marker at all, so there's no cascade
+   fight to win. */
 .feature-list {
-  list-style: none !important;
   margin: 1.25rem 0 2.5rem;
-  padding: 0 !important;
   max-width: 760px;
 }
-.feature-list li {
+.feature-row {
   display: flex;
   align-items: flex-start;
   gap: .75rem;
   padding: .8rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  list-style: none !important;
 }
-.feature-list li::marker { content: ""; }
-.feature-list li:last-child { border-bottom: none; }
+.feature-row:last-child { border-bottom: none; }
 .feature-mark {
   flex: none;
   width: 22px; height: 22px;
