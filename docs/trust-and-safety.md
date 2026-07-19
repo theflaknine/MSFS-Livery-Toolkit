@@ -36,11 +36,11 @@ No. There is no network code in the app at all, not a hidden one, not an optiona
 
 ## What is `ooz.exe`?
 
-Most base-aircraft textures decode with a fully in-app, built-in image decoder — no extra program involved. A minority of newer MSFS aircraft compress their textures with a format the built-in decoder can't unpack on its own. For that specific case, the app calls a small, separate, open-source helper program: [`ooz`](https://github.com/powzix/ooz) (licensed GPL-3).
+Most base-aircraft textures decode with a fully in-app, built-in image decoder and no extra program involved. A minority of newer MSFS aircraft compress their textures with a format the built-in decoder can't unpack on its own. For that specific case, the app calls a small, separate, open-source helper program: [`ooz`](https://github.com/powzix/ooz) (licensed GPL-3).
 
 A few things worth knowing about it:
 
-- **It's a genuinely separate program**, launched as its own process the same way the app launches the official MSFS SDK tools — never linked into or combined with the app's own code.
+- **It's a genuinely separate program**, launched as its own process the same way the app launches the official MSFS SDK tools, it is never linked into or combined with the app's own code.
 - **It only ever touches local files you already have**, the base aircraft texture you asked to extract, and the PNG it writes out. No network access, no other purpose.
 - **Its complete source code ships inside every release**, alongside the license — you don't have to trust a compiled binary blindly; you (or anyone) can read exactly what it does, or rebuild it yourself from that source and compare.
 - **It's used narrowly**, only when you explicitly choose "Extract from base" on a texture that needs it. Every other feature in the app never touches it.
