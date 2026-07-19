@@ -21,9 +21,13 @@ nav_order: 1
 <div class="feature-list">
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery setup</strong>: scans your installed aircraft, detects the profile, and builds a correct, sim-ready package structure for you.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong>: decodes compiled KTX2/DDS art back into editable PNGs, even specially compressed files other tools can't open.</span></div>
-<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></div>
-<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click compile &amp; package</strong>: builds a sim-ready package with the official MSFS SDK, no command line.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Instant UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Seamless compile &amp; package</strong>: builds a sim-ready package with the official MSFS SDK, no command line.</span></div>
 </div>
+
+---
+
+## Explore the docs
 
 <div class="home-cards">
 <a class="home-card" href="{{ '/getting-started.html' | relative_url }}"><span class="home-card-title">Getting started</span><span class="home-card-desc">First-run setup and creating your first project.</span></a>
