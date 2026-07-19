@@ -68,6 +68,8 @@ Once your selection is confirmed, the workspace is populated with correctly-size
 
 On each texture row an **Edit source artwork** action (pencil icon) will be available if the application can find a Photoshop, Gimp or Affinity artwork file where the filename matches the PNG (excluding the file extension). By default the application will check for paintkit artwork files in the same folder as the PNG images, however you can specify another folder at the top of the **Textures** panel.
 
+Use the **UV+** button to extract a UV map wireframe from the aircraft model. This image file will be created in the same folder as the other texture images, and will have a matching filename with the suffix _UV appended. Any textures that have a UV map already extracted will display a small "UV" indicator in the texture list.
+
 Each texture row also has a **Clear image** action (eraser icon) that removes just the source PNG while keeping the texture entry, so you can swap a placeholder for an extracted image or vice versa.  It is also possible to fully remove a texture from the livery using the **Remove texture** action (trashcan icon) - this will remove the texture slot from your livery and remove the PNG from disk. You will receive a confirmation prompt when using **Clear image** or **Remove texture**.
 
 ## Registration details and thumbnails
