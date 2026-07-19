@@ -17,6 +17,9 @@ The **Settings** page holds the settings the toolkit needs to find your aircraft
 
 A toggle that tells the toolkit which storefront copy of MSFS to drive. It controls the `-forcesteam` flag passed to the SDK build tool, and which copy the Compile page's **Launch** action starts on a machine with both installed.
 
+{: .warning }
+> **The Steam build path is untested.** The developer only owns an MS Store copy of MSFS, so this option has never been verified against a real Steam install — only MS Store is confirmed working. If you hit a problem while using it, please [open an issue on GitHub](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues/new) and attach your session log file (Settings → Diagnostics → **Open session log file**).
+
 ## 16-bit textures ##
 
 When extracting source artwork from an aircraft KTX2 or DDS file, this option ensures that if the source files have 16-bit color depth then that detail is preserved in the corresponding PNG file. It is recommended to leave this option on.

@@ -66,7 +66,7 @@ Once your selection is confirmed, the workspace is populated with correctly-size
 {: .important }
 > **Your artwork is protected.** The tool never automatically overwrites an existing image file in your workspace - neither a placeholder nor an extracted image will wipe out artwork you've already put there. Once you replace a placeholder with your own painting, it is safe.
 
-On each texture row an **Edit source artwork** action (pencil icon) will be available if the application can find a Photoshop, Gimp or Affinity artwork file where the filename matches the PNG (excluding the file extension). By default the application will check for paintkit artwork files in the same folder as the PNG images, however you can specify another folder at the top of the **Textures** panel.
+On each texture row an **Edit source artwork** action (pencil icon) will be available if the application can find a Photoshop, Affinity, Gimp or Paint.NET artwork file (`.psd`, `.afphoto`, `.xcf`, `.pdn`) where the filename matches the PNG (excluding the file extension). By default the application will check for paintkit artwork files in the same folder as the PNG images, however you can specify another folder at the top of the **Textures** panel.
 
 Use the **UV+** button to extract a UV map wireframe from the aircraft model. This image file will be created in the same folder as the other texture images, and will have a matching filename with the suffix _UV appended. Any textures that have a UV map already extracted will display a small "UV" indicator in the texture list.
 
