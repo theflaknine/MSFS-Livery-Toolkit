@@ -19,11 +19,10 @@ nav_order: 1
 ## Key features
 
 <ul class="feature-list">
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery setup</strong>: detects your aircraft's profile and builds a correct, sim-ready package structure for you.</span></li>
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong>: decodes compiled KTX2/DDS art back into editable PNGs, even Oodle-compressed files other tools can't open.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery setup</strong>: scans your installed aircraft, detects the profile, and builds a correct, sim-ready package structure for you.</span></li>
+<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong>: decodes compiled KTX2/DDS art back into editable PNGs, even specially compressed files other tools can't open.</span></li>
 <li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></li>
 <li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click compile &amp; package</strong>: builds a sim-ready package with the official MSFS SDK, no command line.</span></li>
-<li><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automatic aircraft discovery</strong>: scans your Community folder and configured source folders, no manual browsing.</span></li>
 </ul>
 
 <div class="home-cards">
