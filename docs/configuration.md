@@ -12,6 +12,7 @@ The **Settings** page holds the settings the toolkit needs to find your aircraft
 
 - **MSFS 2020 SDK** and **MSFS 2024 SDK:** the app auto-detects the default install locations; set at least one, matching the aircraft you intend to build for.
 - **MSFSLayoutGenerator:** used to regenerate `layout.json` on every build. A copy is **bundled with the app and used automatically** — you don't need to download or set anything. Set a path here only if you want to use your own copy (e.g. a [newer release](https://github.com/HughesMDflyer4/MSFSLayoutGenerator/releases)).
+- **Compile 2020 liveries without the SDK:** an optional toggle next to the MSFS 2020 SDK path that uses a bundled `texconv` (Microsoft DirectXTex, MIT-licensed) encoder instead, so you can compile MSFS 2020 liveries with no SDK or simulator installed at all. Off by default (the SDK is used unless you turn it on), automatic if no 2020 SDK is found.
 
 ## Steam vs. MS Store
 

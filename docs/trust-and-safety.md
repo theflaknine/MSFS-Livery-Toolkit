@@ -7,7 +7,7 @@ nav_order: 6
 # Trust & safety
 {: .no_toc }
 
-This page exists because the app triggers two things worth explaining honestly: an "Unknown publisher" warning from Windows, and an extra `ooz.exe` file sitting alongside the main program. Here's exactly what's going on with both, and what the app actually does on your machine.
+This page exists because the app triggers a few things worth explaining honestly: an "Unknown publisher" warning from Windows, and a couple of small extra helper programs (`ooz.exe`, `texconv.exe`) sitting alongside the main program. Here's exactly what's going on with all of it, and what the app actually does on your machine.
 
 1. TOC
 {:toc}
@@ -44,6 +44,17 @@ A few things worth knowing about it:
 - **It only ever touches local files you already have**, the base aircraft texture you asked to extract, and the PNG it writes out. No network access, no other purpose.
 - **Its complete source code ships inside every release**, alongside the license — you don't have to trust a compiled binary blindly; you (or anyone) can read exactly what it does, or rebuild it yourself from that source and compare.
 - **It's used narrowly**, only when you explicitly choose "Extract from base" on a texture that needs it. Every other feature in the app never touches it.
+
+## What is `texconv.exe`?
+
+MSFS 2020 liveries can optionally be compiled without the MSFS 2020 SDK or simulator installed at all, using a small texture encoder instead of the usual official SDK tool. When that's turned on in Settings (off by default, or automatic if you don't have the 2020 SDK installed), the app calls texconv: Microsoft's own [DirectXTex](https://github.com/microsoft/DirectXTex) texture converter, MIT licensed, run as a separate process. Same arm's-length pattern as `ooz.exe` above.
+
+A few things worth knowing about it:
+
+- **It's Microsoft's own official texture-conversion tool**, part of the DirectXTex project, used unmodified.
+- **It's off by default.** The app compiles through the real MSFS SDK/simulator unless you explicitly turn this on, or the 2020 SDK isn't installed, in which case it's the only option since there's nothing else to compile with.
+- **It only ever touches your project's own texture files**: the source artwork you're compiling and the DDS files it writes out. No network access.
+- **A few small Microsoft Visual C++ runtime files ship alongside it** so it runs standalone. These are standard, widely distributed system components, not anything specific to this app.
 
 ## About the source code
 

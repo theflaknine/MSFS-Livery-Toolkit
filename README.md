@@ -39,10 +39,11 @@ Please [open an issue](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues
 
 ## Third-party components
 
-The app bundles a small number of open-source components, listed in its in-app **About** panel. Two worth noting:
+The app bundles a small number of open-source components, listed in its in-app **About** panel. A few worth noting:
 
 - [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator) by Brandon Filer (MIT) — regenerates `layout.json`; bundled unmodified and called as a separate program, with its MIT license included alongside it.
 - [`ooz`](https://github.com/powzix/ooz) (GPL-3) — used by texture extraction as a separate bundled program; its complete source and license ship inside every release package.
+- [DirectXTex](https://github.com/microsoft/DirectXTex) (`texconv`, MIT, © Microsoft Corporation): optionally compiles MSFS 2020 liveries without the MSFS 2020 SDK/simulator installed. Bundled unmodified and called as a separate program, with its MIT license included alongside it.
 
 ## License
 
