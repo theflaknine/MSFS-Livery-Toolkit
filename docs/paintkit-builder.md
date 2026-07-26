@@ -49,6 +49,7 @@ Two details worth knowing:
 
 ## Using it
 
+![Livery Builder](assets/images/Livery-Builder.png)
 **1. Choose an aircraft.** Click **Discover aircraft** and pick one from the list. Each entry shows where
 it was found and whether it is an MSFS 2020 or MSFS 2024 aircraft, so you can tell two installs of the
 same aircraft apart.
