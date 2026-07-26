@@ -1,7 +1,7 @@
 ---
 title: AI-assisted development
 layout: default
-nav_order: 7
+nav_order: 8
 ---
 
 # AI-assisted development

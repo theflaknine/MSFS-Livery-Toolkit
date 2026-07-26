@@ -3,7 +3,9 @@
 
 # MSFS Livery Toolkit
 
-A free Windows tool for creating **Microsoft Flight Simulator** liveries; build the full livery file and folder structure, generate placeholder images ready for edting, prepare and flag its artwork, then compile sim-ready assets, all from one app.
+A free Windows tool for creating **Microsoft Flight Simulator** liveries; build the full livery file and folder structure, generate placeholder images ready for editing, prepare and flag its artwork, then compile sim-ready assets, all from one app.
+
+It can also build you a **paintkit**: a layered Photoshop file made from an aircraft's own textures and UV layout, so you can start painting even when the developer never published one.
 
 Supports MSFS 2020 and 2024, across all three package structures (2020 monolithic / DDS, 2024 monolithic / KTX2, and 2024 modular / KTX2).
 
@@ -27,7 +29,7 @@ Grab the latest portable release from the [**Releases**](https://github.com/thef
 - Microsoft Flight Simulator 2020 and/or 2024
 - The matching MSFS SDK (installed via the sim's Dev Mode) — needed to compile textures
 
-(MSFSLayoutGenerator, which the app also needs, is now **bundled** with the app - nothing to download. You can still point the app at your own copy in Config if you prefer.)
+(MSFSLayoutGenerator, which the app also needs, is now **bundled** with the app - nothing to download. You can still point the app at your own copy in Settings if you prefer.)
 
 ## Documentation
 

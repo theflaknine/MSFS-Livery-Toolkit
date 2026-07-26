@@ -1,7 +1,7 @@
 ---
 title: Configuration
 layout: default
-nav_order: 5
+nav_order: 6
 ---
 
 # Configuration
@@ -30,6 +30,7 @@ When extracting source artwork from an aircraft KTX2 or DDS file, this option en
 - **Default creator name:** pre-fills the manifest `creator` field and, for modular aircraft, the `liveries\<creator>` folder name. Editable per livery afterwards.
 - **Default output location:** the parent folder pre-filled when you create a new project.
 - **Projects root folder:** where each project's workspace subfolder is created.
+- **Default paintkit folder:** the parent folder pre-filled on the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) page. A folder named after the aircraft is created inside it for each build, and you can change the location per build.
 
 ## Aircraft source folders
 

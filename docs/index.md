@@ -22,6 +22,7 @@ nav_order: 1
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery setup</strong>: scans your installed aircraft, detects the profile, and builds a correct, sim-ready package structure for you.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong>: decodes compiled KTX2/DDS art back into editable PNGs, even specially compressed files other tools can't open.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Instant UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Ready-made paintkits</strong>: builds a layered Photoshop file from any aircraft's own textures and UV layout, even when no paintkit was ever published.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Seamless compile &amp; package</strong>: builds a sim-ready package with the official MSFS SDK, no command line.</span></div>
 </div>
 
@@ -32,6 +33,7 @@ nav_order: 1
 <div class="home-cards">
 <a class="home-card" href="{{ '/getting-started.html' | relative_url }}"><span class="home-card-title">Getting started</span><span class="home-card-desc">First-run setup and creating your first project.</span></a>
 <a class="home-card" href="{{ '/creating-liveries.html' | relative_url }}"><span class="home-card-title">Creating liveries</span><span class="home-card-desc">Choosing textures, editing compile flags, and painting your livery.</span></a>
+<a class="home-card" href="{{ '/paintkit-builder.html' | relative_url }}"><span class="home-card-title">Paintkit Builder</span><span class="home-card-desc">Building a layered Photoshop paintkit from any installed aircraft.</span></a>
 <a class="home-card" href="{{ '/compiling.html' | relative_url }}"><span class="home-card-title">Compiling</span><span class="home-card-desc">Building your package and testing it in the sim.</span></a>
 <a class="home-card" href="{{ '/configuration.html' | relative_url }}"><span class="home-card-title">Configuration</span><span class="home-card-desc">SDK paths, aircraft source folders, and settings.</span></a>
 <a class="home-card" href="{{ '/trust-and-safety.html' | relative_url }}"><span class="home-card-title">Trust &amp; safety</span><span class="home-card-desc">What the app does on your machine, and what it never does.</span></a>

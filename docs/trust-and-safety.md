@@ -1,7 +1,7 @@
 ---
 title: Trust & safety
 layout: default
-nav_order: 6
+nav_order: 7
 ---
 
 # Trust & safety
