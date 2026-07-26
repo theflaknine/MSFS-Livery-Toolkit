@@ -66,7 +66,7 @@ Once your selection is confirmed, the workspace is populated with correctly-size
 {: .important }
 > **Your artwork is protected.** The tool never automatically overwrites an existing image file in your workspace - neither a placeholder nor an extracted image will wipe out artwork you've already put there. Once you replace a placeholder with your own painting, it is safe.
 
-On each texture row an **Edit source artwork** action (pencil icon) will be available if the application can find a Photoshop, Affinity, Gimp or Paint.NET artwork file (`.psd`, `.afphoto`, `.xcf`, `.pdn`) where the filename matches the PNG (excluding the file extension). By default the application will check for paintkit artwork files in the same folder as the PNG images, however you can specify another folder at the top of the **Textures** panel.
+On each texture row an **Edit source artwork** action (pencil icon) will be available if the application can find a Photoshop, Affinity, Gimp or Paint.NET artwork file (`.psd`, `.afphoto`, `.xcf`, `.pdn`) where the filename matches the PNG (excluding the file extension). By default the application will check for paintkit artwork files in the same folder as the PNG images, however you can specify another folder at the top of the **Textures** panel. For more details see the section **Linking to a paintkit** below.
 
 Use the **UV+** button to extract a UV map wireframe from the aircraft model. This image file will be created in the same folder as the other texture images, and will have a matching filename with the suffix _UV appended. Any textures that have a UV map already extracted will display a small "UV" indicator in the texture list.
 
@@ -76,3 +76,9 @@ Each texture row also has a **Clear image** action (eraser icon) that removes ju
 
 - **Details tab:** edit every sim-supported `[fltsim.N]` field (tail number, ATC callsign, title, and more). Fields that differ from the base default show a clear indicator and can be reverted instantly.
 - **Thumbnails tab:** a built-in viewer that tracks the exact files and dimensions your sim generation requires. Auto-generate baseline icons, or use **Replace…** to drop in a real image (a size mismatch warns but still lets you proceed). Manually-added thumbnails are never overwritten.
+
+## Linking to a paintkit
+It is possible to directly open source artwork files if the MSFS Livery Toolkit can find an associated file; currently supported formats are Photoshop, Affinity, Gimp and Paint.NET. The search logic is as follows:
+ 1. **Custom path to a specific artwork file**: You can browse to any supported file type in any folder. This is set per texture slot, using the pane on the right side of the application which appears when a texture slot is selected in the **Liveries** tab. This is useful if the aircraft developer provides paintkit files which don't have the same naming convention as the texture images.
+ 2. **Filename match in the folder specified in the livery "Paintkit path" field"**: You choose a path, the toolkit looks for filenames that match the PNG texture name. For example `FW190_EXTERIOR_1001_ALB.PNG` will automatically find `FW190_EXTERIOR_1001_ALB.psd` or `FW190_EXTERIOR_1001_ALB.afphoto` or `FW190_EXTERIOR_1001_ALB.xcf` or `FW190_EXTERIOR_1001_ALB.pdn`.
+ 3. **Filename match in the same folder as the PNG files**: If no "Paintkit path" field is set, the application will search for matching filenames in the same folder as the PNG files, using the name matching logic described above.
