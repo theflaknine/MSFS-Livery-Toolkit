@@ -47,7 +47,7 @@ nav_order: 1
 
 The toolkit takes you through the whole livery pipeline:
 
-1. **Create:** pick an installed base aircraft, and the app detects its profile (2020 monolithic, 2024 monolithic, or 2024 modular) and scaffolds a correct, sim-ready livery package.
+1. **Create:** pick an installed base aircraft, and the app detects its profile (2020 monolithic, 2024 monolithic, or 2024 modular) and builds out a correct, sim-ready livery package.
 2. **Work:** choose which of the base's textures to repaint, generate correctly-sized blank canvases *or* extract the base's own compiled textures back to editable PNGs, and edit each texture's compile flags.
 3. **Compile:** turn your PNG artwork into sim-ready DDS/KTX2 using the official MSFS SDK, build a full package ready to use in your community folder, then regenerate `layout.json` and launch the sim to test.
 
