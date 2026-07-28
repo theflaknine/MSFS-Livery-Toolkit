@@ -89,7 +89,7 @@ exactly where the model puts it.
 
 ## Using it
 
-![The Paintkit Builder page, showing the aircraft list, the texture list and the build options](assets/images/Livery-Builder.png)
+![The Paintkit Builder page, showing the aircraft list, the texture list and the build options](assets/images/paintkit-builder.png)
 
 **1. Choose an aircraft.** Click **Discover aircraft** and pick one from the list. Each entry shows where
 it was found and whether it is an MSFS 2020 or MSFS 2024 aircraft, so you can tell two installs of the
