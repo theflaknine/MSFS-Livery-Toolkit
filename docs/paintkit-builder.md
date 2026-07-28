@@ -9,8 +9,9 @@ Many aircraft never ship a paintkit. Without one you are painting blind: no idea
 fall on the texture sheet, no idea which part of the image is the tail, and nothing underneath to trace.
 
 The Paintkit Builder solves that by building a paintkit **from the aircraft itself**. It reads the
-aircraft's own compiled textures and its 3D model's UV layout, and writes a layered Photoshop file you can
-start painting on straight away.
+aircraft's own compiled textures and its 3D model, and gives you two ways to work: a layered Photoshop
+file you can start painting on straight away, and a 3D model of the parts you are painting that you can
+open in Blender. You can build either on its own, or both together.
 
 It works on any aircraft you have installed, and it does **not** need a project. You can point it at an
 aircraft you are only considering, look at what its textures are like, and decide from there.
@@ -21,7 +22,14 @@ You will find it in the sidebar, just above Settings.
 
 ## What you get
 
-One `.psd` per texture, saved into a folder named after the aircraft, with these layers:
+Everything is saved into a folder named after the aircraft, split into a **2D Paintkit** folder and a
+**3D Paintkit** folder so the Photoshop files and the model stay apart.
+
+---
+
+## The 2D paintkit
+
+One `.psd` per texture, with these layers:
 
 | Layer | What it is |
 |:------|:-----------|
@@ -47,9 +55,42 @@ Two details worth knowing:
 
 ---
 
+## The 3D paintkit
+{: .d-inline-block }
+
+Experimental
+{: .label .label-yellow }
+
+A `.gltf` model containing only the parts of the aircraft that use the textures you picked. Open it in
+Blender, or any other 3D painting software, to see where your artwork actually lands on the aircraft
+instead of working it out from a flat UV map.
+
+- **Each material is named after the paintkit it belongs to**, so it is obvious which `.psd` paints which
+  surface.
+- **The model arrives wearing the aircraft's current paintwork**, so you can see what you are starting
+  from and paint over it.
+- **Parts stay separate.** Movable surfaces such as a rudder or an elevator keep their own place in the
+  model tree, so you can rotate one out of the way to reach what is behind it.
+
+You can build the model on its own, without any Photoshop files, if that is all you want.
+
+### What "experimental" means here
+
+On most aircraft the model is accurate. On some, a few small parts can come out in the wrong position,
+most often control surfaces such as ailerons, flaps and spoilers on airliners. The main airframe is not
+affected.
+
+This is not something the app is getting wrong in isolation: other glTF importers, including the official
+Blender importer, place exactly the same parts in the wrong place, so it appears to be a general issue
+with how certain models store that information. It is worth knowing about before you rely on a part being
+exactly where the model puts it.
+
+---
+
 ## Using it
 
-![Livery Builder](assets/images/Livery-Builder.png)
+![The Paintkit Builder page, showing the aircraft list, the texture list and the build options](assets/images/Livery-Builder.png)
+
 **1. Choose an aircraft.** Click **Discover aircraft** and pick one from the list. Each entry shows where
 it was found and whether it is an MSFS 2020 or MSFS 2024 aircraft, so you can tell two installs of the
 same aircraft apart.
@@ -58,12 +99,20 @@ Stock and marketplace aircraft need the sim's Virtual File System running, exact
 See [Creating liveries]({{ '/creating-liveries.html' | relative_url }}) for how to start it.
 
 **2. Choose what to build.** If the aircraft has several variants, pick the one you are painting first.
-Then tick the textures you want a paintkit for, and tick which layers each file should contain. Your layer
-choice is remembered for next time.
+Then tick the textures you want a paintkit for.
+
+Underneath, choose the outputs. **Build 2D Paintkit** gives you the Photoshop files, and you can tick which
+layers each one should contain. **Build 3D Paintkit** gives you the model. Either can be used on its own,
+and your choices are remembered for next time.
 
 **3. Choose where to save it**, and click **Build paintkits**. A folder named after the aircraft is created
-inside the location you pick, so building for several aircraft keeps them separate. You can set a default
-location in [Settings]({{ '/configuration.html' | relative_url }}).
+inside the location you pick, so building for several aircraft keeps them separate, and inside it you get a
+**2D Paintkit** folder, a **3D Paintkit** folder, or both, depending on what you asked for. You can set a
+default location in [Settings]({{ '/configuration.html' | relative_url }}).
+
+If you built paintkits before this feature arrived, your older files are still where you left them. The app
+will not see them when it checks whether a paintkit already exists, so it builds fresh ones rather than
+skipping.
 
 ---
 
@@ -105,3 +154,11 @@ offered, so you will not be shown a scheme that does not fit.
   Photoshop.
 - Building a lot of textures at once takes a while. The app stays locked while it works, and there is a
   **Cancel** button if you change your mind.
+- The 3D model is written as a `.gltf` with a `.bin` beside it and one image per material. Keep those files
+  together, since the model refers to them by name.
+- A short report file is written next to the model, listing which of the aircraft's model files were used
+  and where each rigged part was placed. It is worth a look if something in the model seems out of place.
+- Some parts of an aircraft are positioned by a skeleton rather than sitting where they are drawn. If one
+  of those comes out wrong, the **Reposition rigged parts** setting beside the 3D option lets you override
+  how they are handled. Leave it on **Automatic** unless you have a reason not to: it is correct on every
+  aircraft tested, and the other settings exist only as an escape hatch.

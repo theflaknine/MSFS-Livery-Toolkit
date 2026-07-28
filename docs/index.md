@@ -22,7 +22,8 @@ nav_order: 1
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery setup</strong>: scans your installed aircraft, detects the profile, and builds a correct, sim-ready package structure for you.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong>: decodes compiled KTX2/DDS art back into editable PNGs, even specially compressed files other tools can't open.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Instant UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></div>
-<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Ready-made paintkits</strong>: builds a layered Photoshop file from any aircraft's own textures and UV layout, even when no paintkit was ever published.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Ready-made 2D paintkits</strong>: builds a layered Photoshop file from any aircraft's own textures and UV layout, even when no paintkit was ever published.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>3D paintkits</strong> (experimental): exports the parts you are painting as a 3D model you can open in Blender or other 3D painting software, so you can see your artwork on the aircraft instead of working it out from a flat UV map.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Seamless compile &amp; package</strong>: builds a sim-ready package with the official MSFS SDK, no command line.</span></div>
 </div>
 
