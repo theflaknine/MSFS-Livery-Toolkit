@@ -89,7 +89,7 @@ exactly where the model puts it.
 
 ## Using it
 
-![The Paintkit Builder page, showing the aircraft list, the texture list and the build options](assets/images/paintkit-builder.png)
+![The Paintkit Builder page, showing the aircraft list, the texture list, the build options and the 3D preview button](assets/images/paintkit-selector.png)
 
 **1. Choose an aircraft.** Click **Discover aircraft** and pick one from the list. Each entry shows where
 it was found and whether it is an MSFS 2020 or MSFS 2024 aircraft, so you can tell two installs of the
@@ -99,9 +99,13 @@ Stock and marketplace aircraft need the sim's Virtual File System running, exact
 See [Creating liveries]({{ '/creating-liveries.html' | relative_url }}) for how to start it.
 
 **2. Choose what to build.** If the aircraft has several variants, pick the one you are painting first.
-Then tick the textures you want a paintkit for.
+Then select the textures you want a paintkit for.
 
-Underneath, choose the outputs. **Build 2D Paintkit** gives you the Photoshop files, and you can tick which
+Texture names rarely tell you much. If you are not sure which part of the aircraft a given name covers,
+click **3D preview** at the top of the page: a separate window opens showing the aircraft, and each texture
+you select lights up on it. See [The 3D preview](#the-3d-preview) below.
+
+Underneath, choose the outputs. **Build 2D Paintkit** gives you the Photoshop files, and you can choose which
 layers each one should contain. **Build 3D Paintkit** gives you the model. Either can be used on its own,
 and your choices are remembered for next time.
 
@@ -113,6 +117,36 @@ default location in [Settings]({{ '/configuration.html' | relative_url }}).
 If you built paintkits before this feature arrived, your older files are still where you left them. The app
 will not see them when it checks whether a paintkit already exists, so it builds fresh ones rather than
 skipping.
+
+---
+
+## The 3D preview
+
+Texture names like `A330_FUSE_1002_ALBD` tell you very little about which part of the aircraft they
+actually cover. **3D preview**, at the top of the page, opens a separate window showing the aircraft so you
+can find out before you build anything.
+
+![The 3D preview window, showing the parts covered by the selected textures picked out against the rest of the aircraft](assets/images/paintkit-preview.png)
+
+It starts with the airframe faintly visible and nothing selected. As you select textures, the parts they
+cover light up, so the aircraft builds itself as you work down the list. Selecting is instant: the whole
+aircraft is loaded once when the window opens, so there is no wait each time you change your mind.
+
+- **Rest of aircraft** controls what the parts you have not selected look like: a faint ghost, solid grey,
+  or hidden entirely.
+- **Colour by material** gives every selected texture its own colour, which is the quickest way to see
+  where one texture ends and the next begins.
+- **Lighting** offers three setups. Studio is a good general choice, Even is nearly shadowless for reading
+  fine detail, and Dramatic uses a single hard light for judging shape and panel lines.
+- **Wireframe** and **Zoom to fit** do what you would expect. Zoom to fit frames what is currently on
+  screen, not the whole aircraft.
+
+Left-drag to rotate, right-drag to pan, and use the scroll wheel to zoom.
+
+The window closes on its own when you leave the page, and remembers its size and position for next time.
+There are no textures here, because at this point in the workflow they have not been extracted yet: the
+preview is about coverage, not paint. To see actual artwork on the aircraft, use the preview on the
+[Liveries page]({{ '/creating-liveries.html' | relative_url }}#seeing-your-paint-in-3d).
 
 ---
 

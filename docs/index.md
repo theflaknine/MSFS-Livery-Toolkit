@@ -24,6 +24,7 @@ nav_order: 1
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Instant UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Ready-made 2D paintkits</strong>: builds a layered Photoshop file from any aircraft's own textures and UV layout, even when no paintkit was ever published.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>3D paintkits</strong> (experimental): exports the parts you are painting as a 3D model you can open in Blender or other 3D painting software, so you can see your artwork on the aircraft instead of working it out from a flat UV map.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Built-in 3D preview</strong>: see your paint on the aircraft as you work, without compiling or launching the sim, and see exactly which part of the airframe each texture covers before you start.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Seamless compile &amp; package</strong>: builds a sim-ready package with the official MSFS SDK, no command line.</span></div>
 </div>
 
@@ -49,7 +50,7 @@ nav_order: 1
 The toolkit takes you through the whole livery pipeline:
 
 1. **Create:** pick an installed base aircraft, and the app detects its profile (2020 monolithic, 2024 monolithic, or 2024 modular) and builds out a correct, sim-ready livery package structure.
-2. **Work:** choose which of the base's textures to repaint, generate correctly-sized blank canvases *or* extract the base's own compiled textures back to editable PNGs, and edit each texture's compile flags.
+2. **Work:** choose which of the base's textures to repaint, generate correctly-sized blank canvases *or* extract the base's own compiled textures back to editable PNGs, and edit each texture's compile flags. A built-in 3D preview shows your artwork on the aircraft as you paint, so you can catch a misplaced decal without compiling first.
 3. **Compile:** turn your PNG artwork into sim-ready DDS/KTX2 using the official MSFS SDK, build a full package ready to use in your community folder, then regenerate `layout.json` and launch the sim to test.
 
 A project is a single deployable package that can hold one or many liveries sharing the same base aircraft.

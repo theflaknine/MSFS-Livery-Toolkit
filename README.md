@@ -7,6 +7,8 @@ A free Windows tool for creating **Microsoft Flight Simulator** liveries; build 
 
 It can also build you a **paintkit**: a layered Photoshop file made from an aircraft's own textures and UV layout, so you can start painting even when the developer never published one.
 
+A built-in **3D preview** shows your artwork on the aircraft while you work, so a misplaced decal or an upside-down stripe turns up straight away instead of after a compile and a flight.
+
 Supports MSFS 2020 and 2024, across all three package structures (2020 monolithic / DDS, 2024 monolithic / KTX2, and 2024 modular / KTX2).
 
 > This repository is the **public home** for the toolkit, including downloads, issue tracking, and documentation. The application source is maintained privately.

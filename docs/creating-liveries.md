@@ -58,6 +58,8 @@ The toolkit classifies each texture using the official SDK **metadata** from the
 
 ## Painting your livery
 
+![The Liveries page, showing a livery's textures with their previews, resolutions and per-texture actions](assets/images/livery-textures.png)
+
 Once your selection is confirmed, the workspace is populated with correctly-sized blank PNG canvases as placeholders. There are two ways to get a starting image for each texture:
 
 - **Generate placeholders:** blank, correctly-sized canvases labelled with the filename and resolution. If you plan to use images generated from a paintkit this is the recommended approach.
@@ -71,6 +73,40 @@ On each texture row an **Edit source artwork** action (pencil icon) will be avai
 Use the **UV+** button to extract a UV map wireframe from the aircraft model. This image file will be created in the same folder as the other texture images, and will have a matching filename with the suffix _UV appended. Any textures that have a UV map already extracted will display a small "UV" indicator in the texture list.
 
 Each texture row also has a **Clear image** action (eraser icon) that removes just the source PNG while keeping the texture entry, so you can swap a placeholder for an extracted image or vice versa.  It is also possible to fully remove a texture from the livery using the **Remove texture** action (trashcan icon) - this will remove the texture slot from your livery and remove the PNG from disk. You will receive a confirmation prompt when using **Clear image** or **Remove texture**.
+
+## Seeing your paint in 3D
+
+Working from a flat UV map, it is easy to get a decal upside down or a stripe landing somewhere you did not
+intend, and normally you would not find out until you had compiled the livery and loaded the sim.
+
+**3D preview**, at the top of the Liveries page, opens a separate window showing your artwork on the
+aircraft. Textures you have painted appear on it. Slots this livery owns but you have not painted yet are
+highlighted in the accent colour, so you can see at a glance what is left to do, and the rest of the
+aircraft is drawn in plain grey for context.
+
+![The 3D preview window, showing a painted livery on the aircraft](assets/images/livery-preview.png)
+
+The preview reads the PNGs in your workspace directly, so there is nothing to compile and no wait. When you
+save a repaint in Photoshop, click **Refresh textures** and it picks up the change straight away. That also
+works after using **Extract from base** to fill a slot that was empty when you opened the window.
+
+A few controls worth knowing:
+
+- **Normal depth** changes how strongly normal maps are applied. Painted at full strength they can look
+  deeper here than they do in the sim, so turn this down until it matches what you see in MSFS.
+- **Lighting** offers three setups, all of which light the underside of the aircraft as well as the top, so
+  you can check gear bays and belly panels.
+- **Rest of aircraft** switches the unpainted parts between solid grey, a faint ghost, or hidden.
+
+At the bottom of the window is a note of how much video memory the preview is using. Large textures add up
+quickly, and it turns amber if the scene is getting heavy.
+
+The window closes on its own when you leave the page.
+
+{: .note }
+> Parts your livery does not repaint are shown in plain grey, not in the aircraft's own paintwork. In the
+> sim those parts fall back to the base aircraft's textures, so the preview answers "where does my paint
+> land, and is it the right way up" rather than "what will this aircraft look like on the ramp".
 
 ## Registration details and thumbnails
 
