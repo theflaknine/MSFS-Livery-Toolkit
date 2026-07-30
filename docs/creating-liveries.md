@@ -30,6 +30,32 @@ When you add a livery or add textures to an existing one, the texture selector h
 - **Smart pre-selection:** the app remembers your texture choices and custom fallback paths per base aircraft, globally, so returning to an aircraft you've painted before pre-selects your usual layout, and later liveries in a project mirror the most recently edited one. The very first livery for an aircraft you've never painted starts with nothing pre-selected, so you choose deliberately.
 - **Manual add:** if you have a need for a texture file that is not found in the base aircraft scan, you can manually enter the filename, resolution, and texture type to force-add it.
 
+### Seeing what a texture covers, before you pick it
+
+Texture names rarely tell you which part of the aircraft they belong to, and picking from a list of names
+is guesswork until you have painted that aircraft once already.
+
+**3D coverage**, beside the texture list, opens a separate window showing the aircraft with the parts your
+selected textures cover lit up. It is available both when you add a livery and when you add more textures to
+an existing one, so you can see what you are taking on before you commit to painting it.
+
+Selecting any of a material's textures lights up that section of the airframe. If you select the fuselage's
+composite or its normal map rather than its colour map, you still see the fuselage. The three belong to one
+material, and the app works out which ones go together by reading the aircraft's own model rather than
+guessing from the file names.
+
+Some textures sit in an aircraft's folders without being used by any of its exterior models, and a texture
+you added by hand is unknown to the model too. Those cannot light anything up, so rather than leave you
+wondering why nothing happened, the window tells you how many of your selected textures it could not place.
+
+{: .note }
+> This is a different question from the **3D preview** button at the top of the Liveries page, which always
+> shows your own artwork on the aircraft. This one is about coverage, before any painting exists.
+
+For aircraft with variants, choose the variant first. The button waits until you have, because the model
+cannot be narrowed down without it. See [When an aircraft cannot be narrowed to one
+variant]({{ '/paintkit-builder.html' | relative_url }}#when-an-aircraft-cannot-be-narrowed-to-one-variant).
+
 ### Fallback selector
 
 A reorderable checklist controls the exact folder order the sim searches for missing textures (`fallback.1`, `fallback.2`, …), written into the livery's `texture.cfg`. The app suggests a baseline you can freely adjust with per-row **Move up / Move down** buttons. If the automatic scan can't find a path (for example a cross-SimObject reference several folders away), add it as a **manual** fallback entry - it even accepts a pasted full `fallback.N=...` line and trims it to just the path.

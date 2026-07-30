@@ -98,8 +98,11 @@ same aircraft apart.
 Stock and marketplace aircraft need the sim's Virtual File System running, exactly as elsewhere in the app.
 See [Creating liveries]({{ '/creating-liveries.html' | relative_url }}) for how to start it.
 
-**2. Choose what to build.** If the aircraft has several variants, pick the one you are painting first.
-Then select the textures you want a paintkit for.
+**2. Choose what to build.** If the aircraft has several variants, pick the one you are painting first. It
+is worth doing even if you only want a rough look, because without it the app cannot tell the variants'
+parts apart. See [When an aircraft cannot be narrowed to one
+variant](#when-an-aircraft-cannot-be-narrowed-to-one-variant). Then select the textures you want a paintkit
+for.
 
 Texture names rarely tell you much. If you are not sure which part of the aircraft a given name covers,
 click **3D preview** at the top of the page: a separate window opens showing the aircraft, and each texture
@@ -147,6 +150,32 @@ The window closes on its own when you leave the page, and remembers its size and
 There are no textures here, because at this point in the workflow they have not been extracted yet: the
 preview is about coverage, not paint. To see actual artwork on the aircraft, use the preview on the
 [Liveries page]({{ '/creating-liveries.html' | relative_url }}#seeing-your-paint-in-3d).
+
+---
+
+## When an aircraft cannot be narrowed to one variant
+
+Modular aircraft ship as a set of parts, and the app works out which parts belong to the variant you picked
+so the preview and the model show that variant and nothing else.
+
+Sometimes it cannot. There may be no variants to choose from, or you may have chosen "applies to all
+variants" deliberately. When that happens, what you are looking at is **every variant's parts at once**, and
+because the app also cannot work out where each part belongs, some of them sit where they were designed
+rather than where they go on the finished aircraft. You may see two fuselages, four wings, or engines in
+the wrong place.
+
+The catch is that this still looks like a perfectly normal aeroplane, so the 3D window now says so in a
+banner across the top whenever it applies.
+
+If you build a **3D Paintkit** in this state, the model has the same problem, and unlike the preview it is
+saved to disk where you might open it days later. So the warning also appears in the build result and in the
+`3D-Paintkit-report.txt` file written beside the model.
+
+If the aircraft does offer variants, picking one clears all of this up. Where you can pick one, the app
+holds the preview back until you do rather than showing you something misleading.
+
+None of this affects the 2D paintkits, or which textures cover which parts. Coverage is still correct; it is
+the arrangement of the parts on screen that is not.
 
 ---
 
