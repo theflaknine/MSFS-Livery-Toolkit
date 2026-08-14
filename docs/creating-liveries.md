@@ -100,6 +100,31 @@ Use the **UV+** button to extract a UV map wireframe from the aircraft model. Th
 
 Each texture row also has a **Clear image** action (eraser icon) that removes just the source PNG while keeping the texture entry, so you can swap a placeholder for an extracted image or vice versa.  It is also possible to fully remove a texture from the livery using the **Remove texture** action (trashcan icon) - this will remove the texture slot from your livery and remove the PNG from disk. You will receive a confirmation prompt when using **Clear image** or **Remove texture**.
 
+### Working on several textures at once
+
+A livery can easily run to dozens of textures, and doing everything one row at a time gets slow. Hold
+**Ctrl** to add individual textures to your selection, or **Shift** to select a run of them, and the
+actions apply to everything you have selected.
+
+With a single texture selected nothing changes: you get the same per-texture panel and the same row
+actions you always had. Select two or more and the panel closes, giving the list more room, and the
+heading is replaced by the bulk actions for the whole selection.
+
+{: .note }
+> While several textures are selected, the per-row icons are deliberately unavailable. They only ever act
+> on their own single row, so firing one with six textures highlighted would look like a bulk action that
+> had quietly done almost nothing.
+
+### Splitting a composite into separate images
+
+A composite texture packs three separate things into one image: ambient occlusion, roughness and
+metalness, one per colour channel. That is efficient for the sim but awkward to paint, since the image
+looks like nothing in particular.
+
+When you extract a composite from the base aircraft, you can also have those three channels written out as
+separate grayscale images alongside it, named with `_AO`, `_ROUGHNESS` and `_METAL` suffixes. Edit whichever
+one you actually care about, and keep the packed composite as the file the sim gets.
+
 ## Seeing your paint in 3D
 
 Working from a flat UV map, it is easy to get a decal upside down or a stripe landing somewhere you did not
@@ -134,10 +159,56 @@ The window closes on its own when you leave the page.
 > sim those parts fall back to the base aircraft's textures, so the preview answers "where does my paint
 > land, and is it the right way up" rather than "what will this aircraft look like on the ramp".
 
-## Registration details and thumbnails
+## Registration details
 
 - **Details tab:** edit every sim-supported `[fltsim.N]` field (tail number, ATC callsign, title, and more). Fields that differ from the base default show a clear indicator and can be reverted instantly.
-- **Thumbnails tab:** a built-in viewer that tracks the exact files and dimensions your sim generation requires. Auto-generate baseline icons, or use **Replace…** to drop in a real image (a size mismatch warns but still lets you proceed). Manually-added thumbnails are never overwritten.
+
+## Thumbnails
+
+MSFS shows your livery in its aircraft selection screens using a small set of thumbnail images. They have
+to be at exact sizes, some of them have to have a transparent background, and the set is not the same for
+MSFS 2020 and 2024. The **Thumbnails tab** tracks the exact files and dimensions your sim generation
+requires, and shows you what is currently there.
+
+Producing real images used to mean leaving the toolkit: launch the sim, turn on Developer Mode, find the
+Aircraft Capture Tool, take the shots, then copy the files back into your livery.
+
+### Render thumbnails
+
+**Render thumbnails** draws your livery on the aircraft itself and writes every thumbnail file MSFS
+expects, so you do not have to capture them in the simulator.
+
+- It writes exactly the files your project's sim generation needs, at the right sizes, with a transparent
+  background on the ones that need to be cut out.
+- It uses **your** paint. Anything you have not painted yet falls back to the base aircraft's own
+  textures, so a half-finished livery still gives you a useful picture of where you have got to.
+- For an aircraft installed in your Community folder, the simulator does not need to be running. For a
+  stock or marketplace aircraft it does, with the VFS Projector started, exactly as it already does for
+  everything else you do with those aircraft.
+
+{: .warning }
+> This is badged **Experimental**. It is a different renderer from the simulator's own, so expect the
+> lighting and the finish to be close rather than identical. It is a shortcut past a tedious trip into
+> Developer Mode, not a pixel-exact reproduction of an in-sim capture.
+
+**Generate placeholders** is still there and unchanged: it writes plain labelled images, and only for
+files that are missing. It is the fallback for when an aircraft's geometry cannot be read.
+
+**Replace…** still lets you drop in a real image of your own, and a size mismatch warns but lets you
+proceed. Images you add by hand are never overwritten.
+
+### Leaving parts out of a render
+
+Aircraft carry plenty of geometry you would not want in a livery thumbnail: ground power units, chocks,
+crew figures, covers, tow bars, and on some aircraft a pilot sitting in the cockpit. **Edit object
+visibility** opens the aircraft in 3D and lets you leave any part out of the render.
+
+- Click a part in the list to find it on the model, or hover the model to see what a part is called.
+- The display switch controls what you are looking at: **Both** shows everything, with hidden parts
+  ghosted; **Only visible** shows just what will actually be rendered; **Only hidden** shows just the
+  parts you have taken out, which is the quickest way to check you have not hidden something by mistake.
+- Your choices are remembered per aircraft, so you only do this once no matter how many liveries you
+  paint for it.
 
 ## Linking to a paintkit
 It is possible to directly open source artwork files if the MSFS Livery Toolkit can find an associated file; currently supported formats are Photoshop, Affinity, Gimp and Paint.NET. The search logic is as follows:
