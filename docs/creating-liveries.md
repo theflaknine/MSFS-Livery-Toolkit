@@ -176,6 +176,8 @@ Select **Use a custom panel.cfg to define registration number styling and visibi
 livery gets its own panel folder, holding a complete copy of the base aircraft's panel, so the aircraft's
 own instruments and avionics keep working exactly as before.
 
+![The Panel tab, showing the registration styling controls beside a live preview of the number and the panel.cfg the toolkit will write](assets/images/panel-cfg.png)
+
 - **Hide the registration number** is the option to reach for when your artwork already includes a tail
   number. It stops the simulator drawing a second one over the top.
 - **`[VPaintingN]` section** appears when an aircraft draws more than one registration, for example one on
