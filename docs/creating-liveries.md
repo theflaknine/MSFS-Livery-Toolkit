@@ -7,11 +7,12 @@ nav_order: 3
 # Creating liveries
 {: .no_toc }
 
-Everything for a single livery lives on the **Edit liveries** page, organized into four tabs: **Textures**, **Thumbnails**, **Details**, and **Model**.
+Everything for a single livery lives on the **Edit liveries** page, organized into five tabs: **Textures**, **Thumbnails**, **Details**, **Panel**, and **Model**.
 
 - **Textures:** defines the texture images used in your livery, including texture "flags" used by the SDK when compiling images into game assets.
 - **Thumbnails:** defines the thumbnail images used in the MSFS livery selection user interface.
 - **Details:** defines the parameters which populate the `aircraft.cfg` (monolithic aircraft) or `livery.cfg` (modular aircraft); this includes items such as the livery name, ATC ID, etc.
+- **Panel:** controls how the simulator draws the registration number on your livery, or whether it draws one at all.
 - **Model:** a placeholder tab for future functionality in the MSFS Livery Toolkit.
 
 1. TOC
@@ -159,9 +160,59 @@ The window closes on its own when you leave the page.
 > sim those parts fall back to the base aircraft's textures, so the preview answers "where does my paint
 > land, and is it the right way up" rather than "what will this aircraft look like on the ramp".
 
-## Registration details
+## Registration numbers
+
+The tail number MSFS paints on your aircraft is not part of your artwork. The simulator draws it at
+runtime, which is why the same aircraft can show a different registration for every livery.
 
 - **Details tab:** edit every sim-supported `[fltsim.N]` field (tail number, ATC callsign, title, and more). Fields that differ from the base default show a clear indicator and can be reverted instantly.
+
+### Styling the registration
+
+The **Panel tab** controls how that number is drawn: its colour, size, position and typeface, or whether
+it is drawn at all. The text itself comes from **ATC id** on the Details tab, not from here.
+
+Select **Use a custom panel.cfg to define registration number styling and visibility** to start. Your
+livery gets its own panel folder, holding a complete copy of the base aircraft's panel, so the aircraft's
+own instruments and avionics keep working exactly as before.
+
+- **Hide the registration number** is the option to reach for when your artwork already includes a tail
+  number. It stops the simulator drawing a second one over the top.
+- **`[VPaintingN]` section** appears when an aircraft draws more than one registration, for example one on
+  the fuselage and one on a cockpit placard. The exterior one is selected for you, since that is usually
+  the one you mean. Edits to each are kept as you switch between them.
+- **`size_mm`** is the size of the texture the number is drawn onto, where 1 mm is 1 pixel.
+  **X, Y, W and H** are the area within it to paint. These should not exceed `size_mm`.
+- **Text format** covers colour, style, scale, outline and background. Every box is optional: leave one
+  empty to use the simulator's own default. Colours take a name such as `red` or a hexadecimal code such
+  as `0xFF00FF`.
+
+Two previews sit beside the editor and update as you type. One draws the registration itself, using the
+simulator's own fitting rules, so you can see the result without loading the sim. The other shows the
+real `panel.cfg` the toolkit will write, with the line you are editing called out in it.
+
+Changes are saved as you make them. Compile the livery for them to reach the simulator.
+
+{: .note }
+> The preview uses the nearest typeface Windows has, so the text can be slightly different in size from
+> what the simulator draws. Colour, position and layout are accurate.
+
+### When the Panel tab has nothing to offer
+
+Not every aircraft can show a livery's own registration, and the tab tells you which case you are in
+rather than letting you set something that would never appear.
+
+- **The aircraft does not use dynamic registration numbers at all.** There is nothing for a livery to
+  change, so any tail number on it is part of the paintwork.
+- **The aircraft supplies its registration with each of its own liveries**, using an extra model that the
+  toolkit does not generate. Its own liveries show a registration and one made here cannot, so the tab
+  explains that instead of offering settings that would have no effect.
+- **The aircraft is modular.** Those handle registrations in a different way that is not supported yet.
+
+{: .note }
+> If an aircraft's registration is drawn by its own custom file rather than the simulator's standard one,
+> you get a single options box instead of the styling controls. What those options mean is defined by the
+> aircraft, so check its manual.
 
 ## Thumbnails
 
