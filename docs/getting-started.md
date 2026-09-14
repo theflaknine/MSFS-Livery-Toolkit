@@ -29,7 +29,7 @@ If either is missing, the Home page shows a **"Let's get you set up"** banner wi
 
 On the **Home** page:
 1. (Optional) If you want to include stock or Marketplace aircraft you must first mount the MSFS Virtual File System (VFS). View MSFS SDK documentation [here](https://docs.flightsimulator.com/msfs2024/html/2_DevMode/Menus/Tools/The_Virtual_File_System.htm) for instructions. Aircraft located in the VFS will display a green "VFS" badge at the next step. 
-2. Click **Discover aircraft** to populate the base-aircraft list, then pick one. Search by title, manufacturer, or folder name. A colour-coded **profile badge** shows whether it's 2020 Mono, 2024 Mono, or 2024 Modular. *Note we are referring to non-modular aircraft as "monolithic" since, hence the label "mono".* **Note: encrypted VFS aircraft are not supported**, if you find a Marketplace aircraft is missing from the Discover aircraft list, it's almost certainly because it is encrypted.   
+2. Click **Discover aircraft** to populate the base-aircraft list, then pick one. Search by title, manufacturer, or folder name. A colour-coded **profile badge** shows whether it's 2020 Mono, 2024 Mono, or 2024 Modular. *Note we are referring to non-modular aircraft as "monolithic", hence the label "mono".* **Note: encrypted VFS aircraft are not supported**, if you find a Marketplace aircraft is missing from the Discover aircraft list, it's almost certainly because it is encrypted.   
     
     ![Discovering aircraft](assets/images/discover-aircraft.png)
     
@@ -54,6 +54,6 @@ Open either at any time from the **Open folder in Windows Explorer** shortcuts (
 The Home dashboard keeps two lists:
 
 - **Pinned projects:** projects you want to make available for quick access, they will not drop off the Recents list.
-- **Recent projects:** an automatically maintained, capped history. Clear unpinned recents or all history with the appropraite **Clear** buttons.
+- **Recent projects:** an automatically maintained, capped history. Clear unpinned recents or all history with the appropriate **Clear** buttons.
 
 Each row shows a small thumbnail preview derived from the project's first livery.

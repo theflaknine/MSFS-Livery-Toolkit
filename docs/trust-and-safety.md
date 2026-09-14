@@ -58,4 +58,4 @@ A few things worth knowing about it:
 
 ## About the source code
 
-The application's source isn't public, this is still a small, early hobby project, not something ready for outside contributions yet. What *is* public and welcomes scrutiny: this documentation, the [issue tracker](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues), and every third-party component the app bundles (listed with its license in the in-app **About** panel). If something here doesn't add up or you'd like more detail on a specific behavior, please open an issue and I'll be happy to answer.
+The application's source isn't public, this is still a small, early hobby project, not something ready for outside contributions yet. What *is* public and welcomes scrutiny: this documentation, the [issue tracker](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues), and every third-party component the app bundles (listed in the in-app **About** panel, with full license texts in `THIRD-PARTY-NOTICES.txt` inside every release package). If something here doesn't add up or you'd like more detail on a specific behavior, please open an issue and I'll be happy to answer.

@@ -30,6 +30,19 @@ If you click **Cancel**, the toolkit stops its build chain, but it won't force-t
 - **Update layout.json only:** regenerates just `layout.json` (no texture recompile, no sim launch). The page shows that file's last-modified time. Every full compile also regenerates `layout.json` from scratch, so file sizes and verification hashes always stay in sync.
 - **Launch Microsoft Flight Simulator:** starts the sim directly (fast-launch, skipping intro videos) to test your livery in-game. If both a Steam and an MS Store copy of the required generation are installed, the app asks which to launch.
 
+## Warnings that do not block compiling
+
+The Compile page can show two warning cards above the build button. Neither one stops you compiling, but
+both are worth reading before you do.
+
+- **Missing textures.** Lists any livery with textures that have no local image and no fallback reaching a
+  compiled copy. Those will render as a pink checkerboard in the simulator. Open **Edit fallback** and use
+  **Check texture coverage** to see the full list and fix it.
+- **No matching configuration.** Lists any livery on a modular aircraft whose tags do not match any
+  configuration the aircraft offers. The build will succeed, but the livery will never appear in the
+  simulator with nothing to say why. Change which configurations it appears under on its **Availability**
+  tab on the Liveries page.
+
 ## Sim-running warning
 
 If Microsoft Flight Simulator is already running for your project's generation, the Work, Compile, and Project pages show a dismissible warning - editing or compiling files the sim has open can cause instability. It's a soft warning you can dismiss and proceed past, not a hard block.

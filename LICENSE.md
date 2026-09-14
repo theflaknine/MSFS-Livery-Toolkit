@@ -17,7 +17,9 @@ You **may not**, without prior written permission:
 
 The application is provided "AS IS", without warranty of any kind, express or implied.
 
-Third-party components bundled with the application (listed in its in-app About panel) remain under their own respective licenses.
+Third-party components bundled with the application remain under their own respective licenses. They are listed, with their full license texts, in the `THIRD-PARTY-NOTICES.txt` file and `licenses` folder inside every release package, and in the in-app About panel.
+
+Every release package also includes a `LICENSE.txt` carrying these terms, together with terms Microsoft requires for the Microsoft components the application includes.
 
 ## Documentation and other repository content
 

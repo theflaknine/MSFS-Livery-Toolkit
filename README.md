@@ -43,7 +43,7 @@ Please [open an issue](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues
 
 ## Third-party components
 
-The app bundles a small number of open-source components, listed in its in-app **About** panel. A few worth noting:
+The app bundles a number of third-party components, each under its own license. Every release package lists them all, with their full license texts, in `THIRD-PARTY-NOTICES.txt` and a `licenses` folder, and the in-app **About** panel lists them too. A few worth noting:
 
 - [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator) by Brandon Filer (MIT) — regenerates `layout.json`; bundled unmodified and called as a separate program, with its MIT license included alongside it.
 - [`ooz`](https://github.com/powzix/ooz) (GPL-3) — used by texture extraction as a separate bundled program; its complete source and license ship inside every release package.

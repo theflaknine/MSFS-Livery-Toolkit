@@ -42,4 +42,4 @@ This list excludes matching text strings from the Texture Selector, to filter ou
 
 ## About
 
-The **About** panel lists every bundled third-party component and its license, including the GPL-3 decompressor used only for the compressed-texture extraction case.
+The **About** panel lists every bundled third-party component and its license, including the GPL-3 decompressor used only for the compressed-texture extraction case. The full license texts ship in `THIRD-PARTY-NOTICES.txt` and the `licenses` folder beside the launcher, and `LICENSE.txt` there holds the terms of use for the app itself.

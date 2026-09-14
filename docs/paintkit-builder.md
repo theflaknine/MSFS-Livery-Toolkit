@@ -144,7 +144,11 @@ aircraft is loaded once when the window opens, so there is no wait each time you
 - **Wireframe** and **Zoom to fit** do what you would expect. Zoom to fit frames what is currently on
   screen, not the whole aircraft.
 
-Left-drag to rotate, right-drag to pan, and use the scroll wheel to zoom.
+You can also click a part directly on the model to select or clear its material, instead of working down
+the texture list.
+
+The middle mouse button rotates, Shift plus middle mouse pans, and the wheel zooms. From the keyboard,
+which also covers a trackpad, the arrow keys rotate, Ctrl plus arrows pan, and Z and Shift+Z zoom.
 
 The window closes on its own when you leave the page, and remembers its size and position for next time.
 There are no textures here, because at this point in the workflow they have not been extracted yet: the
