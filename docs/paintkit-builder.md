@@ -76,14 +76,11 @@ You can build the model on its own, without any Photoshop files, if that is all 
 
 ### What "experimental" means here
 
-On most aircraft the model is accurate. On some, a few small parts can come out in the wrong position,
-most often control surfaces such as ailerons, flaps and spoilers on airliners. The main airframe is not
+On most aircraft the model is accurate. A few small parts can still look out of place, for example a
+propeller drawn in several animation states at once, or some ground equipment. The main airframe is not
 affected.
 
-This is not something the app is getting wrong in isolation: other glTF importers, including the official
-Blender importer, place exactly the same parts in the wrong place, so it appears to be a general issue
-with how certain models store that information. It is worth knowing about before you rely on a part being
-exactly where the model puts it.
+It is worth knowing about before you rely on a small part being exactly where the model puts it.
 
 ---
 
