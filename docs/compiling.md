@@ -32,16 +32,23 @@ If you click **Cancel**, the toolkit stops its build chain, but it won't force-t
 
 ## Warnings that do not block compiling
 
-The Compile page can show two warning cards above the build button. Neither one stops you compiling, but
-both are worth reading before you do.
+The Compile page can show warnings above the build button. None of them stops you compiling, but they
+are worth reading before you do.
 
 - **Missing textures.** Lists any livery with textures that have no local image and no fallback reaching a
   compiled copy. Those will render as a pink checkerboard in the simulator. Open **Edit fallback** and use
   **Check texture coverage** to see the full list and fix it.
+- **Missing shared simulator folders.** Lists any livery that leaves out one of the simulator's own shared
+  texture folders that its aircraft uses, such as `..\..\..\..\texture\detailMap` for frost and detail
+  textures. Those parts will render pink. Open **Edit fallback** and select the folders marked
+  **Base aircraft**. New liveries include them automatically, so this mostly catches older ones.
 - **No matching configuration.** Lists any livery on a modular aircraft whose tags do not match any
   configuration the aircraft offers. The build will succeed, but the livery will never appear in the
   simulator with nothing to say why. Change which configurations it appears under on its **Availability**
   tab on the Liveries page.
+- **Texture coverage not checked.** Shown instead of the checks above for an aircraft protected by the
+  simulator, whose files that say which textures are needed can't be read. Check the livery in the
+  simulator for pink areas. See [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}).
 
 ## Sim-running warning
 

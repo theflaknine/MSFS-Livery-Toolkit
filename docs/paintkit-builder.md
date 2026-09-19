@@ -207,6 +207,16 @@ offered, so you will not be shown a scheme that does not fit.
 
 ---
 
+## Encrypted aircraft
+
+Encrypted 2024 modular aircraft, the ones the simulator partly protects, appear in the aircraft list with a
+padlock. For those, the Paintkit Builder builds the albedo, composite and normal layers from the aircraft's
+own textures. The UV wireframe and paintable-area layers, the 3D paintkit and the 3D preview are greyed out,
+because they need the highest-detail 3D models, which the simulator does not let any tool read. See
+[Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}) for the full picture.
+
+---
+
 ## Notes
 
 - Paintkits can be large. A full set of layers at 4K is typically well under 100 MB, but an 8K texture with

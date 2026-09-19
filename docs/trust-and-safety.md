@@ -30,6 +30,12 @@ If you'd rather verify the download yourself before running it, every release ha
 
 Nothing outside those three areas.
 
+## Encrypted aircraft
+
+Some aircraft are partly protected by the simulator (often called encrypted aircraft): their configuration files and highest-detail 3D models can't be read. The Livery Toolkit never decrypts, bypasses or reverse engineers protected files. It reads only the files the simulator itself leaves readable, such as textures and livery and texture configuration files, the same files any livery artist works from. That is why some features, like 3D previews and UV maps, aren't available for these aircraft.
+
+In the app, these aircraft carry a padlock on their **VFS** tag and are described as *protected by the simulator*, and any feature that would need a protected file is greyed out with a padlock beside it rather than attempted. [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}) lists exactly what works for them.
+
 ## Does it phone home?
 
 No. There is no network code in the app at all, not a hidden one, not an optional one. Every place that looks like a "link" (the Help button, Donate, the SDK download link) is the app asking Windows to open your normal web browser to a page, exactly like clicking a link in a text editor. The app itself never makes an HTTP request, never uploads anything, and collects no telemetry or usage data of any kind.
