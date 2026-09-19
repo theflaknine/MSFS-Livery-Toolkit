@@ -48,7 +48,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
   </thead>
   <tbody>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Finding and setting up</th></tr>
-    <tr><th scope="row">Listed in Discover aircraft</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No <sup>1</sup></td><td>No <sup>2</sup></td><td>Yes, with a padlock</td></tr>
+    <tr><th scope="row">Listed in Discover aircraft</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No <sup>1</sup></td><td>No <sup>2</sup></td><td>Yes <sup>11</sup></td></tr>
     <tr><th scope="row">Create projects and liveries</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
     <tr><th scope="row">Stock and Marketplace aircraft</th><td>Untested <sup>3</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
     <tr><th scope="row">Proper aircraft name in the list</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>4</sup></td></tr>
@@ -89,6 +89,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 8. **Offered on every encrypted aircraft**, because the files that show whether an aircraft can display a registration are protected. It works where the aircraft supports it.
 9. **Configurations are shown by their folder names**, because the names you see in the simulator are stored in protected files.
 10. **MSFS 2020 only**, using a bundled texture converter instead of the SDK and the simulator. Turn it on in Settings.
+11. **Marked with a padlock** in the Discover aircraft list, so you can tell an encrypted aircraft from the others before you start.
 
 <style>
   /* The theme gives every cell a 7.5rem minimum, which pushed this 7-column table past the content width. */
