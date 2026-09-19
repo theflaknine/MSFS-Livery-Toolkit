@@ -32,14 +32,18 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 
 <table class="aircraft-matrix">
   <thead>
+    <tr class="matrix-groups">
+      <th scope="col" rowspan="2">Feature</th>
+      <th scope="colgroup" colspan="3">Not encrypted</th>
+      <th scope="colgroup" colspan="3" class="matrix-encrypted-start">Encrypted</th>
+    </tr>
     <tr>
-      <th scope="col">Feature</th>
       <th scope="col">2020 mono</th>
       <th scope="col">2024 mono</th>
       <th scope="col">2024 modular</th>
-      <th scope="col">2020 mono, encrypted</th>
-      <th scope="col">2024 mono, encrypted</th>
-      <th scope="col">2024 modular, encrypted</th>
+      <th scope="col" class="matrix-encrypted-start">2020 mono</th>
+      <th scope="col">2024 mono</th>
+      <th scope="col">2024 modular</th>
     </tr>
   </thead>
   <tbody>
@@ -87,9 +91,37 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 10. **MSFS 2020 only**, using a bundled texture converter instead of the SDK and the simulator. Turn it on in Settings.
 
 <style>
+  /* The theme gives every cell a 7.5rem minimum, which pushed this 7-column table past the content width. */
+  .aircraft-matrix {
+    font-size: 0.9em;
+  }
+  .aircraft-matrix th,
+  .aircraft-matrix td {
+    min-width: 0;
+    padding: 0.35em 0.55em;
+  }
+  .aircraft-matrix td,
+  .aircraft-matrix thead th {
+    text-align: center;
+  }
+  .aircraft-matrix thead th[rowspan] {
+    text-align: left;
+    vertical-align: bottom;
+  }
   .aircraft-matrix tbody th[scope="row"] {
     font-weight: normal;
     text-align: left;
+    min-width: 11em;
+  }
+  .aircraft-matrix .matrix-groups th {
+    font-size: 0.8em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  /* A rule between the plain and encrypted halves, so the two groups of three read as groups. */
+  .aircraft-matrix .matrix-encrypted-start,
+  .aircraft-matrix tbody tr:not(.matrix-section) td:nth-of-type(4) {
+    border-left: 2px solid rgba(255, 255, 255, 0.22);
   }
   .aircraft-matrix tr.matrix-section th {
     background: rgba(255, 255, 255, 0.07);
