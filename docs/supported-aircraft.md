@@ -30,35 +30,48 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 
 **Yes** means the feature works. **Partly** means it works with a limit, explained in the notes below the table. **No** means the feature isn't available for that kind of aircraft.
 
-| Feature | 2020 mono | 2024 mono | 2024 modular | 2020 mono, encrypted | 2024 mono, encrypted | 2024 modular, encrypted |
-|---|---|---|---|---|---|---|
-| **Finding and setting up** | | | | | | |
-| Listed in Discover aircraft | Yes | Yes | Yes | No <sup>1</sup> | No <sup>2</sup> | Yes, with a padlock |
-| Create projects and liveries | Yes | Yes | Yes | No | No | Yes |
-| Stock and Marketplace aircraft | Untested <sup>3</sup> | Yes | Yes | No | No | Yes |
-| Proper aircraft name in the list | Yes | Yes | Yes | No | No | Partly <sup>4</sup> |
-| **Textures** | | | | | | |
-| Texture list and type labels | Yes | Yes | Yes | No | No | Partly <sup>5</sup> |
-| Extract a texture from the aircraft to PNG | Yes | Yes | Yes | No | No | Yes |
-| Placeholder images | Yes | Yes | Yes | No | No | Yes |
-| Edit texture fallbacks | Yes | Yes | Yes | No | No | Yes |
-| Check texture coverage (pink checkerboard warning) | Yes | Yes | Yes | No | No | No <sup>6</sup> |
-| Extract UV map | Yes | Yes | Yes | No | No | No |
-| **Livery settings** | | | | | | |
-| Details (title, ATC id and other fields) | Yes | Yes | Yes | No | No | Yes |
-| Registration number | Yes <sup>7</sup> | Yes <sup>7</sup> | Yes <sup>7</sup> | No | No | Partly <sup>8</sup> |
-| Availability (which configurations a livery appears under) | Not needed | Not needed | Yes | No | No | Partly <sup>9</sup> |
-| **Previews and thumbnails** | | | | | | |
-| 3D preview, including click to add a texture | Yes | Yes | Yes | No | No | No |
-| Rendered thumbnails (experimental) | Yes | Yes | Yes | No | No | No |
-| Placeholder thumbnails, or your own images | Yes | Yes | Yes | No | No | Yes |
-| **Paintkit Builder** | | | | | | |
-| Layered paintkit with albedo, composite and normal layers | Yes | Yes | Yes | No | No | Yes |
-| UV wireframe and paintable-area layers | Yes | Yes | Yes | No | No | No |
-| 3D paintkit (experimental) | Yes | Yes | Yes | No | No | No |
-| **Compiling** | | | | | | |
-| Compile with the MSFS SDK | Yes | Yes | Yes | No | No | Yes |
-| Compile without the SDK installed | Yes <sup>10</sup> | No | No | No | No | No |
+<table class="aircraft-matrix">
+  <thead>
+    <tr>
+      <th scope="col">Feature</th>
+      <th scope="col">2020 mono</th>
+      <th scope="col">2024 mono</th>
+      <th scope="col">2024 modular</th>
+      <th scope="col">2020 mono, encrypted</th>
+      <th scope="col">2024 mono, encrypted</th>
+      <th scope="col">2024 modular, encrypted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="matrix-section"><th colspan="7" scope="colgroup">Finding and setting up</th></tr>
+    <tr><th scope="row">Listed in Discover aircraft</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No <sup>1</sup></td><td>No <sup>2</sup></td><td>Yes, with a padlock</td></tr>
+    <tr><th scope="row">Create projects and liveries</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><th scope="row">Stock and Marketplace aircraft</th><td>Untested <sup>3</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><th scope="row">Proper aircraft name in the list</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>4</sup></td></tr>
+    <tr class="matrix-section"><th colspan="7" scope="colgroup">Textures</th></tr>
+    <tr><th scope="row">Texture list and type labels</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>5</sup></td></tr>
+    <tr><th scope="row">Extract a texture from the aircraft to PNG</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><th scope="row">Placeholder images</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><th scope="row">Edit texture fallbacks</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><th scope="row">Check texture coverage (pink checkerboard warning)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No <sup>6</sup></td></tr>
+    <tr><th scope="row">Extract UV map</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr class="matrix-section"><th colspan="7" scope="colgroup">Livery settings</th></tr>
+    <tr><th scope="row">Details (title, ATC id and other fields)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><th scope="row">Registration number</th><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>No</td><td>No</td><td>Partly <sup>8</sup></td></tr>
+    <tr><th scope="row">Availability (which configurations a livery appears under)</th><td>Not needed</td><td>Not needed</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>9</sup></td></tr>
+    <tr class="matrix-section"><th colspan="7" scope="colgroup">Previews and thumbnails</th></tr>
+    <tr><th scope="row">3D preview, including click to add a texture</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">Rendered thumbnails (experimental)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">Placeholder thumbnails, or your own images</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr class="matrix-section"><th colspan="7" scope="colgroup">Paintkit Builder</th></tr>
+    <tr><th scope="row">Layered paintkit with albedo, composite and normal layers</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><th scope="row">UV wireframe and paintable-area layers</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">3D paintkit (experimental)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr class="matrix-section"><th colspan="7" scope="colgroup">Compiling</th></tr>
+    <tr><th scope="row">Compile with the MSFS SDK</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><th scope="row">Compile without the SDK installed</th><td>Yes <sup>10</sup></td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+  </tbody>
+</table>
 
 ## Notes
 
@@ -72,3 +85,20 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 8. **Offered on every encrypted aircraft**, because the files that show whether an aircraft can display a registration are protected. It works where the aircraft supports it.
 9. **Configurations are shown by their folder names**, because the names you see in the simulator are stored in protected files.
 10. **MSFS 2020 only**, using a bundled texture converter instead of the SDK and the simulator. Turn it on in Settings.
+
+<style>
+  .aircraft-matrix tbody th[scope="row"] {
+    font-weight: normal;
+    text-align: left;
+  }
+  .aircraft-matrix tr.matrix-section th {
+    background: rgba(255, 255, 255, 0.07);
+    border-top: 2px solid rgba(255, 255, 255, 0.22);
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: left;
+    padding-top: 0.8em;
+  }
+</style>
