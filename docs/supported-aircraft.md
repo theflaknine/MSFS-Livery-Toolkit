@@ -91,7 +91,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 9. **Configurations are shown by their folder names**, because the names you see in the simulator are stored in protected files.
 10. **MSFS 2020 only**, using a bundled texture converter instead of the SDK and the simulator. Turn it on in Settings.
 11. **Marked with a padlock** in the Discover aircraft list, so you can tell an encrypted aircraft from the others before you start.
-12. **Not available for MSFS 2020 aircraft yet.** See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
+12. **The toolkit does not build mesh liveries for MSFS 2020 aircraft yet**, although the simulator supports them. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
 
 <style>
   /* The theme gives every cell a 7.5rem minimum, which pushed this 7-column table past the content width. */

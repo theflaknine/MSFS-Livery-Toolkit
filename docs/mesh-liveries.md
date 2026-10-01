@@ -9,7 +9,7 @@ nav_order: 3.5
 
 A livery does not have to be paint alone. A **mesh livery** also carries a small 3D model of its own, merged into the aircraft's model by the simulator: stripes, lettering or a registration as real geometry that stays crisp at any distance, or an extra part such as an aerial or a pod. Decals can even ride the aircraft's moving parts, so a stripe across a door opens with the door.
 
-You build the model in Blender. The toolkit checks it, compiles it with your livery, and writes everything the simulator needs to merge it.
+You build the model in a 3D modelling tool that exports glTF for MSFS. Blender is a great free choice, and it is the one this page uses in its examples. The toolkit checks the model, compiles it with your livery, and writes everything the simulator needs to merge it.
 
 1. TOC
 {:toc}
@@ -18,7 +18,7 @@ You build the model in Blender. The toolkit checks it, compiles it with your liv
 
 ## Which aircraft
 
-Mesh liveries work on **MSFS 2024 aircraft**, both monolithic and modular, including stock and Marketplace aircraft read through the Virtual File System. They are not available for MSFS 2020 aircraft yet, or for aircraft the simulator protects. See [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}).
+Mesh liveries work on **MSFS 2024 aircraft**, both monolithic and modular, including stock and Marketplace aircraft read through the Virtual File System. MSFS 2020 aircraft can carry mesh liveries too, but the toolkit does not build them for 2020 yet. Aircraft the simulator protects are not supported. See [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}).
 
 ---
 
@@ -37,7 +37,7 @@ Working in the parent nodes file keeps the aircraft's own geometry out of your l
 
 ## Modelling tips
 
-- **Export with the MSFS glTF exporter for Blender.** It gives every node the identifier the simulator merges by. A file from another exporter is reported in the File checks, because its decals may not follow moving parts.
+- **Export with an MSFS glTF exporter**, such as the one for Blender. It gives every node the identifier the simulator merges by. A file without those identifiers, such as one from a general-purpose glTF exporter, is reported in the File checks, because its decals may not follow moving parts.
 - **Use a decal material** for anything laid over the paint, such as stripes and lettering. It blends over the aircraft's surface instead of fighting it. An ordinary material is right for a solid part, such as an aerial.
 - **Lift geometry slightly off the skin**, or give it a decal material, or it can flicker in the simulator where it meets the aircraft's surface.
 - **One model per livery.** If the model folder holds two, the build stops rather than guessing which you meant.
