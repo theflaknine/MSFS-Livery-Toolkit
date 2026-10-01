@@ -14,7 +14,7 @@ nav_order: 2
 
 ## Download and installation
 
-Grab the latest portable release using the button above. There is no installer: unzip the download, then double-click **MSFS Livery Toolkit** at the top of the extracted folder to start the app. Everything else the app needs lives in the `app` subfolder next to it — you don't need to open that folder or run anything inside it. You'll probably get a Windows warning about an unsigned app, so you'll need to click **More Info > Run Anyway** to proceed, if you are comfortable to do so. See **https://theflaknine.github.io/MSFS-Livery-Toolkit/trust-and-safety.html** for more details on unsigned applications.
+Grab the latest portable release using the button above. There is no installer: unzip the download, then double-click **MSFS Livery Toolkit** at the top of the extracted folder to start the app. Everything else the app needs lives in the `app` subfolder next to it; you don't need to open that folder or run anything inside it. You'll probably get a Windows warning about an unsigned app, so you'll need to click **More Info > Run Anyway** to proceed, if you are comfortable to do so. See **https://theflaknine.github.io/MSFS-Livery-Toolkit/trust-and-safety.html** for more details on unsigned applications.
 
 ## First-run setup
 
@@ -36,9 +36,9 @@ On the **Home** page:
 3. Name your project.
 4. Confirm the **output location**. The app suggests a folder name following MSFS naming conventions (`<company>-aircraft-<name>-livery-<project>`), but it's fully editable, and a live preview shows the exact path that will be created. You can optionally choose to create the output folder as a sibling folder of the base aircraft folder.
 5. Click **Create**. This makes an empty project with no liveries yet.
-6. You land on the **Project** page. Click **Add livery** there to go straight to building your first one. Project details on that page save as you edit them.
+6. The project opens in the [Workspace]({{ '/workspace.html' | relative_url }}) and goes straight into adding your first livery. See [Creating liveries]({{ '/creating-liveries.html' | relative_url }}).
 
-
+The navigation pane down the left shows only icons by default. Its menu button at the top widens it to show their names, and it remembers which you prefer.
 
 ## The two locations of a project
 
@@ -47,7 +47,7 @@ Every project lives in two places on disk:
 - **Workspace:** holds the project save file and your loose, editable PNG artwork. Safe to move or rename; the app always finds the project relative to wherever the `project.json` is opened from.
 - **Deployment target:** the final compiled package the simulator reads.
 
-Open either at any time from the **Open folder in Windows Explorer** shortcuts (Base Aircraft / Project / Built Package) in the navigation pane footer, next to **Save**.
+Both are shown when you select the project at the top of the Workspace tree, each with **Copy** and **Open** buttons. Right-click the project row to open them in Windows Explorer, along with the base aircraft's folder.
 
 ## Opening and pinning projects
 

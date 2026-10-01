@@ -11,15 +11,15 @@ The **Settings** page holds the settings the toolkit needs to find your aircraft
 ## SDK and tool paths
 
 - **MSFS 2020 SDK** and **MSFS 2024 SDK:** the app auto-detects the default install locations; set at least one, matching the aircraft you intend to build for.
-- **MSFSLayoutGenerator:** used to regenerate `layout.json` on every build. A copy is **bundled with the app and used automatically** — you don't need to download or set anything. Set a path here only if you want to use your own copy (e.g. a [newer release](https://github.com/HughesMDflyer4/MSFSLayoutGenerator/releases)).
-- **Compile 2020 liveries without the SDK:** an optional toggle next to the MSFS 2020 SDK path that uses a bundled `texconv` (Microsoft DirectXTex, MIT-licensed) encoder instead, so you can compile MSFS 2020 liveries with no SDK or simulator installed at all. Off by default (the SDK is used unless you turn it on), automatic if no 2020 SDK is found.
+- **MSFSLayoutGenerator:** used to regenerate `layout.json` on every build. A copy is **bundled with the app and used automatically**, so you don't need to download or set anything. Set a path here only if you want to use your own copy (for example a [newer release](https://github.com/HughesMDflyer4/MSFSLayoutGenerator/releases)).
+- **2020 compile method:** **MSFS SDK**, or **texconv**, a bundled encoder (Microsoft DirectXTex, MIT-licensed) that compiles MSFS 2020 liveries with no SDK or simulator installed at all. The SDK is used unless you choose texconv, which is chosen for you if no 2020 SDK is found.
 
 ## Steam vs. MS Store
 
-A toggle that tells the toolkit which storefront copy of MSFS to drive. It controls the `-forcesteam` flag passed to the SDK build tool, and which copy the Compile page's **Launch** action starts on a machine with both installed.
+A toggle that tells the toolkit which storefront copy of MSFS to drive. It controls the `-forcesteam` flag passed to the SDK build tool, and which copy the build screen's **Launch** action starts on a machine with both installed.
 
 {: .warning }
-> **The Steam build path is untested.** The developer only owns an MS Store copy of MSFS, so this option has never been verified against a real Steam install, only MS Store is confirmed working. If you hit a problem while using it, please [open an issue on GitHub](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues/new) and attach your session log file (Settings → Diagnostics → **Open session log file**).
+> **The Steam build path is untested.** I only own an MS Store copy of MSFS, so this option has never been verified against a real Steam install; only MS Store is confirmed working. If you hit a problem while using it, please [open an issue on GitHub](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues/new) and attach your session log file (Settings → Diagnostics → **Open session log file**).
 
 ## 16-bit textures ##
 
@@ -38,7 +38,25 @@ The list of folders scanned for base aircraft. Add them with **Add folder…**. 
 
 ## Texture exclude list
 
-This list excludes matching text strings from the Texture Selector, to filter out textures that are unlikely to be required for livery artists, for example texture files containing the string "tire" or "gauge". You may edit this list as required, and reset to default if needed.
+This list excludes matching text strings from the texture list when you add a livery or add textures, to filter out textures that are unlikely to be required for livery artists, for example texture files containing the string "tire" or "gauge". You may edit this list as required, and reset to default if needed.
+
+## 3D viewer
+
+**Load the aircraft model automatically** decides whether the [Workspace]({{ '/workspace.html' | relative_url }}) loads the aircraft into its viewport by itself when a project opens or you change livery:
+
+- **Off**: select **Load aircraft model** yourself.
+- **Local aircraft only**: aircraft on your own drives load straight away.
+- **Local aircraft, and VFS aircraft when the VFS is connected**: stock and Marketplace aircraft load too, if the VFS was connected when the project opened.
+
+Loading reads every model file of the aircraft, which can take several seconds on a large one; the rest of the app stays usable meanwhile. An aircraft the simulator protects never loads.
+
+## Appearance
+
+**Monochrome icons** shows the Workspace's icons in the text colour instead of coloured by type.
+
+## Diagnostics
+
+**Open session log file** opens the log of the current run. Attach it when you report a problem.
 
 ## About
 

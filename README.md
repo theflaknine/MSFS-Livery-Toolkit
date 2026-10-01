@@ -7,7 +7,9 @@ A free Windows tool for creating **Microsoft Flight Simulator** liveries; build 
 
 It can also build you a **paintkit**: a layered Photoshop file made from an aircraft's own textures and UV layout, so you can start painting even when the developer never published one.
 
-A built-in **3D preview** shows your artwork on the aircraft while you work, so a misplaced decal or an upside-down stripe turns up straight away instead of after a compile and a flight.
+Everything happens in one **Workspace**: your project as a tree, with the aircraft in 3D beside it showing your artwork while you work, so a misplaced decal or an upside-down stripe turns up straight away instead of after a compile and a flight.
+
+**Mesh liveries** go beyond paint: add your own 3D decal model to a livery, and it can ride the aircraft's doors and control surfaces (MSFS 2024 aircraft).
 
 Supports MSFS 2020 and 2024, across all three package structures (2020 monolithic / DDS, 2024 monolithic / KTX2, and 2024 modular / KTX2).
 
@@ -24,12 +26,12 @@ Supports MSFS 2020 and 2024, across all three package structures (2020 monolithi
 
 ## Download
 
-Grab the latest portable release from the [**Releases**](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases) page. There is no installer: unzip the download, then double-click **MSFS Livery Toolkit** at the top of the extracted folder to start the app. Everything else the app needs lives in the `app` subfolder next to it — you don't need to open that folder. You'll probably get a Windows warning about an unsigned app, so you'll need to click **More Info** > **Run Anyway** to proceed, if you are comfortable to do so. See **https://theflaknine.github.io/MSFS-Livery-Toolkit/trust-and-safety.html** for more details on unsigned applications.
+Grab the latest portable release from the [**Releases**](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases) page. There is no installer: unzip the download, then double-click **MSFS Livery Toolkit** at the top of the extracted folder to start the app. Everything else the app needs lives in the `app` subfolder next to it; you don't need to open that folder. You'll probably get a Windows warning about an unsigned app, so you'll need to click **More Info** > **Run Anyway** to proceed, if you are comfortable to do so. See **https://theflaknine.github.io/MSFS-Livery-Toolkit/trust-and-safety.html** for more details on unsigned applications.
 
 **Requirements**
 - Windows 11 (64-bit)
 - Microsoft Flight Simulator 2020 and/or 2024
-- The matching MSFS SDK (installed via the sim's Dev Mode) — needed to compile textures
+- The matching MSFS SDK (installed via the sim's Dev Mode), needed to compile textures
 
 (MSFSLayoutGenerator, which the app also needs, is now **bundled** with the app - nothing to download. You can still point the app at your own copy in Settings if you prefer.)
 
@@ -45,8 +47,8 @@ Please [open an issue](https://github.com/theflaknine/MSFS-Livery-Toolkit/issues
 
 The app bundles a number of third-party components, each under its own license. Every release package lists them all, with their full license texts, in `THIRD-PARTY-NOTICES.txt` and a `licenses` folder, and the in-app **About** panel lists them too. A few worth noting:
 
-- [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator) by Brandon Filer (MIT) — regenerates `layout.json`; bundled unmodified and called as a separate program, with its MIT license included alongside it.
-- [`ooz`](https://github.com/powzix/ooz) (GPL-3) — used by texture extraction as a separate bundled program; its complete source and license ship inside every release package.
+- [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator) by Brandon Filer (MIT): regenerates `layout.json`; bundled unmodified and called as a separate program, with its MIT license included alongside it.
+- [`ooz`](https://github.com/powzix/ooz) (GPL-3): used by texture extraction as a separate bundled program; its complete source and license ship inside every release package.
 - [DirectXTex](https://github.com/microsoft/DirectXTex) (`texconv`, MIT, © Microsoft Corporation): optionally compiles MSFS 2020 liveries without the MSFS 2020 SDK/simulator installed. Bundled unmodified and called as a separate program, with its MIT license included alongside it.
 
 ## License

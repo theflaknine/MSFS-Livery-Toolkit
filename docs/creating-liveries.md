@@ -7,110 +7,112 @@ nav_order: 3
 # Creating liveries
 {: .no_toc }
 
-Everything for a single livery lives on the **Edit liveries** page, organized into six tabs: **Textures**, **Thumbnails**, **Registration number**, **Model**, **Details**, and **Availability**.
+A livery lives under its row in the [Workspace]({{ '/workspace.html' | relative_url }}) tree, with one node for each part of it:
 
-- **Textures:** defines the texture images used in your livery, including texture "flags" used by the SDK when compiling images into game assets.
-- **Thumbnails:** defines the thumbnail images used in the MSFS livery selection user interface.
-- **Registration number:** controls how the simulator draws the registration number on your livery, or whether it draws one at all. Works on both monolithic and modular aircraft.
-- **Model:** a placeholder tab for future functionality in the MSFS Livery Toolkit.
-- **Details:** defines the parameters which populate the `aircraft.cfg` (monolithic aircraft) or `livery.cfg` (modular aircraft); this includes items such as the livery name, ATC ID, etc.
-- **Availability:** on modular aircraft, controls which of the aircraft's configurations your livery appears under. See [Choosing which configurations show your livery](#choosing-which-configurations-show-your-livery) below.
+- **Textures:** the images your livery repaints, and the compile flags the SDK uses to turn them into game assets.
+- **Thumbnails:** the images MSFS shows for your livery in its aircraft selection screens.
+- **Registration number:** how the simulator draws the registration number on your livery, or whether it draws one at all. Works on both monolithic and modular aircraft.
+- **Model:** your own 3D decal model, merged with the aircraft's. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
+- **Details:** the fields written into `aircraft.cfg` (monolithic aircraft) or `livery.cfg` (modular aircraft), such as the livery's title and ATC id.
+- **Availability:** on modular aircraft, which of the aircraft's configurations your livery appears under.
 
 1. TOC
 {:toc}
 
 ---
 
-## The texture selector
+## Adding a livery
 
-![Texture selector](assets/images/texture-selector.png)
-When you add a livery or add textures to an existing one, the texture selector helps you pick which textures to include in your livery (i.e. which images you want to repaint). Complex add-on aircraft can contain hundreds of texture files, so the selector does the untangling for you:
+Select **Add new livery...**, the last row under the project. Adding a livery is a guided task in three steps, and the aircraft stays in 3D beside you the whole way. **Previous** and **Next** move between the steps without losing anything; **Esc** or the back arrow cancels.
 
-- **Unified fallback scan:** flattens every texture the aircraft can reach through its `texture.cfg` fallback chains into one list, even across shared folders or entirely separate sibling aircraft directories. When the same filename exists in several folders, the highest-resolution copy is offered.
-- **Instance-count badges:** a badge (e.g. ×3) shows how many base aircraft folders a file appears in. A higher instance count suggests a texture file that is probably used for liveries, since multiple copies of it exist within the base aircraft package. Single-instance textures are more likely to be a common / shared asset and less likely to be needed in a livery.
-- **Filters and quick-select:** sort by name, type, resolution, or instance count; live text filtering; and one-click category toggles (e.g. "Albedo only").
-- **Smart pre-selection:** the app remembers your texture choices and custom fallback paths per base aircraft, globally, so returning to an aircraft you've painted before pre-selects your usual layout, and later liveries in a project mirror the most recently edited one. The very first livery for an aircraft you've never painted starts with nothing pre-selected, so you choose deliberately.
-- **Manual add:** if you have a need for a texture file that is not found in the base aircraft scan, you can manually enter the filename, resolution, and texture type to force-add it.
+1. **Details and variant.** Title, ATC id, creator, paintkit path and, on modular aircraft, the configuration you are painting. The viewport shows that configuration as you choose it. Each livery in a project needs a title of its own: MSFS uses the title to tell liveries apart, so a title another livery in the project already uses is refused.
+2. **Textures.** Choose which of the aircraft's textures to repaint. See [Choosing textures](#choosing-textures).
+3. **Fallback** (optional). The viewport colours the aircraft by coverage, so you can see whether anything would turn pink. See [Texture fallbacks](#texture-fallbacks).
 
-### Seeing what a texture covers, before you pick it
-
-Texture names rarely tell you which part of the aircraft they belong to, and picking from a list of names
-is guesswork until you have painted that aircraft once already.
-
-**3D coverage**, beside the texture list, opens a separate window showing the aircraft with the parts your
-selected textures cover lit up. It is available both when you add a livery and when you add more textures to
-an existing one, so you can see what you are taking on before you commit to painting it.
-
-Selecting any of a material's textures lights up that section of the airframe. If you select the fuselage's
-composite or its normal map rather than its colour map, you still see the fuselage. The three belong to one
-material, and the app works out which ones go together by reading the aircraft's own model rather than
-guessing from the file names.
-
-You can also work the other way around: click a part on the aircraft to add its texture to your selection,
-and click it again to take it out. Right-click a part to choose its composite or normal map instead of its
-colour map, or to pick from one of several overlapping layers - some aircraft weather their paint with
-dirt or frost textures that sit over the whole airframe, and right-click lists every layer underneath so
-you are not stuck only ever picking the top one.
+**Add livery** is available from the textures step onwards, so the fallback step is yours to skip. Once the livery is added it is loaded, ready to paint.
 
 {: .note }
-> When you are adding textures to an existing livery, textures it already has appear in green in this
-> window, so you can tell them apart from anything new you are about to add. You cannot remove an
-> existing texture from here; use **Remove texture** on the Liveries page instead.
+> A livery titled the same as one in another project, or in another add-on, can still clash in the simulator, and the app cannot check that far. A creator prefix in the title avoids it, as the SDK recommends.
 
-Some textures sit in an aircraft's folders without being used by any of its exterior models, and a texture
-you added by hand is unknown to the model too. Those cannot light anything up, so rather than leave you
-wondering why nothing happened, the window tells you how many of your selected textures it could not place.
+---
+
+## Choosing textures
+
+![Add livery's texture step: the texture list beside the aircraft, with the parts the selected textures cover lit up](assets/images/texture-selector.png)
+
+Complex aircraft can contain hundreds of texture files, so the texture list does the untangling for you:
+
+- **Unified fallback scan:** flattens every texture the aircraft can reach through its `texture.cfg` fallback chains into one list, even across shared folders or entirely separate sibling aircraft folders. When the same filename exists in several folders, the highest-resolution copy is offered.
+- **Instance-count badges:** a badge (for example ×3) shows how many of the base aircraft's folders a file appears in. A higher count suggests a texture that liveries repaint, since multiple copies of it exist in the package. Single-instance textures are more likely to be shared assets.
+- **Sort and search:** **Sort by** name, type, resolution or instance count, and search by part of a name (for example "fuse" or "ext"). **Clear selection** starts again. Textures matching the exclude list in [Settings]({{ '/configuration.html' | relative_url }}) are left out, and the list says how many.
+- **Smart pre-selection:** the app remembers your texture choices per base aircraft, so returning to an aircraft you have painted before pre-selects your usual layout, and later liveries in a project mirror the most recently edited one. The very first livery for an aircraft you have never painted starts with nothing selected, so you choose deliberately.
+- **Add texture manually**, below the list, force-adds a texture the scan did not find: enter its filename, resolution and type.
+
+### Picking on the aircraft
+
+Texture names rarely say which part of the aircraft they paint, so the aircraft is right beside the list. Select a texture and the parts it covers light up. Or work the other way round: **click a part** to add its texture, and click it again to take it out.
+
+- Selecting any of a material's textures lights up its parts. The colour, composite and normal maps of one material belong together, and the app works that out from the aircraft's own model rather than from the file names.
+- **Right-click a part** to choose its composite or normal map instead of its colour map, or to pick one of several overlapping layers. Some aircraft weather their paint with dirt or frost textures over the whole airframe, and the menu lists every layer underneath.
+- The interior is hidden while you pick, so you can reach the outside of the aircraft.
+
+Some textures sit in an aircraft's folders without being used by any of its exterior models, and a texture you added by hand is unknown to the model too. Those cannot light anything up, so the app tells you how many of your selected textures it could not place.
+
+For aircraft with variants, choose the variant first: the view cannot be narrowed to the right parts without it. See [When an aircraft cannot be narrowed to one variant]({{ '/paintkit-builder.html' | relative_url }}#when-an-aircraft-cannot-be-narrowed-to-one-variant).
+
+### Adding more textures later
+
+Select **Add textures...**, the last row in a livery's Textures folder. The texture list takes the tree's place and the viewport is set up for picking: parts your livery already paints stand out from the ones you are about to add. You cannot remove an existing texture from here; use **Remove texture** on the texture itself. When you finish or cancel, the viewport goes back to exactly how you left it.
+
+Another way in: select a part on the aircraft and open the **material chip** at the end of the [breadcrumb]({{ '/workspace.html' | relative_url }}#the-breadcrumb). A texture that is not in your livery yet opens Add textures with it already selected.
+
+---
+
+## Texture fallbacks
+
+When the simulator cannot find a texture in your livery, it searches a list of other folders, the fallbacks written into your livery's `texture.cfg`. Get them wrong and those parts turn into a pink checkerboard.
+
+Select a livery's **Textures** folder: the **Fallback** section holds the list, in the order the simulator searches it.
+
+- It **saves as you change it**. **Revert** undoes this visit's changes, and **Reset to match the base aircraft** puts back the list the base aircraft uses.
+- Folders taken from the aircraft's own texture setup carry a **Base aircraft** label. Some of them are the simulator's own shared folders, such as `..\..\..\..\texture\detailMap` for frost and detail textures, which exist in no package on disk. They are selected for every new livery, because leaving one out turns those parts pink.
+- **Your project's other liveries** are offered as fallback folders too, and the coverage check counts them.
+- If the automatic scan cannot find a path (for example a reference several folders away), add it with **Add fallback manually**. It even accepts a pasted `fallback.N=...` line and trims it to just the path.
+
+### Checking coverage
+
+A line at the top of the Fallback section says whether every texture the aircraft needs will be found. Open it for the full list, with each texture in one of three states:
+
+- **Missing**: no fallback folder holds this texture, so it will render as a pink checkerboard.
+- **In livery**: your livery includes it.
+- **In aircraft**: a fallback folder finds it. **Resolved via** shows which one.
+
+![The Textures folder's Fallback section and its coverage line, beside the aircraft in Coverage preview](assets/images/fallback-checker.png)
+
+**Show in 3D**, on the coverage line, switches the viewport to **Coverage preview** (also on the viewport's toolbar), which colours the aircraft the same way: your livery's parts in the accent colour, the aircraft's own in light grey, and anything missing in the simulator's pink checkerboard. Point at a part to see each of its maps. The legend doubles as a filter: select a group to hide or show its parts.
 
 {: .note }
-> This is a different question from the **3D preview** button at the top of the Liveries page, which always
-> shows your own artwork on the aircraft. This one is about coverage, before any painting exists.
+> If a livery's built folder has gone missing (deleted by hand, for example), the app refuses to save its fallback and Compile refuses to build it, rather than writing into a folder that no longer holds the livery's files.
 
-For aircraft with variants, choose the variant first. The button waits until you have, because the model
-cannot be narrowed down without it. See [When an aircraft cannot be narrowed to one
-variant]({{ '/paintkit-builder.html' | relative_url }}#when-an-aircraft-cannot-be-narrowed-to-one-variant).
-
-### Fallback selector
-
-A reorderable checklist controls the exact folder order the sim searches for missing textures (`fallback.1`, `fallback.2`, …), written into the livery's `texture.cfg`. The app suggests a baseline you can freely adjust with per-row **Move up / Move down** buttons. If the automatic scan can't find a path (for example a cross-SimObject reference several folders away), add it as a **manual** fallback entry - it even accepts a pasted full `fallback.N=...` line and trims it to just the path.
-
-Folders taken from the aircraft's own texture setup carry a **Base aircraft** label. Some of them are the simulator's own shared folders, such as `..\..\..\..\texture\detailMap` for frost and detail textures, which exist in no package on disk. They are selected for every new livery, because leaving one out turns those parts pink, and **Check fallback** and the Compile page warn about any livery that is missing one.
+---
 
 ## Choosing which configurations show your livery
 
-Modular aircraft are built from parts, and the same airframe is often sold in several configurations - a
-cargo pod, floats, a different engine, and so on. MSFS decides which of your liveries to offer under each
-configuration using tags written into `livery.cfg`, and getting them wrong can make a livery invisible in
-the simulator.
+Modular aircraft are built from parts, and the same airframe is often sold in several configurations: a cargo pod, floats, a different engine, and so on. MSFS decides which of your liveries to offer under each configuration using tags written into `livery.cfg`, and getting them wrong can make a livery invisible in the simulator.
 
-When you add a livery to a modular aircraft, the app offers a curated list of configurations drawn from
-tags the aircraft's own liveries already use. If none of those fit what you want, select **Customise
-tags** to see the aircraft's whole tag vocabulary as a set of checkboxes, alongside a table listing every
-configuration the aircraft supports and marking which ones your choice reaches.
+When you add a livery to a modular aircraft, the app offers a curated list of configurations drawn from tags the aircraft's own liveries already use. If none of those fit, select **Customise tags** to see the aircraft's whole tag vocabulary as a set of checkboxes, alongside a table listing every configuration the aircraft supports and marking which ones your choice reaches.
 
-If the aircraft uses no tags at all, leave the field blank - the app tells you so rather than suggesting
-something that would hide your livery under every configuration.
+If the aircraft uses no tags at all, leave the field blank. The app tells you so rather than suggesting something that would hide your livery under every configuration.
 
-**Changing this later:** the **Availability tab** on the Liveries page lets you change which configurations
-a livery appears under without deleting and re-adding it, which would also delete its artwork. Narrowing
-the configurations does not delete any textures, even ones only used by configurations you removed - those
-textures stay in your livery, marked **not used** in the texture list, in case you widen the availability
-again later.
+**Changing this later:** the **Availability** node changes which configurations a livery appears under, without deleting and re-adding it, which would also delete its artwork. Select **Save availability** when you are done. Narrowing the configurations does not delete any textures, even ones only used by configurations you removed. Those stay in your livery, dimmed and marked **not used**, in case you widen the availability again later.
 
-If a livery's tags do not match any configuration the aircraft offers, the app tells you on the Liveries
-page and on the Compile page. This does not block compiling, but such a livery would never appear in the
-simulator, so it is worth fixing before you ship it.
+If a livery's tags do not match any configuration the aircraft offers, the app tells you, and so does the build screen. This does not block compiling, but such a livery would never appear in the simulator.
 
-### Fallback checker
-
-![Fallback checker](assets/images/fallback-checker.png)
-The **Check fallback** button is available on the **Liveries** page and from the **Edit fallback** panel. It will analyse the livery's images and texture fallbacks to ensure MSFS will find every texture the aircraft requires. Textures will be listed in one of three states:
-- **Missing** (pink): the simulator will not be able to find this texture because no texture fallback path contains that file - the texture will appear as pink checkerboard in the sim. This indicates you have not set your texture fallbacks correctly.
-- **In livery** (green): the texture is included with your livery.
-- **In aircraft** (blue): the texture can be found by the texture fallbacks. Use the **Resolved via** column to see which fallback path found it.
+---
 
 ## Texture types and compile flags
 
-The toolkit classifies each texture using the official SDK **metadata** from the base aircraft, refined by checking how the aircraft's own materials actually use it - never by filename. A file named `..._ALBEDO.PNG` that happens to carry alpha for an unrelated reason is not automatically treated as a Decal / Transparent map; only textures genuinely bound to a decal or transparent material are.
+The toolkit classifies each texture using the official SDK **metadata** from the base aircraft, refined by checking how the aircraft's own materials actually use it, never by filename. A file named `..._ALBEDO.PNG` that happens to carry alpha for an unrelated reason is not treated as a Decal / Transparent map; only textures genuinely bound to a decal or transparent material are.
 
 | Type | What it is |
 |---|---|
@@ -118,221 +120,126 @@ The toolkit classifies each texture using the official SDK **metadata** from the
 | **Composite** | A packed image of Ambient Occlusion (red channel), Roughness (green channel), and Metallic (blue channel). |
 | **Normal** | Surface detail. |
 | **Emissive** | Self-illuminated areas such as instruments. |
-| **Decal / Transparent** | An overlay layer that relies on an alpha channel. Often use for higher resolution areas of local detail such as placards, logos or text. |
+| **Decal / Transparent** | An overlay layer that relies on an alpha channel. Often used for higher resolution areas of local detail such as placards, logos or text. |
 
-**Compile flags:** tell the SDK texture compiler how to process each image (high-quality compression, alpha preservation, mipmaps, and so on). By default the toolkit matches the exact flags the original aircraft developers used. Change anything in the flag editor and a highlight appears alongside a one-click **Reset to base** button.
+**Compile flags** tell the SDK texture compiler how to process each image (high-quality compression, alpha preservation, mipmaps, and so on). They are in each texture's **Texture flags** section. By default the toolkit matches the exact flags the original aircraft developers used. Change anything and a marker appears beside it with a **Reset**, and **Reset to base** at the bottom of the panel puts every flag back. Select **Save flags**, or press **Ctrl+S**, to keep your changes.
+
+---
 
 ## Painting your livery
 
-![The Liveries page, showing a livery's textures with their previews, resolutions and per-texture actions](assets/images/livery-textures.png)
+![A texture selected in the tree, with its preview, compile flags, paintkit artwork and actions on the right](assets/images/livery-textures.png)
 
-Once your selection is confirmed, the workspace is populated with correctly-sized blank PNG canvases as placeholders. There are two ways to get a starting image for each texture:
+Once your livery is added, its Textures folder lists every texture it repaints, each with a small thumbnail of your artwork. There are two ways to get a starting image for each texture:
 
-- **Generate placeholders:** blank, correctly-sized canvases labelled with the filename and resolution. If you plan to use images generated from a paintkit this is the recommended approach.
-- **Extract from base:** decode the base aircraft's *own already-compiled* texture back into an editable PNG, a real head start when no paintkit exists. This handles both 2020 DDS and 2024 KTX2, including MSFS's Oodle-compressed KTX2 variant that defeats most other tools. When a texture exists as more than one compiled copy in the base, you choose which instance to extract.
+- **Generate placeholder:** a blank, correctly-sized canvas labelled with the filename and resolution. If you plan to use images from a paintkit, this is the recommended approach.
+- **Extract from base:** decodes the base aircraft's own compiled texture back into an editable PNG, a real head start when no paintkit exists. This handles both 2020 DDS and 2024 KTX2, including MSFS's Oodle-compressed KTX2 that defeats most other tools. When a texture exists as more than one compiled copy in the base, you choose which one to extract.
 
 {: .important }
-> **Your artwork is protected.** The tool never automatically overwrites an existing image file in your workspace - neither a placeholder nor an extracted image will wipe out artwork you've already put there. Once you replace a placeholder with your own painting, it is safe.
+> **Your artwork is protected.** The tool never automatically overwrites an existing image file in your workspace. Neither a placeholder nor an extracted image will wipe out artwork you have already put there.
 
-On each texture row an **Edit source artwork** action (pencil icon) will be available if the application can find a Photoshop, Affinity, Gimp or Paint.NET artwork file (`.psd`, `.afphoto`, `.xcf`, `.pdn`) where the filename matches the PNG (excluding the file extension). By default the application will check for paintkit artwork files in the same folder as the PNG images, however you can specify another folder at the top of the **Textures** panel. For more details see the section **Linking to a paintkit** below.
+**Select the Textures folder** for the livery-wide actions: **Add textures...**, **Generate placeholders** for every texture without an image, **Refresh**, **Open image folder**, and the **Paintkit path**.
 
-Use the **UV+** button to extract a UV map wireframe from the aircraft model. This image file will be created in the same folder as the other texture images, and will have a matching filename with the suffix _UV appended. Any textures that have a UV map already extracted will display a small "UV" indicator in the texture list.
+**Select a texture** for its preview, its state (for example "not used" or a size that differs from the base aircraft's), its **Texture flags**, its **Paintkit artwork**, and its actions:
 
-Each texture row also has a **Clear image** action (eraser icon) that removes just the source PNG while keeping the texture entry, so you can swap a placeholder for an extracted image or vice versa.  It is also possible to fully remove a texture from the livery using the **Remove texture** action (trashcan icon) - this will remove the texture slot from your livery and remove the PNG from disk. You will receive a confirmation prompt when using **Clear image** or **Remove texture**.
+- **Extract from base** and **Generate placeholder**, as above.
+- **Extract UV map** writes a wireframe of the texture's UV layout, taken from the aircraft's model, beside your PNG with `_UV` added to its name.
+- **Clear image** removes just the PNG while keeping the texture in your livery, so you can swap a placeholder for an extracted image or the other way round.
+- **Remove texture** takes the texture out of your livery and deletes its PNG.
+
+You are asked before anything is cleared or removed. **Right-click** any texture for the same actions without opening its properties. After Extract from base, Generate placeholder or Clear image, the viewport updates by itself.
 
 ### Working on several textures at once
 
-A livery can easily run to dozens of textures, and doing everything one row at a time gets slow. Hold
-**Ctrl** to add individual textures to your selection, or **Shift** to select a run of them, and the
-actions apply to everything you have selected.
-
-With a single texture selected nothing changes: you get the same per-texture panel and the same row
-actions you always had. Select two or more and the panel closes, giving the list more room, and the
-heading is replaced by the bulk actions for the whole selection.
-
-{: .note }
-> While several textures are selected, the per-row icons are deliberately unavailable. They only ever act
-> on their own single row, so firing one with six textures highlighted would look like a bulk action that
-> had quietly done almost nothing.
+Hold **Ctrl** to add individual textures to your selection, or **Shift** to select a run of them. The properties panel then shows how many are selected and the actions for all of them at once.
 
 ### Splitting a composite into separate images
 
-A composite texture packs three separate things into one image: ambient occlusion, roughness and
-metalness, one per colour channel. That is efficient for the sim but awkward to paint, since the image
-looks like nothing in particular.
+A composite texture packs three separate things into one image: ambient occlusion, roughness and metalness, one per colour channel. That is efficient for the sim but awkward to paint.
 
-When you extract a composite from the base aircraft, you can also have those three channels written out as
-separate grayscale images alongside it, named with `_AO`, `_ROUGHNESS` and `_METAL` suffixes. Edit whichever
-one you actually care about, and keep the packed composite as the file the sim gets.
+When you extract a composite from the base aircraft, you can also have those three channels written out as separate grayscale images alongside it, named with `_AO`, `_ROUGHNESS` and `_METAL` suffixes. Edit whichever one you care about, and keep the packed composite as the file the sim gets.
 
-## Seeing your paint in 3D
+### Linking to a paintkit
 
-Working from a flat UV map, it is easy to get a decal upside down or a stripe landing somewhere you did not
-intend, and normally you would not find out until you had compiled the livery and loaded the sim.
+A texture's **Paintkit artwork** section finds the Photoshop, Affinity, GIMP or Paint.NET file (`.psd`, `.afphoto`, `.xcf`, `.pdn`) you paint it in, and **Open** opens it in its program. The search runs in this order:
 
-**3D preview**, at the top of the Liveries page, opens a separate window showing your artwork on the
-aircraft. Textures you have painted appear on it. Slots this livery owns but you have not painted yet are
-highlighted in the accent colour, so you can see at a glance what is left to do, and the rest of the
-aircraft is drawn in plain grey for context.
+1. **A file you chose for this texture.** Select **Browse...** to choose any supported file in any folder, and **Clear chosen file** to go back to the automatic search. Useful when an aircraft's own paintkit files are not named like its textures.
+2. **A matching filename in the livery's Paintkit path**, set on the Textures folder. For a texture `FW190_EXTERIOR_1001_ALB.PNG`, the app finds `FW190_EXTERIOR_1001_ALB.psd`, `.afphoto`, `.xcf` or `.pdn`. Files made by the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) are found too, since it names its output `FW190_EXTERIOR_1001_ALB_Paintkit.psd`. A file named exactly after the texture wins over a `_Paintkit` one.
+3. **A matching filename beside the PNG**, when no Paintkit path is set.
 
-![The 3D preview window, showing a painted livery on the aircraft](assets/images/livery-preview.png)
+### Seeing your paint in 3D
 
-The preview reads the PNGs in your workspace directly, so there is nothing to compile and no wait. When you
-save a repaint in Photoshop, click **Refresh textures** and it picks up the change straight away. That also
-works after using **Extract from base** to fill a slot that was empty when you opened the window.
+The viewport shows your artwork on the aircraft as you work, reading the PNGs in your workspace directly, so there is nothing to compile and no wait. After saving a repaint in your paint program, select **Refresh** on the viewport's toolbar. See [The viewport]({{ '/workspace.html' | relative_url }}#the-viewport) for everything it can do.
 
-**Navigating the view** works the same in every 3D window in the app: the middle mouse button rotates,
-Shift plus middle mouse pans, and the wheel zooms. From the keyboard, which also covers a trackpad, the
-arrow keys rotate, Ctrl plus arrows pan, and Z and Shift+Z zoom. The controls are listed along the bottom
-of the window.
+![The viewport in Livery preview, showing a painted livery on the aircraft](assets/images/livery-preview.png)
 
-A few controls worth knowing:
-
-- **Normal depth** changes how strongly normal maps are applied. Painted at full strength they can look
-  deeper here than they do in the sim, so turn this down until it matches what you see in MSFS.
-- **Lighting** offers three setups, all of which light the underside of the aircraft as well as the top, so
-  you can check gear bays and belly panels.
-- **Rest of aircraft** switches the unpainted parts between solid grey, a faint ghost, or hidden.
-- **Visibility set** lets you hide parts you do not want in this preview, such as ground equipment or crew
-  figures, the same way you can for rendered thumbnails. It keeps its own list separate from the thumbnail
-  picker's - switch between the two lists here, or use **Copy** to bring one into line with the other.
-
-At the bottom of the window is a note of how much video memory the preview is using. Large textures add up
-quickly, and it turns amber if the scene is getting heavy.
-
-The window closes on its own when you leave the page.
-
-{: .note }
-> Parts your livery does not repaint are shown in plain grey, not in the aircraft's own paintwork. In the
-> sim those parts fall back to the base aircraft's textures, so the preview answers "where does my paint
-> land, and is it the right way up" rather than "what will this aircraft look like on the ramp".
+---
 
 ## Registration numbers
 
-The tail number MSFS paints on your aircraft is not part of your artwork. The simulator draws it at
-runtime, which is why the same aircraft can show a different registration for every livery.
+The tail number MSFS paints on your aircraft is not part of your artwork. The simulator draws it at runtime, which is why the same aircraft can show a different registration for every livery. The text itself is the livery's **ATC id**, set when you add the livery and editable on the **Details** node.
 
-- **Details tab:** edit every sim-supported `[fltsim.N]` field (tail number, ATC callsign, title, and more). Fields that differ from the base default show a clear indicator and can be reverted instantly.
-
-A summary at the top of the **Registration number tab** answers four questions for any aircraft, monolithic
-or modular: what the registration says, what it is drawn onto, how it looks, and what this livery may
-change.
+A summary at the top of the **Registration number** node answers four questions for any aircraft, monolithic or modular: what the registration says, what it is drawn onto, how it looks, and what this livery may change.
 
 ### Styling the registration
 
-On monolithic aircraft, the tab controls how that number is drawn: its colour, size, position and
-typeface, or whether it is drawn at all. The text itself comes from **ATC id** on the Details tab, not from
-here.
+On monolithic aircraft, the node controls how the number is drawn: its colour, size, position and typeface, or whether it is drawn at all.
 
-Select **Use a custom panel.cfg to define registration number styling and visibility** to start. Your
-livery gets its own panel folder, holding a complete copy of the base aircraft's panel, so the aircraft's
-own instruments and avionics keep working exactly as before.
+Select **Use a custom panel.cfg** to start. Your livery gets its own panel folder, holding a complete copy of the base aircraft's panel, so the aircraft's own instruments and avionics keep working exactly as before.
 
-![The Registration number tab, showing the registration styling controls beside a live preview of the number and the panel.cfg the toolkit will write](assets/images/panel-cfg.png)
+![The Registration number node, showing the registration styling controls with a live preview of the number and the panel.cfg the toolkit will write](assets/images/panel-cfg.png)
 
-- **Hide the registration number** is the option to reach for when your artwork already includes a tail
-  number. It stops the simulator drawing a second one over the top.
-- **`[VPaintingN]` section** appears when an aircraft draws more than one registration, for example one on
-  the fuselage and one on a cockpit placard. The exterior one is selected for you, since that is usually
-  the one you mean. Edits to each are kept as you switch between them.
-- **`size_mm`** is the size of the texture the number is drawn onto, where 1 mm is 1 pixel.
-  **X, Y, W and H** are the area within it to paint. These should not exceed `size_mm`.
-- **Text format** covers colour, style, scale, outline and background. Every box is optional: leave one
-  empty to use the simulator's own default. Colours take a name such as `red` or a hexadecimal code such
-  as `0xFF00FF`.
+- **Hide the registration number** is the option to reach for when your artwork already includes a tail number. It stops the simulator drawing a second one over the top.
+- **`[VPaintingN]` section** appears when an aircraft draws more than one registration, for example one on the fuselage and one on a cockpit placard. The exterior one is selected for you, since that is usually the one you mean. Edits to each are kept as you switch between them.
+- **`size_mm`** is the size of the texture the number is drawn onto, where 1 mm is 1 pixel. **X, Y, W and H** are the area within it to paint. These should not exceed `size_mm`.
+- **Text format** covers colour, style, scale, outline and background. Every box is optional: leave one empty to use the simulator's own default. Colours take a name such as `red` or a hexadecimal code such as `0xFF00FF`.
 
-Two previews sit beside the editor and update as you type. One draws the registration itself, using the
-simulator's own fitting rules, so you can see the result without loading the sim. The other shows the
-real `panel.cfg` the toolkit will write, with the line you are editing called out in it.
-
-Changes are saved as you make them. Compile the livery for them to reach the simulator.
+Two previews update as you type. One draws the registration itself, using the simulator's own fitting rules, so you can see the result without loading the sim. The other shows the real `panel.cfg` the toolkit will write, with the line you are editing called out in it. Changes are saved as you make them. Compile the livery for them to reach the simulator.
 
 {: .note }
-> The preview uses the nearest typeface Windows has, so the text can be slightly different in size from
-> what the simulator draws. Colour, position and layout are accurate.
+> The preview uses the nearest typeface Windows has, so the text can be slightly different in size from what the simulator draws. Colour, position and layout are accurate.
 
 ### Modular aircraft
 
-Modular aircraft do not get a `panel.cfg` of their own. Instead the tab overrides named parameters in the
-base aircraft's own registration through `livery.cfg`, when the aircraft's own painting allows it - a list
-of the parameters you can set, if any, appears with the aircraft's own default for each shown alongside.
-Not every modular aircraft allows this; when it does not, the tab explains why instead of offering settings
-that would have no effect.
+Modular aircraft do not get a `panel.cfg` of their own. Instead the node overrides named parameters in the base aircraft's own registration through `livery.cfg`, when the aircraft's own painting allows it: a list of the parameters you can set, if any, appears with the aircraft's own default for each shown alongside. When the aircraft does not allow it, the node explains why instead of offering settings that would have no effect.
 
-As with monolithic aircraft, these settings control how the registration looks, not what it says - the text
-still comes from this livery's ATC id, and the simulator's own tail number setting overrides it if one is
-set there.
+As with monolithic aircraft, these settings control how the registration looks, not what it says. The simulator's own tail number setting overrides the ATC id if one is set there.
 
-### When the Registration number tab has nothing to offer
+### When there is nothing to offer
 
-Not every monolithic aircraft can show a livery's own registration, and the tab tells you which case you
-are in rather than letting you set something that would never appear.
+Not every monolithic aircraft can show a livery's own registration, and the node tells you which case you are in:
 
-- **The aircraft does not use dynamic registration numbers at all.** There is nothing for a livery to
-  change, so any tail number on it is part of the paintwork.
-- **The aircraft supplies its registration with each of its own liveries**, using an extra model that the
-  toolkit does not generate. Its own liveries show a registration and one made here cannot, so the tab
-  explains that instead of offering settings that would have no effect.
+- **The aircraft does not use dynamic registration numbers at all.** There is nothing for a livery to change, so any tail number on it is part of the paintwork.
+- **The aircraft supplies its registration with each of its own liveries**, using an extra model that the toolkit does not generate. Its own liveries show a registration and one made here cannot.
 
 {: .note }
-> If an aircraft's registration is drawn by its own custom file rather than the simulator's standard one,
-> you get a single options box instead of the styling controls. What those options mean is defined by the
-> aircraft, so check its manual.
+> If an aircraft's registration is drawn by its own custom file rather than the simulator's standard one, you get a single options box instead of the styling controls. What those options mean is defined by the aircraft, so check its manual.
+
+---
+
+## Details
+
+The **Details** node lists every field of the livery's `[fltsim.N]` section (monolithic) or `livery.cfg` (modular) that the simulator supports: title, ATC id, callsign and more, in the file's own order. Fields that differ from the base aircraft are marked and can be put back with **Reset**. A few are set by the toolkit and shown for reference only. Select **Save details**, or press **Ctrl+S**, to keep your changes.
+
+---
 
 ## Thumbnails
 
-MSFS shows your livery in its aircraft selection screens using a small set of thumbnail images. They have
-to be at exact sizes, some of them have to have a transparent background, and the set is not the same for
-MSFS 2020 and 2024. The **Thumbnails tab** tracks the exact files and dimensions your sim generation
-requires, and shows you what is currently there.
-
-Producing real images used to mean leaving the toolkit: launch the sim, turn on Developer Mode, find the
-Aircraft Capture Tool, take the shots, then copy the files back into your livery.
+MSFS shows your livery in its aircraft selection screens using a small set of thumbnail images. They have to be at exact sizes, some of them with a transparent background, and the set is not the same for MSFS 2020 and 2024. The **Thumbnails** node lists the exact files your sim generation requires and shows what is currently there.
 
 ### Render thumbnails
 
-**Render thumbnails** draws your livery on the aircraft itself and writes every thumbnail file MSFS
-expects, so you do not have to capture them in the simulator.
+**Render thumbnails** draws your livery on the aircraft and writes every thumbnail file MSFS expects, so you do not have to capture them in the simulator's Developer Mode.
 
-- It writes exactly the files your project's sim generation needs, at the right sizes, with a transparent
-  background on the ones that need to be cut out.
-- It uses **your** paint. Anything you have not painted yet falls back to the base aircraft's own
-  textures, so a half-finished livery still gives you a useful picture of where you have got to.
-- For an aircraft installed in your Community folder, the simulator does not need to be running. For a
-  stock or marketplace aircraft it does, with the VFS Projector started, exactly as it already does for
-  everything else you do with those aircraft.
+- It writes exactly the files your sim generation needs, at the right sizes, with a transparent background on the ones that need it.
+- It uses **your** paint. Anything you have not painted yet falls back to the base aircraft's own textures, so a half-finished livery still gives you a useful picture.
+- For an aircraft in your Community folder, the simulator does not need to be running. For a stock or Marketplace aircraft it does, with the VFS Projector started, as for everything else you do with those aircraft.
 
 {: .warning }
-> This is badged **Experimental**. It is a different renderer from the simulator's own, so expect the
-> lighting and the finish to be close rather than identical. It is a shortcut past a tedious trip into
-> Developer Mode, not a pixel-exact reproduction of an in-sim capture.
+> This is badged **Experimental**. It is a different renderer from the simulator's own, so expect the lighting and the finish to be close rather than identical.
 
-**Generate placeholders** is still there and unchanged: it writes plain labelled images, and only for
-files that are missing. It is the fallback for when an aircraft's geometry cannot be read.
-
-**Replace…** still lets you drop in a real image of your own, and a size mismatch warns but lets you
-proceed. Images you add by hand are never overwritten.
+**Generate placeholders** writes plain labelled images, only for files that are missing. **Replace...** drops in an image of your own; a size mismatch warns but lets you proceed. Images you add by hand are never overwritten.
 
 ### Leaving parts out of a render
 
-Aircraft carry plenty of geometry you would not want in a livery thumbnail: ground power units, chocks,
-crew figures, covers, tow bars, and on some aircraft a pilot sitting in the cockpit. **Edit object
-visibility** opens the aircraft in 3D and lets you leave any part out of the render. See [Seeing your paint
-in 3D](#seeing-your-paint-in-3d) above for how to move around the model; the same controls apply here.
-
-- Click a part in the list to find it on the model, or hover the model to see what a part is called.
-- **Drag a box** over the model to hide everything it touches in one go - much quicker than clicking small
-  parts one at a time, such as aerials and cables. The box reaches all the way through the aircraft, so it
-  catches parts on the far side too. Hold **Shift** while dragging to catch only parts that are entirely
-  inside the box. **Ctrl+Z** undoes a whole box in one step.
-- The display switch controls what you are looking at: **Both** shows everything, with hidden parts
-  ghosted; **Only visible** shows just what will actually be rendered; **Only hidden** shows just the
-  parts you have taken out, which is the quickest way to check you have not hidden something by mistake.
-- Your choices are remembered per aircraft, so you only do this once no matter how many liveries you
-  paint for it.
-
-## Linking to a paintkit
-It is possible to directly open source artwork files if the MSFS Livery Toolkit can find an associated file; currently supported formats are Photoshop, Affinity, Gimp and Paint.NET. The search logic is as follows:
- 1. **Custom path to a specific artwork file**: You can browse to any supported file type in any folder. This is set per texture slot, using the pane on the right side of the application which appears when a texture slot is selected in the **Liveries** tab. This is useful if the aircraft developer provides paintkit files which don't have the same naming convention as the texture images.
- 2. **Filename match in the folder specified in the livery "Paintkit path" field**: You choose a path, the toolkit looks for filenames that match the PNG texture name. For example if the texture PNG filename is `FW190_EXTERIOR_1001_ALB.PNG`, then the application will automatically find `FW190_EXTERIOR_1001_ALB.psd` or `FW190_EXTERIOR_1001_ALB.afphoto` or `FW190_EXTERIOR_1001_ALB.xcf` or `FW190_EXTERIOR_1001_ALB.pdn`. Files made by the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) are found too, since it names its output `FW190_EXTERIOR_1001_ALB_Paintkit.psd`. A file named exactly after the texture wins over a `_Paintkit` one.
- 3. **Filename match in the same folder as the PNG files**: If no "Paintkit path" field is set, the application will search for matching filenames in the same folder as the PNG files, using the name matching logic described above.
+Aircraft carry plenty of geometry you would not want in a thumbnail: ground power units, chocks, crew figures, covers and tow bars. Clear the **camera** column on a part in the Aircraft model node to leave it out, or select **Show in Thumbnail Preview** to see exactly what a render will include and press **H** to hide parts from it. Your choices are remembered per aircraft. See [Hiding parts]({{ '/workspace.html' | relative_url }}#hiding-parts).

@@ -63,8 +63,9 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
     <tr><th scope="row">Details (title, ATC id and other fields)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
     <tr><th scope="row">Registration number</th><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>No</td><td>No</td><td>Partly <sup>8</sup></td></tr>
     <tr><th scope="row">Availability (which configurations a livery appears under)</th><td>Not needed</td><td>Not needed</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>9</sup></td></tr>
+    <tr><th scope="row">Mesh liveries (your own 3D decal model)</th><td>No <sup>12</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Previews and thumbnails</th></tr>
-    <tr><th scope="row">3D preview, including click to add a texture</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">3D view in the Workspace, including click to add a texture</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr><th scope="row">Rendered thumbnails (experimental)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr><th scope="row">Placeholder thumbnails, or your own images</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Paintkit Builder</th></tr>
@@ -85,11 +86,12 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 4. **An encrypted aircraft shows its folder name** until you pick its real name from the list MSFS 2024 reports while it's running. Your choice is remembered.
 5. **The texture list for an encrypted aircraft is built from its lower-detail models**, because the highest-detail ones can't be read. A texture used only by the highest-detail model may appear under the aircraft's other texture folders instead.
 6. **The files that say which textures each configuration needs are protected**, so the check can't tell what is missing. Check the livery in the simulator for pink areas instead.
-7. **Only on aircraft that can display a registration.** The Registration number tab tells you when an aircraft can't.
+7. **Only on aircraft that can display a registration.** The Registration number node tells you when an aircraft can't.
 8. **Offered on every encrypted aircraft**, because the files that show whether an aircraft can display a registration are protected. It works where the aircraft supports it.
 9. **Configurations are shown by their folder names**, because the names you see in the simulator are stored in protected files.
 10. **MSFS 2020 only**, using a bundled texture converter instead of the SDK and the simulator. Turn it on in Settings.
 11. **Marked with a padlock** in the Discover aircraft list, so you can tell an encrypted aircraft from the others before you start.
+12. **Not available for MSFS 2020 aircraft yet.** See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
 
 <style>
   /* The theme gives every cell a 7.5rem minimum, which pushed this 7-column table past the content width. */
