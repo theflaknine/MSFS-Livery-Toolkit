@@ -22,7 +22,7 @@ nav_order: 1
     <div class="support-figure"><span class="support-value support-cost"></span><span class="support-label">running costs so far</span></div>
     <div class="support-figure"><span class="support-value">{{ support.symbol }}{{ support.donations }}</span><span class="support-label">donated by {{ support.supporters }} {% if support.supporters == 1 %}supporter{% else %}supporters{% endif %}</span></div>
   </div>
-  <p class="support-text">The toolkit is free and always will be. I pay for the AI subscription that builds it myself, {{ support.symbol }}{{ support.monthly }} every month. If it saves you time, a coffee helps keep it going.</p>
+  <p class="support-text">The toolkit is free and always will be. I pay for the AI subscription that builds it myself, {{ support.symbol }}{{ support.monthly }} every month. If it saves you time, a coffee helps fund the development of new features.</p>
   <a class="btn support-btn" href="{{ support.coffee_url }}">&#9749; Buy me a coffee</a>
 </div>
 
