@@ -53,10 +53,19 @@ Select the livery's **Model** node in the [Workspace]({{ '/workspace.html' | rel
 **Export folders** shows two folders, each with an **Open** button:
 
 - **Model**: export the `.gltf` and its `.bin` here.
-- **Textures**: copy any textures your model uses here, and point Blender's images at **that** copy before you export.
+- **Textures**: where your model's textures must already be **before** you export. See below.
+
+{: .important }
+> **This step is very easy to get wrong.** Blender does **not** copy your textures into the Textures folder when you export. The exporter only writes down where each image already is. So the images must be in that folder, and Blender must be pointing at them there, before you export:
+>
+> 1. Copy every texture your model uses into the **Textures** folder.
+> 2. In Blender, point each image at its copy in that folder (in the Image Editor, **Image > Replace**, or the image's file path in its properties).
+> 3. Then export the model into the **Model** folder.
+>
+> If Blender still points at the images somewhere else, such as your artwork folder, the **File checks** flag every image that is not in the Textures folder. Fix it in Blender and export again before you compile.
 
 {: .warning }
-> Keep your model and its textures on the same drive. The exporter writes each image as a path relative to the model, and a relative path cannot cross drive letters, so an image on another drive is silently left out and the material draws white in the simulator.
+> Keep your model and its textures on the same drive. The exporter writes each image as a path relative to the model, and a relative path cannot cross drive letters, so an image on another drive is silently left out and the material draws white in the simulator. Keeping them in the Textures folder above avoids this.
 
 After each export, select **Refresh** to check the files again.
 
