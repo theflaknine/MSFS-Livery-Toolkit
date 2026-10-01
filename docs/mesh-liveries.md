@@ -24,13 +24,14 @@ Mesh liveries work on **MSFS 2024 aircraft**, both monolithic and modular, inclu
 
 ## Before you start: get the aircraft's moving-part nodes
 
-For a decal to follow a moving part, it has to be parented to the aircraft's own node for that part, with the same name and in the same place. The easiest way to get those nodes into Blender is the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}):
+For a decal to follow a moving part, it has to be parented to the aircraft's own node for that part, with the same name and in the same place. The [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) gives you those nodes as two files, and each has its own job:
 
-1. Build a **3D paintkit** with **Include parent nodes for merged models** selected.
-2. Import it into Blender. The aircraft's door, rudder and other moving-part nodes come in with it, already in the right place.
-3. Model your decals and parent each one under the node it should follow. A decal parented to nothing stays still.
+1. Build a **3D paintkit** with **Include parent nodes for merged models** and **Also write parent nodes as a separate file** both selected.
+2. **Use the paintkit model as your reference.** Import it into Blender to see how the aircraft is put together: which parts hang under which node, so you know which node a door or a rudder moves with.
+3. **Build your livery in the parent nodes file.** It holds just the aircraft's nodes, for every part of the aircraft, already in the right place, and none of its geometry. Model your decals in it and parent each one under the node it should follow. A decal parented to nothing stays still.
+4. Export that file as your livery's model.
 
-**Also write parent nodes as a separate file** writes just those nodes, every part of the aircraft included, if you would rather keep them apart from the painted geometry.
+Working in the parent nodes file keeps the aircraft's own geometry out of your livery's model, and gives you every node whatever textures you chose for the paintkit.
 
 ---
 

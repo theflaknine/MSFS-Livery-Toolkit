@@ -82,9 +82,10 @@ Two options under **Build 3D paintkit** are for [mesh liveries]({{ '/mesh-liveri
 where you model your own decals in Blender and they must follow the aircraft's moving parts:
 
 - **Include parent nodes for merged models** adds the aircraft's moving-part nodes (doors, rudders and so on)
-  to the model, in the right place, so you can parent your decals under them.
-- **Also write parent nodes as a separate file** writes just those nodes, for every part of the aircraft, as
-  their own file.
+  to the model, so you can see which parts hang under which node.
+- **Also write parent nodes as a separate file** writes just those nodes, for every part of the aircraft and
+  with none of its geometry, as their own file. **Build your mesh livery in this file**, using the paintkit
+  model as a reference. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
 
 ### What "experimental" means here
 
