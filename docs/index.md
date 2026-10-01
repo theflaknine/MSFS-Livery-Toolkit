@@ -33,7 +33,9 @@ nav_order: 1
   var parts = (card.dataset.start || '').split('-').map(Number);
   var monthly = Number(card.dataset.monthly);
   if (parts.length !== 3 || parts.some(isNaN) || isNaN(monthly)) return;
-  // One charge per month on the start date's day of the month, the first included.
+  /* One charge per month on the start date's day of the month, the first included.
+     Never use line comments in this script: the site compresses the page onto one
+     line, so a line comment would swallow the rest of the code. */
   var now = new Date();
   var charges = (now.getFullYear() - parts[0]) * 12 + (now.getMonth() + 1 - parts[1])
               + (now.getDate() >= parts[2] ? 1 : 0);
