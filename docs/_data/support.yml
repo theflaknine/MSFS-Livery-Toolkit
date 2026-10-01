@@ -1,0 +1,10 @@
+# Figures for the "Support" card on the landing page (index.md).
+# Edit donations and supporters by hand when a coffee arrives. The running cost
+# needs no edits: the page counts the monthly charges since `start` itself.
+
+start: "2026-06-03"   # date of the first subscription receipt; charged on this day each month
+monthly: 18           # subscription cost per month
+symbol: "£"
+donations: 20         # one-off Buy Me a Coffee donations to date, as paid by supporters
+supporters: 2
+coffee_url: https://buymeacoffee.com/flaknine
