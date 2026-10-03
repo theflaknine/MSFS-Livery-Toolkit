@@ -28,7 +28,19 @@ If you'd rather verify the download yourself before running it, every release ha
 - **Your project folder:** the only place it writes: your chosen workspace (loose PNG artwork + project file) and your chosen output/deployment folder.
 - **The official MSFS SDK tools already on your machine:** compiling a livery hands your artwork to Microsoft's own `fspackagetool.exe` (installed with the SDK via the sim's Dev Mode) and the community [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator) tool. The toolkit doesn't do its own custom compiling — it drives the same official tools you'd otherwise run by hand, and that briefly opens and closes Microsoft Flight Simulator itself, the same way those tools always have.
 
-Nothing outside those three areas.
+- **The app's own data folder** (`%LOCALAPPDATA%\MsfsLiveryToolkit`): its settings, session logs and the VFS model cache described below.
+
+Nothing outside those four areas.
+
+## The VFS model cache
+
+Stock and marketplace aircraft are read through the simulator's Virtual File System (VFS), which is only there while the simulator is running. So that you can still see these aircraft in 3D with the simulator closed, the app can keep a cache of the 3D models it has already shown. It asks before turning this on, and you can change your answer in Settings at any time.
+
+- **It holds the app's own processed models, not the aircraft's files.** What is stored is the geometry the app built for its own 3D view, in the app's own format. No textures, and no copy of any file from the aircraft. No simulator or other tool can load it.
+- **Protected aircraft are never cached.** Nothing from an aircraft the simulator protects is ever written to it.
+- **Where it lives**: `%LOCALAPPDATA%\MsfsLiveryToolkit\ModelCache` by default. You can move it and set a size limit in Settings; the least recently used aircraft are dropped first when it is full.
+- **Mesh livery data is the one exception to asking first**: to build a mesh livery for a stock or marketplace aircraft with the simulator closed, the app always keeps the few details of the aircraft's model that the build needs, in `%LOCALAPPDATA%\MsfsLiveryToolkit\MeshBaseData`, even with the cache turned off. It is only kept for aircraft you have opened a mesh livery for, and the same rules apply: the app's own format, never a file from the aircraft, never a protected aircraft.
+- **How to clear it**: **Clear cache...** in the VFS model cache section of Settings deletes both. Deleting the folders by hand is also safe.
 
 ## Encrypted aircraft
 
