@@ -7,7 +7,7 @@ nav_order: 3.5
 # Mesh liveries
 {: .no_toc }
 
-A livery does not have to be paint alone. A **mesh livery** also carries a small 3D model of its own, merged into the aircraft's model by the simulator: stripes, lettering or a registration as real geometry that stays crisp at any distance, or an extra part such as an aerial or a pod. Decals can even ride the aircraft's moving parts, so a stripe across a door opens with the door.
+A livery does not have to be paint alone. A **mesh livery** also carries a small 3D model of its own, which the simulator merges into, or attaches to, the aircraft's model (see [Merging or attaching](#monolithic-aircraft-merging-or-attaching)): stripes, lettering or a registration as real geometry that stays crisp at any distance, or an extra part such as an aerial or a pod. Decals can even ride the aircraft's moving parts, so a stripe across a door opens with the door.
 
 You build the model in a 3D modelling tool that exports glTF for MSFS. Blender is a great free choice, and it is the one this page uses in its examples. The toolkit checks the model, compiles it with your livery, and writes everything the simulator needs to merge it.
 
@@ -32,6 +32,43 @@ For a decal to follow a moving part, it has to be parented to the aircraft's own
 4. Export that file as your livery's model.
 
 Working in the parent nodes file keeps the aircraft's own geometry out of your livery's model, and gives you every node whatever textures you chose for the paintkit.
+
+### What the tree should look like
+
+Here is how a simple aircraft might look in Blender's Outliner. The names are made up; every aircraft names its own nodes. A **node** (an empty in Blender) is a point the aircraft's animations move, and the aircraft's meshes hang under them:
+
+```
+Base aircraft (the paintkit model, for reference)
+└── Airframe                  node
+    ├── Fuselage              mesh     (the aircraft's own)
+    ├── Rudder                node     moved by the rudder animation
+    │   └── Rudder_Skin       mesh     (the aircraft's own)
+    └── Door_L                node     moved by the door animation
+        └── Door_L_Skin       mesh     (the aircraft's own)
+```
+
+Your livery's model keeps the same nodes, with the same names in the same places, and hangs **your** meshes under them instead of the aircraft's:
+
+```
+Your livery model (built in the parent nodes file)
+└── Airframe                  node     from the parent nodes file, untouched
+    ├── Fuselage_Stripes      YOUR mesh   stays with the airframe
+    ├── Rudder                node     from the parent nodes file, untouched
+    │   └── Tail_Logo         YOUR mesh   moves with the rudder
+    └── Door_L                node     from the parent nodes file, untouched
+        └── Door_Stripes      YOUR mesh   opens with the door
+```
+
+When the livery is built, each of your meshes ends up under the aircraft's real node of the same name, so it moves exactly as that node does. The aircraft's own meshes (`Fuselage`, `Rudder_Skin`, `Door_L_Skin`) are **not** in your file; the simulator already has them.
+
+To parent a mesh in Blender, select the mesh, then Shift-click the node so it is selected last, and press **Ctrl+P** > **Object (Keep Transform)**. Keep Transform leaves the mesh exactly where you modelled it.
+
+Common mistakes, and what they do:
+
+- **A mesh left at the top of the tree**, under no node: it stays still, even if it sits on a door or a control surface.
+- **A renamed node** (`Rudder` changed to `Rudder_mine`): it no longer matches the aircraft's node, so the mesh does not move with the rudder. Blender's `.001` on a duplicated node is fine; the toolkit ignores it.
+- **A moved node**: the mesh follows the aircraft's real node, which is somewhere else, so it ends up in the wrong place. The **Parent node checks** warn about this.
+- **A mesh named the same as one of the aircraft's nodes**: it can be mistaken for that node. Give your meshes names of their own.
 
 ---
 
@@ -91,6 +128,52 @@ The **Materials** folder under the Model node lists each material in your model.
 ![A decal material selected, with its colour and surface settings](assets/images/mesh-material.png)
 
 Your own file is never changed. The toolkit applies these settings to a copy while it builds, and **Reset** on any row puts back what you exported. On a textured decal the colour multiplies the texture, so it tints rather than replaces.
+
+---
+
+## Monolithic aircraft: merging or attaching
+
+On a monolithic aircraft, there are two ways the simulator can add your model to the aircraft:
+
+- **Merging** joins your model into the aircraft's own model, as if the aircraft's developer had built it in. The SDK calls this [Submodel Merging](https://docs.flightsimulator.com/msfs2024/html/3_Models_And_Textures/Submodel_Merging.htm): it "merge[s] partially exported hierarchies based on unique identifiers that exist on the nodes in the model's node hierarchy".
+- **Attaching** keeps your model separate and hangs it from a node of the aircraft's model: the whole of it, or each piece from the node it should move with. The SDK calls this [Model Attachments](https://docs.flightsimulator.com/msfs2024/html/3_Models_And_Textures/Model_Attachments.htm): "the attached model is **not** merged into the aircraft itself, and so has its own set of LODs".
+
+You don't choose between them: the toolkit picks one for each livery, and the Model node's title says which ("Model merging" or "Model attachment"). Both features are marked beta in the SDK.
+
+### Why merging comes first
+
+Merging is the better method for a livery, so the toolkit uses it wherever the aircraft allows. The SDK says submodel merging "was initially developed with the intent of being able to more easily create mesh liveries for airplanes without having to re-export the entire airplane". Attachments are meant for separate objects with their own detail levels, such as passengers, and the simulator restricts where they can go:
+
+| | Merging | Attaching |
+|---|---|---|
+| **What the aircraft needs** | An Asobo unique ID (`ASOBO_unique_id`) on the nodes of its exterior model | Nothing: works on any aircraft |
+| **How a piece finds its moving part** | By the node's unique ID | By the node's name |
+| **Following moving parts** | At every detail level | Only on detail levels that have the node in the same place; elsewhere the piece stays still |
+| **Detail levels it appears on** | Every one, unless you leave your model out of some (see below) | Not the most distant level, nor any level the aircraft only shows from far away; a single-level model is the exception (see the SDK rules below) |
+| **What the toolkit builds** | One model shared by every detail level | Your model split into one file per moving part it follows, plus one for the pieces that stay still |
+
+In short, a merged model behaves like part of the aircraft at every distance. An attached model is limited by the simulator's rules for attachments, and by how the aircraft's developer named and placed the parts at each detail level.
+
+The SDK's rules for attachments, and what the toolkit does with them:
+
+- "The last LOD of a model may not have any attachments." Your model is left off the aircraft's most distant detail level.
+- "LODs that have a 'minSize' of less than 5% may not have any attachments (this is to encourage merging meshes at that stage, for performance reasons)." The toolkit uses 2% instead of 5%, because at 5% pieces visibly disappeared too early on aircraft tested in the simulator.
+- "Attachments need to be attached to every LOD individually." The toolkit writes the attachments for every detail level it can, so you don't have to.
+
+### When the toolkit falls back to attaching
+
+The unique IDs are a feature of the **base aircraft**, not of your model: the MSFS exporters write them when the aircraft's developer exports the model with that option on (the SDK's merging page tells developers to "make sure the ASOBO_uniqueID is enabled"), and some aircraft are exported without them. Merging into a model without them doesn't just fail quietly: the simulator can stop drawing the aircraft's whole exterior model.
+
+So before it builds, the toolkit reads the aircraft's exterior model:
+
+- **Every detail level has nodes with unique IDs**: your model is **merged**.
+- **Any detail level has none, or the model can't be read**: your model is **attached**.
+
+When attaching, each piece follows the nearest node above it in your file whose name matches a node in the aircraft. Blender's `.001` suffix on a duplicated node is ignored, but a name the aircraft uses more than once is never matched, since the piece could go to either. On a detail level where the aircraft doesn't have that node, or has it somewhere else, the piece is attached fixed for that level instead of guessing.
+
+**What you will notice on an attaching aircraft:** a piece on a part the aircraft stops drawing at a distance stays still from that distance on, and your model is left off the most distant detail levels. The Model XML node greys out those levels and quotes the simulator's rule.
+
+Modular aircraft don't need this choice: the simulator adds a livery's model to each part of the aircraft itself, as described [below](#modular-aircraft-one-model-split-by-part).
 
 ---
 
