@@ -83,7 +83,7 @@ Common mistakes, and what they do:
 
 ## Adding a model to a livery
 
-Select the livery's **Model** node in the [Workspace]({{ '/workspace.html' | relative_url }}) tree, then select **Add a model to this livery, merged with the aircraft's model**. Turning it off later keeps your files.
+Select the livery's **Model** node in the [Workspace]({{ '/workspace.html' | relative_url }}) tree, then select **Add a model to this livery, merged with the aircraft's model** (on an aircraft that takes attachments instead, it reads **attached to the aircraft's model**; see [Monolithic aircraft: merging or attaching](#monolithic-aircraft-merging-or-attaching)). Turning it off later keeps your files.
 
 ![The Model node selected: export folders, file checks and parent node checks on the right, and the livery's model drawn on the aircraft](assets/images/mesh-model-node.png)
 
@@ -169,9 +169,13 @@ So before it builds, the toolkit reads the aircraft's exterior model:
 - **Every detail level has nodes with unique IDs**: your model is **merged**.
 - **Any detail level has none, or the model can't be read**: your model is **attached**.
 
+![The Model node on an aircraft that takes attachments: its title reads Model attachment, and the livery's model is drawn on the aircraft](assets/images/mesh-model-attachment.png)
+
 When attaching, each piece follows the nearest node above it in your file whose name matches a node in the aircraft. Blender's `.001` suffix on a duplicated node is ignored, but a name the aircraft uses more than once is never matched, since the piece could go to either. On a detail level where the aircraft doesn't have that node, or has it somewhere else, the piece is attached fixed for that level instead of guessing.
 
 **What you will notice on an attaching aircraft:** a piece on a part the aircraft stops drawing at a distance stays still from that distance on, and your model is left off the most distant detail levels. The Model XML node greys out those levels and quotes the simulator's rule.
+
+![The Model XML node's detail levels: the model attached on each, except the most distant one, which is greyed out with the SDK's rule quoted](assets/images/mesh-attachment-lods.png)
 
 Modular aircraft don't need this choice: the simulator adds a livery's model to each part of the aircraft itself, as described [below](#modular-aircraft-one-model-split-by-part).
 

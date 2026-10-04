@@ -12,7 +12,7 @@ A livery lives under its row in the [Workspace]({{ '/workspace.html' | relative_
 - **Textures:** the images your livery repaints, and the compile flags the SDK uses to turn them into game assets.
 - **Thumbnails:** the images MSFS shows for your livery in its aircraft selection screens.
 - **Registration number:** how the simulator draws the registration number on your livery, or whether it draws one at all. Works on both monolithic and modular aircraft.
-- **Model:** your own 3D decal model, merged with the aircraft's. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
+- **Model:** your own 3D model, merged with or attached to the aircraft's. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
 - **Details:** the fields written into `aircraft.cfg` (monolithic aircraft) or `livery.cfg` (modular aircraft), such as the livery's title and ATC id.
 - **Availability:** on modular aircraft, which of the aircraft's configurations your livery appears under.
 

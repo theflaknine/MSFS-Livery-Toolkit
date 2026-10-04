@@ -24,7 +24,7 @@ Everything in the project is one tree:
 - **Each livery** below it. One livery is *loaded* at a time: it is the one you are working on, the one drawn in the viewport, and it is marked by an accent bar down the left edge of its rows. Double-click another livery, or right-click it and choose **Load livery**, to switch.
 - **Under the loaded livery**, one node for each part of a livery:
   - **Aircraft model**: every part of the aircraft, with controls to hide parts from the preview and from your thumbnails. See [The viewport](#the-viewport).
-  - **Model**: your own 3D decal model, if the livery has one. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
+  - **Model**: your own 3D model, if the livery has one. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
   - **Textures**: one row per texture, each with a small thumbnail of your artwork. Hover a row for a larger preview. See [Creating liveries]({{ '/creating-liveries.html' | relative_url }}).
   - **Thumbnails**, **Registration number**, **Details** and **Availability**.
 - **Add new livery...** is always the last row under the project, and **Add textures...** the last row in every Textures folder.
@@ -83,14 +83,14 @@ Elsewhere on the toolbar:
 - **Hidden objects** shows **both** visible and hidden parts (hidden ones ghosted), **only visible** parts, or **only hidden** parts, which is the quickest way to bring back something you hid by mistake.
 - **Aircraft visibility** draws the rest of the aircraft as solid grey, a faint ghost, or not at all.
 - **Projection** switches between perspective and orthographic, a flat view with no foreshortening for judging whether a stripe is straight.
-- **Zoom to fit** and **Zoom to selected** frame the view, and **Refresh** re-reads your painted textures and your decal model after you save or re-export them.
+- **Zoom to fit** and **Zoom to selected** frame the view, and **Refresh** re-reads your painted textures and your livery's model after you save or re-export them.
 
 ### Display options
 
 - **Shading**: Wireframe, and Colour by material, which gives every material its own colour.
 - **Lighting**: Studio, Even and Dramatic, all of which light the underside too, so you can check gear bays and belly panels.
 - **Normal depth**: how strongly normal maps are applied. Turn it down until it matches what you see in MSFS.
-- **Model alignment**: how your own decal model is placed. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
+- **Model alignment**: how your livery's own model is placed. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
 - **Tree**: **By file** lists every part under its model file. **Node hierarchy** lists them the way the aircraft's developer built them, each part under the node it hangs from. Long chains of empty nodes are merged into one row, and hiding a part hides everything inside it.
 - **Statistics**: the triangle count, model files, meshes and estimated video memory, in the corner of the view. The memory figure always shows, and turns amber if the scene is getting heavy.
 
@@ -115,6 +115,26 @@ When you select a part, a row of arrow-shaped chips appears at the top of the vi
 **Ctrl+F**, or the box above the tree, finds parts by name. Type part of a name and every match is outlined on the aircraft, with a count. Then **Select all**, **Hide all** or **Show all** act on every match at once, and each is one step for Ctrl+Z.
 
 ![Find in aircraft model, with several matching parts outlined in the viewport](assets/images/find-in-model.png)
+
+---
+
+## Working with the simulator closed
+
+Stock and Marketplace aircraft are read through the simulator's Virtual File System (VFS), which is only there while the simulator runs. The toolkit can keep its own processed copy of each of these aircraft's 3D models, so that once you have loaded one, it shows in the viewport and in Add textures with the simulator closed, and mesh liveries for it still build.
+
+The first time a VFS aircraft's model finishes loading, the app asks whether to keep these copies:
+
+![The question the app asks once: Cache 3D models of VFS aircraft?](assets/images/model-cache-prompt.png)
+
+It asks only once; you can change your answer, move the cache or clear it in [Settings]({{ '/configuration.html' | relative_url }}#vfs-model-cache).
+
+When the viewport shows an aircraft from its saved copy, the **Aircraft model** row says so with a small disk mark. Hover it to see when the copy was saved:
+
+![The Aircraft model row with its disk mark, and the tooltip saying the aircraft is shown from the offline copy because the VFS isn't connected](assets/images/model-cache-disk-mark.png)
+
+A saved copy may be out of date if the simulator has since updated the aircraft. The next time the aircraft is shown with the VFS connected, the copy is refreshed.
+
+Only the 3D models are kept, never textures, so **Extract from base**, **Extract UV map**, **Render thumbnails** and the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) still need the simulator running for these aircraft. Encrypted aircraft are never cached.
 
 ---
 

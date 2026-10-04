@@ -28,6 +28,8 @@ Supports MSFS 2020 and 2024, across all three package structures (2020 monolithi
 
 Grab the latest portable release from the [**Releases**](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases) page. There is no installer: unzip the download, then double-click **MSFS Livery Toolkit** at the top of the extracted folder to start the app. Everything else the app needs lives in the `app` subfolder next to it; you don't need to open that folder. You'll probably get a Windows warning about an unsigned app, so you'll need to click **More Info** > **Run Anyway** to proceed, if you are comfortable to do so. See **https://theflaknine.github.io/MSFS-Livery-Toolkit/trust-and-safety.html** for more details on unsigned applications.
 
+**Updating?** Delete the old folder first, or unzip somewhere new: unzipping over an older copy leaves files behind that can make the app misbehave. Your settings and projects are kept elsewhere, so nothing is lost. The app tells you when a new version is out: once a day it reads the public list of releases here on GitHub, and nothing about you or your computer is sent. You can turn that off in Settings.
+
 **Requirements**
 - Windows 11 (64-bit)
 - Microsoft Flight Simulator 2020 and/or 2024

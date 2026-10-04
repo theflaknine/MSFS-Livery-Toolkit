@@ -50,7 +50,9 @@ In the app, these aircraft carry a padlock on their **VFS** tag and are describe
 
 ## Does it phone home?
 
-No. There is no network code in the app at all, not a hidden one, not an optional one. Every place that looks like a "link" (the Help button, Donate, the SDK download link) is the app asking Windows to open your normal web browser to a page, exactly like clicking a link in a text editor. The app itself never makes an HTTP request, never uploads anything, and collects no telemetry or usage data of any kind.
+Only to check for updates. Once a day, when the app starts, it reads the public list of releases from the toolkit's GitHub page, the same list anyone sees at [github.com/theflaknine/MSFS-Livery-Toolkit/releases](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases), to tell you when a newer version is out. That request carries nothing about you, your computer or your projects: no account, no ID, no app version, no usage data. GitHub sees the request come from your internet address, as it would for any web page. To turn it off, go to Settings and clear **Check for updates when the app starts**; the app then makes no network requests at all, unless you select **Check for updates** yourself.
+
+Nothing else in the app uses the network. Every place that looks like a "link" (the Help button, Donate, the SDK download link, the Download button in What's new) is the app asking Windows to open your normal web browser to a page, exactly like clicking a link in a text editor. The app never uploads anything, and collects no telemetry or usage data of any kind.
 
 ## What is `ooz.exe`?
 

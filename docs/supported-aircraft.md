@@ -63,7 +63,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
     <tr><th scope="row">Details (title, ATC id and other fields)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
     <tr><th scope="row">Registration number</th><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>No</td><td>No</td><td>Partly <sup>8</sup></td></tr>
     <tr><th scope="row">Availability (which configurations a livery appears under)</th><td>Not needed</td><td>Not needed</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>9</sup></td></tr>
-    <tr><th scope="row">Mesh liveries (your own 3D decal model)</th><td>No <sup>12</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">Mesh liveries (your own 3D model)</th><td>No <sup>12</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Previews and thumbnails</th></tr>
     <tr><th scope="row">3D view in the Workspace, including click to add a texture</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr><th scope="row">Rendered thumbnails (experimental)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
@@ -82,7 +82,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 
 1. **Encrypted MSFS 2020 aircraft are not supported.** MSFS 2020 protects its aircraft differently, and I have not been able to test one.
 2. **Encrypted 2024 mono aircraft are not listed.** Too little of them can be read to build a working livery. The Discover message tells you how many aircraft were left out for this reason.
-3. **Stock and Marketplace aircraft are read from the simulator's Virtual File System** while MSFS is running. This is tested with MSFS 2024 only.
+3. **Stock and Marketplace aircraft are read from the simulator's Virtual File System** while MSFS is running. Their 3D models can also be shown from the toolkit's own cache with the simulator closed; see [Working with the simulator closed]({{ '/workspace.html' | relative_url }}#working-with-the-simulator-closed). This is tested with MSFS 2024 only.
 4. **An encrypted aircraft shows its folder name** until you pick its real name from the list MSFS 2024 reports while it's running. Your choice is remembered.
 5. **The texture list for an encrypted aircraft is built from its lower-detail models**, because the highest-detail ones can't be read. A texture used only by the highest-detail model may appear under the aircraft's other texture folders instead.
 6. **The files that say which textures each configuration needs are protected**, so the check can't tell what is missing. Check the livery in the simulator for pink areas instead.
