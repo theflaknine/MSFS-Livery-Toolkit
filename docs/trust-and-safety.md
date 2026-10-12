@@ -52,7 +52,9 @@ In the app, these aircraft carry a padlock on their **VFS** tag and are describe
 
 Only to check for updates. Once a day, when the app starts, it reads the public list of releases from the toolkit's GitHub page, the same list anyone sees at [github.com/theflaknine/MSFS-Livery-Toolkit/releases](https://github.com/theflaknine/MSFS-Livery-Toolkit/releases), to tell you when a newer version is out. That request carries nothing about you, your computer or your projects: no account, no ID, no app version, no usage data. GitHub sees the request come from your internet address, as it would for any web page. To turn it off, go to Settings and clear **Check for updates when the app starts**; the app then makes no network requests at all, unless you select **Check for updates** yourself.
 
-Nothing else in the app uses the network. Every place that looks like a "link" (the Help button, Donate, the SDK download link, the Download button in What's new) is the app asking Windows to open your normal web browser to a page, exactly like clicking a link in a text editor. The app never uploads anything, and collects no telemetry or usage data of any kind.
+One other request: when you open **What's new** or the **Donate** window, the app reads the donation figures shown on this site's home page from the site itself ([support.json](https://theflaknine.github.io/MSFS-Livery-Toolkit/support.json)), so the card in the app matches the home page. That request carries nothing about you either, and it is not covered by the startup switch, because it only happens when you open one of those yourself.
+
+Nothing else in the app uses the network. Every place that looks like a "link" (the Help button, Donate, the SDK download link, the download buttons in What's new) is the app asking Windows to open your normal web browser to a page, exactly like clicking a link in a text editor. The app never uploads anything, and collects no telemetry or usage data of any kind.
 
 ## What is `ooz.exe`?
 

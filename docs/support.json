@@ -1,0 +1,16 @@
+---
+layout: null
+permalink: /support.json
+nav_exclude: true
+search_exclude: true
+sitemap: false
+---
+{% assign support = site.data.support %}{
+  "start": {{ support.start | jsonify }},
+  "monthly": {{ support.monthly | jsonify }},
+  "symbol": {{ support.symbol | jsonify }},
+  "donations": {{ support.donations | jsonify }},
+  "supporters": {{ support.supporters | jsonify }},
+  "coffee_url": {{ support.coffee_url | jsonify }},
+  "changes": {{ support.changes | jsonify }}
+}
