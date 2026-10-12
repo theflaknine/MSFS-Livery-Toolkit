@@ -63,7 +63,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
     <tr><th scope="row">Extract UV map</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Livery settings</th></tr>
     <tr><th scope="row">Details (title, ATC id and other fields)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
-    <tr><th scope="row">Registration number</th><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>No</td><td>No</td><td>Partly <sup>8</sup></td></tr>
+    <tr><th scope="row">Registration number</th><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>Yes <sup>7, 17</sup></td><td>No</td><td>No</td><td>Partly <sup>8</sup></td></tr>
     <tr><th scope="row">Availability (which configurations a livery appears under)</th><td>Not needed</td><td>Not needed</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>9</sup></td></tr>
     <tr><th scope="row">Mesh liveries (your own 3D model)</th><td>No <sup>12</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr><th scope="row">Hide parts of the aircraft in the simulator</th><td>No <sup>15</sup></td><td>Yes</td><td>No <sup>16</sup></td><td>No</td><td>No</td><td>No</td></tr>
@@ -99,6 +99,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 14. **For a livery made for the aircraft's MSFS 2020 version.** The registration's look (its font, colour and position) is copied onto the 2024 aircraft's own panel settings.
 15. **Not available for MSFS 2020 aircraft yet.**
 16. **The simulator doesn't let a livery for a modular aircraft hide the aircraft's parts.** A modular livery has no model file of its own to hide them from, and the simulator ignores hiding instructions in a livery's model files. I tested this in the simulator.
+17. **Also on modular aircraft that paint a fixed registration of their own.** The livery adds its own painting in place of the aircraft's, so you can set your own number and style, or hide it. A few aircraft that paint one registration from two places can't use this yet.
 
 <style>
   /* The theme gives every cell a 7.5rem minimum, which pushed this 7-column table past the content width. */
