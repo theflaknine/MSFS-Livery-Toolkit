@@ -51,7 +51,7 @@ Folder paths shown in the properties panel also have their own **Copy** and **Op
 
 ## The viewport
 
-The middle of the Workspace shows the aircraft in 3D, with your own artwork on it. It updates by itself when your artwork changes in the app, after **Extract from base**, **Generate placeholder** or **Clear image**. After saving a repaint in Photoshop, select **Refresh** on the viewport's toolbar.
+The middle of the Workspace shows the aircraft in 3D, with your own artwork on it. It updates by itself when your artwork changes in the app, after **Extract from aircraft**, **Generate placeholder** or **Clear image**. After saving a repaint in Photoshop, select **Refresh** on the viewport's toolbar.
 
 If the model is not loaded yet, select **Load aircraft model**. Large aircraft take several seconds to read, and the rest of the app stays usable meanwhile. [Settings]({{ '/configuration.html' | relative_url }}) can load it for you whenever a project opens.
 
@@ -134,7 +134,7 @@ When the viewport shows an aircraft from its saved copy, the **Aircraft model** 
 
 A saved copy may be out of date if the simulator has since updated the aircraft. The next time the aircraft is shown with the VFS connected, the copy is refreshed.
 
-Only the 3D models are kept, never textures, so **Extract from base**, **Extract UV map**, **Render thumbnails** and the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) still need the simulator running for these aircraft. Encrypted aircraft are never cached.
+Only the 3D models are kept, never textures, so **Extract from aircraft**, **Extract UV map**, **Render thumbnails** and the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) still need the simulator running for these aircraft. Encrypted aircraft are never cached.
 
 ---
 

@@ -65,7 +65,7 @@ A few things worth knowing about it:
 - **It's a genuinely separate program**, launched as its own process the same way the app launches the official MSFS SDK tools, it is never linked into or combined with the app's own code.
 - **It only ever touches local files you already have**, the base aircraft texture you asked to extract, and the PNG it writes out. No network access, no other purpose.
 - **Its complete source code ships inside every release**, alongside the license — you don't have to trust a compiled binary blindly; you (or anyone) can read exactly what it does, or rebuild it yourself from that source and compare.
-- **It's used narrowly**, only when you explicitly choose "Extract from base" on a texture that needs it. Every other feature in the app never touches it.
+- **It's used narrowly**, only when you explicitly choose "Extract from aircraft" on a texture that needs it. Every other feature in the app never touches it.
 
 ## What is `texconv.exe`?
 

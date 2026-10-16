@@ -92,7 +92,7 @@ nav_order: 1
 The toolkit takes you through the whole livery pipeline:
 
 1. **Create:** pick an installed base aircraft, and the app detects its profile (2020 monolithic, 2024 monolithic, or 2024 modular) and builds out a correct, sim-ready livery package structure.
-2. **Work:** choose which of the base's textures to repaint, generate correctly-sized blank canvases *or* extract the base's own compiled textures back to editable PNGs, and edit each texture's compile flags. The aircraft sits in 3D beside your project, showing your artwork as you paint, so you can catch a misplaced decal without compiling first. Add your own 3D model if you want geometry as well as paint. When the paint is done, the app renders your livery's thumbnail images for you, so the sim's own capture tool is one less thing to learn.
+2. **Work:** choose which of the aircraft's textures to repaint, generate correctly-sized blank canvases *or* extract the aircraft's own compiled textures back to editable PNGs, and edit each texture's compile flags. The aircraft sits in 3D beside your project, showing your artwork as you paint, so you can catch a misplaced decal without compiling first. Add your own 3D model if you want geometry as well as paint. When the paint is done, the app renders your livery's thumbnail images for you, so the sim's own capture tool is one less thing to learn.
 3. **Compile:** turn your PNG artwork into sim-ready DDS/KTX2 using the official MSFS SDK, build a full package ready to use in your community folder, then regenerate `layout.json` and launch the sim to test.
 
 A project is a single deployable package that can hold one or many liveries sharing the same base aircraft.

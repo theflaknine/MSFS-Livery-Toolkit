@@ -133,7 +133,7 @@ The toolkit classifies each texture using the official SDK **metadata** from the
 Once your livery is added, its Textures folder lists every texture it repaints, each with a small thumbnail of your artwork. There are two ways to get a starting image for each texture:
 
 - **Generate placeholder:** a blank, correctly-sized canvas labelled with the filename and resolution. If you plan to use images from a paintkit, this is the recommended approach.
-- **Extract from base:** decodes the base aircraft's own compiled texture back into an editable PNG, a real head start when no paintkit exists. This handles both 2020 DDS and 2024 KTX2, including MSFS's Oodle-compressed KTX2 that defeats most other tools. When a texture exists as more than one compiled copy in the base, you choose which one to extract.
+- **Extract from aircraft:** decodes the base aircraft's own compiled texture back into an editable PNG, a real head start when no paintkit exists. This handles both 2020 DDS and 2024 KTX2, including MSFS's Oodle-compressed KTX2 that defeats most other tools. When a texture exists as more than one compiled copy in the aircraft, you choose which one to extract.
 
 {: .important }
 > **Your artwork is protected.** The tool never automatically overwrites an existing image file in your workspace. Neither a placeholder nor an extracted image will wipe out artwork you have already put there.
@@ -142,12 +142,12 @@ Once your livery is added, its Textures folder lists every texture it repaints, 
 
 **Select a texture** for its preview, its state (for example "not used" or a size that differs from the base aircraft's), its **Texture flags**, its **Paintkit artwork**, and its actions:
 
-- **Extract from base** and **Generate placeholder**, as above.
+- **Extract from aircraft** and **Generate placeholder**, as above.
 - **Extract UV map** writes a wireframe of the texture's UV layout, taken from the aircraft's model, beside your PNG with `_UV` added to its name.
 - **Clear image** removes just the PNG while keeping the texture in your livery, so you can swap a placeholder for an extracted image or the other way round.
 - **Remove texture** takes the texture out of your livery and deletes its PNG.
 
-You are asked before anything is cleared or removed. **Right-click** any texture for the same actions without opening its properties. After Extract from base, Generate placeholder or Clear image, the viewport updates by itself.
+You are asked before anything is cleared or removed. **Right-click** any texture for the same actions without opening its properties. After Extract from aircraft, Generate placeholder or Clear image, the viewport updates by itself.
 
 ### Working on several textures at once
 
