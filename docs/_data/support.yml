@@ -8,4 +8,4 @@ symbol: "£"
 donations: 30         # one-off Buy Me a Coffee donations to date, as paid by supporters
 supporters: 4
 coffee_url: https://buymeacoffee.com/flaknine
-changes: 893         # commits at the last release (its build number); the release skill sets it
+changes: 1099        # commits at the last release (its build number); the release skill sets it
