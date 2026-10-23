@@ -5,7 +5,7 @@
 start: "2026-06-03"   # date of the first subscription receipt; charged on this day each month
 monthly: 18           # subscription cost per month
 symbol: "£"
-donations: 30         # one-off Buy Me a Coffee donations to date, as paid by supporters
-supporters: 4
+donations: 35         # one-off Buy Me a Coffee donations to date, as paid by supporters
+supporters: 5
 coffee_url: https://buymeacoffee.com/flaknine
 changes: 1099        # commits at the last release (its build number); the release skill sets it
