@@ -128,7 +128,9 @@ The toolkit classifies each texture using the official SDK **metadata** from the
 
 ## Painting your livery
 
-![A texture selected in the tree, with its preview, compile flags, paintkit artwork and actions on the right](assets/images/livery-textures.png)
+![A texture selected in the tree, with its preview, compile flags, image and paint sections and actions on the right](assets/images/livery-textures.png)
+
+You can paint a texture inside the toolkit with [Texture painting]({{ '/texture-painting.html' | relative_url }}), or in a program of your own and link the texture to your file, as described below. Both can be used on the same livery, one texture at a time.
 
 Once your livery is added, its Textures folder lists every texture it repaints, each with a small thumbnail of your artwork. There are two ways to get a starting image for each texture:
 
@@ -140,8 +142,9 @@ Once your livery is added, its Textures folder lists every texture it repaints, 
 
 **Select the Textures folder** for the livery-wide actions: **Add textures...**, **Generate placeholders** for every texture without an image, **Refresh**, **Open image folder**, and the **Paintkit path**.
 
-**Select a texture** for its preview, its state (for example "not used" or a size that differs from the base aircraft's), its **Texture flags**, its **Paintkit artwork**, and its actions:
+**Select a texture** for its preview, its state (for example "not used" or a size that differs from the base aircraft's), its **Texture flags**, its **Image** and **Paint** sections, and its actions:
 
+- **Paint texture** starts [Texture painting]({{ '/texture-painting.html' | relative_url }}) on it.
 - **Extract from aircraft** and **Generate placeholder**, as above.
 - **Extract UV map** writes a wireframe of the texture's UV layout, taken from the aircraft's model, beside your PNG with `_UV` added to its name.
 - **Clear image** removes just the PNG while keeping the texture in your livery, so you can swap a placeholder for an extracted image or the other way round.
@@ -159,17 +162,17 @@ A composite texture packs three separate things into one image: ambient occlusio
 
 When you extract a composite from the base aircraft, you can also have those three channels written out as separate grayscale images alongside it, named with `_AO`, `_ROUGHNESS` and `_METAL` suffixes. Edit whichever one you care about, and keep the packed composite as the file the sim gets.
 
-### Linking to a paintkit
+### Linking to artwork made in another program
 
-A texture's **Paintkit artwork** section finds the Photoshop, Affinity, GIMP or Paint.NET file (`.psd`, `.afphoto`, `.xcf`, `.pdn`) you paint it in, and **Open** opens it in its program. The search runs in this order:
+A texture's **Image** section shows its base image and finds the Photoshop, Affinity, GIMP or Paint.NET file (`.psd`, `.afphoto`, `.af`, `.xcf`, `.pdn`) you paint it in. **Link a file...** chooses one yourself. A linked file is named by its type (for example "Linked PSD"), **Open** opens it in its program, **Change** picks a different file and **Unlink** removes the link. A texture you paint with [Texture painting]({{ '/texture-painting.html' | relative_url }}) shows its paint file in the **Paint** section instead. The search for a linked file runs in this order:
 
-1. **A file you chose for this texture.** Select **Browse...** to choose any supported file in any folder, and **Clear chosen file** to go back to the automatic search. Useful when an aircraft's own paintkit files are not named like its textures.
-2. **A matching filename in the livery's Paintkit path**, set on the Textures folder. For a texture `FW190_EXTERIOR_1001_ALB.PNG`, the app finds `FW190_EXTERIOR_1001_ALB.psd`, `.afphoto`, `.xcf` or `.pdn`. Files made by the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) are found too, since it names its output `FW190_EXTERIOR_1001_ALB_Paintkit.psd`. A file named exactly after the texture wins over a `_Paintkit` one.
+1. **A file you chose for this texture.** Select **Link a file...** (or **Change**) to choose any supported file in any folder, and **Unlink** to go back to the automatic search. Useful when an aircraft's own paintkit files are not named like its textures.
+2. **A matching filename in the livery's Paintkit path**, set on the Textures folder. For a texture `FW190_EXTERIOR_1001_ALB.PNG`, the app finds `FW190_EXTERIOR_1001_ALB.psd`, `.afphoto`, `.af`, `.xcf` or `.pdn`. Files made by the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) are found too, since it names its output `FW190_EXTERIOR_1001_ALB_Paintkit.psd`. A file named exactly after the texture wins over a `_Paintkit` one.
 3. **A matching filename beside the PNG**, when no Paintkit path is set.
 
 ### Seeing your paint in 3D
 
-The viewport shows your artwork on the aircraft as you work, reading the PNGs in your workspace directly, so there is nothing to compile and no wait. After saving a repaint in your paint program, select **Refresh** on the viewport's toolbar. See [The viewport]({{ '/workspace.html' | relative_url }}#the-viewport) for everything it can do.
+The viewport shows your artwork on the aircraft as you work, reading the PNGs in your workspace directly, so there is nothing to compile and no wait. After saving a repaint in another paint program, select **Refresh** on the viewport's toolbar. Paint made with [Texture painting]({{ '/texture-painting.html' | relative_url }}) shows as you paint. See [The viewport]({{ '/workspace.html' | relative_url }}#the-viewport) for everything it can do.
 
 ![The viewport in Livery preview, showing a painted livery on the aircraft](assets/images/livery-preview.png)
 

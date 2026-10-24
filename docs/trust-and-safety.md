@@ -16,21 +16,22 @@ This page exists because the app triggers a few things worth explaining honestly
 
 ## Why Windows warns about it
 
-The toolkit isn't code-signed, so Windows SmartScreen will flag it as coming from an "Unknown publisher" the first time you run it. That's not a statement about what the app does — it's purely about the certificate.
+The toolkit isn't code-signed, so Windows SmartScreen will flag it as coming from an "Unknown publisher" the first time you run it. That's not a statement about what the app does, it's purely about the certificate.
 
 Code-signing certificates that actually clear SmartScreen (EV certificates) cost real money every year and are aimed at commercial software. This is a free hobby project built and maintained by one person, so it isn't signed. That's the whole story, there's no functional difference between a signed and unsigned build of the same code.
 
-If you'd rather verify the download yourself before running it, every release has a published SHA-256 hash (see [Verifying a download](#verifying-a-download) below) — check it against what you downloaded and you know you have exactly the file that was published, byte for byte.
+If you'd rather verify the download yourself before running it, every release has a published SHA-256 hash (see [Verifying a download](#verifying-a-download) below). Check it against what you downloaded and you know you have exactly the file that was published, byte for byte.
 
 ## What the app actually touches on your PC
 
 - **Your installed aircraft:** read-only. The toolkit reads a base aircraft's files to find its textures and registration data; it never writes into a base aircraft's own folders.
 - **Your project folder:** the only place it writes: your chosen workspace (loose PNG artwork + project file) and your chosen output/deployment folder.
-- **The official MSFS SDK tools already on your machine:** compiling a livery hands your artwork to Microsoft's own `fspackagetool.exe` (installed with the SDK via the sim's Dev Mode) and the community [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator) tool. The toolkit doesn't do its own custom compiling — it drives the same official tools you'd otherwise run by hand, and that briefly opens and closes Microsoft Flight Simulator itself, the same way those tools always have.
+- **The official MSFS SDK tools already on your machine:** compiling a livery hands your artwork to Microsoft's own `fspackagetool.exe` (installed with the SDK via the sim's Dev Mode) and the community [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator) tool. The toolkit doesn't do its own custom compiling: it drives the same official tools you'd otherwise run by hand, and that briefly opens and closes Microsoft Flight Simulator itself, the same way those tools always have.
 
 - **The app's own data folder** (`%LOCALAPPDATA%\MsfsLiveryToolkit`): its settings, session logs and the VFS model cache described below.
+- **Your sticker library folder**, if you use [Texture painting]({{ '/texture-painting.html' | relative_url }}): by default `Documents\MSFS Livery Toolkit\Stickers`, or wherever you set it in Settings. The app writes there only when you add an image to the library, and only inside that folder. Your painted layers are kept in your project's own workspace folder, with the rest of your artwork.
 
-Nothing outside those four areas.
+Nothing outside those five areas.
 
 ## The VFS model cache
 
@@ -54,6 +55,8 @@ Only to check for updates. Once a day, when the app starts, it reads the public 
 
 One other request: when you open **What's new** or the **Donate** window, the app reads the donation figures shown on this site's home page from the site itself ([support.json](https://theflaknine.github.io/MSFS-Livery-Toolkit/support.json)), so the card in the app matches the home page. That request carries nothing about you either, and it is not covered by the startup switch, because it only happens when you open one of those yourself.
 
+One more, and only when you ask for it: **Add from URL...** in the Texture Paint sticker library downloads the one image at the link you type. Nothing is sent but the request for that address, and the image is saved into your sticker library. The app makes no other request when you paint.
+
 Nothing else in the app uses the network. Every place that looks like a "link" (the Help button, Donate, the SDK download link, the download buttons in What's new) is the app asking Windows to open your normal web browser to a page, exactly like clicking a link in a text editor. The app never uploads anything, and collects no telemetry or usage data of any kind.
 
 ## What is `ooz.exe`?
@@ -64,7 +67,7 @@ A few things worth knowing about it:
 
 - **It's a genuinely separate program**, launched as its own process the same way the app launches the official MSFS SDK tools, it is never linked into or combined with the app's own code.
 - **It only ever touches local files you already have**, the base aircraft texture you asked to extract, and the PNG it writes out. No network access, no other purpose.
-- **Its complete source code ships inside every release**, alongside the license — you don't have to trust a compiled binary blindly; you (or anyone) can read exactly what it does, or rebuild it yourself from that source and compare.
+- **Its complete source code ships inside every release**, alongside the license, so you don't have to trust a compiled binary blindly; you (or anyone) can read exactly what it does, or rebuild it yourself from that source and compare.
 - **It's used narrowly**, only when you explicitly choose "Extract from aircraft" on a texture that needs it. Every other feature in the app never touches it.
 
 ## What is `texconv.exe`?

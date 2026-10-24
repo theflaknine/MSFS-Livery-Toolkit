@@ -55,6 +55,7 @@ nav_order: 1
 
 <div class="feature-list">
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One Workspace</strong>: your project as a tree, the aircraft in 3D beside it, and the settings for whatever you select, all on one page. If you know Blender, it will feel familiar.</span></div>
+<div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Texture painting</strong>: paint your textures inside the toolkit, in 2D or straight onto the aircraft in 3D. Layers, masks and groups, stripes drawn as curves, stickers, fill, clone stamp and selections, with your original image kept safe.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Automated livery setup</strong>: scans your installed aircraft, detects the profile, and builds a correct, sim-ready package structure for you.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>One-click texture extraction</strong>: decodes compiled KTX2/DDS art back into editable PNGs, even specially compressed files other tools can't open.</span></div>
 <div class="feature-row"><span class="feature-mark">&#10003;</span><span class="feature-text"><strong>Instant UV wireframes</strong>: generates a paint-alignment UV map straight from the aircraft's own 3D model.</span></div>
@@ -75,7 +76,8 @@ nav_order: 1
 <div class="home-cards">
 <a class="home-card" href="{{ '/getting-started.html' | relative_url }}"><span class="home-card-title">Getting started</span><span class="home-card-desc">First-run setup and creating your first project.</span></a>
 <a class="home-card" href="{{ '/workspace.html' | relative_url }}"><span class="home-card-title">The Workspace</span><span class="home-card-desc">The project tree, the 3D viewport, and the keys that drive them.</span></a>
-<a class="home-card" href="{{ '/creating-liveries.html' | relative_url }}"><span class="home-card-title">Creating liveries</span><span class="home-card-desc">Choosing textures, editing compile flags, and painting your livery.</span></a>
+<a class="home-card" href="{{ '/creating-liveries.html' | relative_url }}"><span class="home-card-title">Creating liveries</span><span class="home-card-desc">Choosing textures, editing compile flags, and linking your artwork.</span></a>
+<a class="home-card" href="{{ '/texture-painting.html' | relative_url }}"><span class="home-card-title">Texture painting</span><span class="home-card-desc">Painting your textures in 2D and on the aircraft in 3D.</span></a>
 <a class="home-card" href="{{ '/mesh-liveries.html' | relative_url }}"><span class="home-card-title">Mesh liveries</span><span class="home-card-desc">Adding your own 3D model to a livery.</span></a>
 <a class="home-card" href="{{ '/paintkit-builder.html' | relative_url }}"><span class="home-card-title">Paintkit Builder</span><span class="home-card-desc">Building a layered Photoshop paintkit from any installed aircraft.</span></a>
 <a class="home-card" href="{{ '/compiling.html' | relative_url }}"><span class="home-card-title">Compiling</span><span class="home-card-desc">Building your package and testing it in the sim.</span></a>
@@ -92,7 +94,7 @@ nav_order: 1
 The toolkit takes you through the whole livery pipeline:
 
 1. **Create:** pick an installed base aircraft, and the app detects its profile (2020 monolithic, 2024 monolithic, or 2024 modular) and builds out a correct, sim-ready livery package structure.
-2. **Work:** choose which of the aircraft's textures to repaint, generate correctly-sized blank canvases *or* extract the aircraft's own compiled textures back to editable PNGs, and edit each texture's compile flags. The aircraft sits in 3D beside your project, showing your artwork as you paint, so you can catch a misplaced decal without compiling first. Add your own 3D model if you want geometry as well as paint. When the paint is done, the app renders your livery's thumbnail images for you, so the sim's own capture tool is one less thing to learn.
+2. **Work:** choose which of the aircraft's textures to repaint, generate correctly-sized blank canvases *or* extract the aircraft's own compiled textures back to editable PNGs, and edit each texture's compile flags. Paint the textures in the toolkit itself, or in your own program. The aircraft sits in 3D beside your project, showing your artwork as you paint, so you can catch a misplaced decal without compiling first. Add your own 3D model if you want geometry as well as paint. When the paint is done, the app renders your livery's thumbnail images for you, so the sim's own capture tool is one less thing to learn.
 3. **Compile:** turn your PNG artwork into sim-ready DDS/KTX2 using the official MSFS SDK, build a full package ready to use in your community folder, then regenerate `layout.json` and launch the sim to test.
 
 A project is a single deployable package that can hold one or many liveries sharing the same base aircraft.

@@ -57,6 +57,10 @@ Textures are never cached, so extracting textures and rendering thumbnails for t
 
 **Extract at full bit depth** extracts the rare 16-bit base textures as 16-bit PNGs, as the SDK recommends, instead of 8-bit. The files are larger. It is recommended to leave this option on.
 
+## Sticker library
+
+**Sticker library folder** is where [Texture painting]({{ '/texture-painting.html' | relative_url }}) keeps your sticker images. It is an ordinary folder, by default `Documents\MSFS Livery Toolkit\Stickers`, so you can add, rename and share images in Windows Explorer too. Select **Browse...** to move it. Images already in the old folder are not moved for you.
+
 ## Appearance
 
 **Monochrome icons** shows the Workspace's icons in the text colour instead of coloured by type.

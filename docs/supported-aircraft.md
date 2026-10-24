@@ -69,6 +69,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
     <tr><th scope="row">Hide parts of the aircraft in the simulator</th><td>No <sup>15</sup></td><td>Yes</td><td>No <sup>16</sup></td><td>No</td><td>No</td><td>No</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Previews and thumbnails</th></tr>
     <tr><th scope="row">3D view in the Workspace, including click to add a texture</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">Texture painting, in 2D and on the aircraft in 3D</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr><th scope="row">Rendered thumbnails (experimental)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr><th scope="row">Placeholder thumbnails, or your own images</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Paintkit Builder</th></tr>

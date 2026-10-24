@@ -166,6 +166,10 @@ Adding a livery and adding textures are guided **tasks**. While one runs, the ta
 
 **Compile**, at the top of the Workspace and on the project row's right-click menu, opens the build screen in place of the Workspace. The back arrow, the project name at the top, or **Esc** returns you to where you were. See [Compiling]({{ '/compiling.html' | relative_url }}).
 
+### Texture Paint
+
+**Paint texture** on a texture, or on a part of the aircraft, changes the Workspace into [Texture Paint]({{ '/texture-painting.html' | relative_url }}): the tree folds away, a 2D panel takes the left half and the aircraft stays in 3D on the right. The header shows **Save**, **Discard** and **Done**, and Compile is locked until you leave.
+
 ---
 
 ## Messages and saving
