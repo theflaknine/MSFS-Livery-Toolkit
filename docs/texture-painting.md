@@ -7,7 +7,7 @@ nav_order: 3.2
 # Texture painting
 {: .no_toc }
 
-Texture Paint lets you paint your livery's textures inside the toolkit, on the flat texture or straight onto the aircraft in 3D. You get layers, masks, groups, stripes drawn as curves, stickers, a fill, a clone stamp and selections, and everything you paint is written back to your livery's PNG files.
+Texture Paint lets you paint your livery's textures inside the toolkit, on the flat texture or straight onto the aircraft in 3D. You get layers, masks, groups, stripes drawn as curves, stickers, a fill, a clone stamp and selections, and your original images are never changed: the paint is kept as layers on top of them, and the compile uses the result.
 
 ![Texture Paint: the 2D texture on the left with its Layers strip, and the aircraft in 3D on the right with its Objects strip](assets/images/paint-overview.png)
 
@@ -35,17 +35,17 @@ Some textures can't be painted yet. The app tells you why and, where it can, off
 - **The texture isn't in your livery.** Choose Add to put it in.
 - **It has no image yet.** Choose Generate placeholder or Extract from aircraft first.
 - **The aircraft is protected by the simulator.** Painting isn't available for protected aircraft.
-- **The image is 16-bit.** Texture Paint refuses 16-bit PNGs.
 
 ---
 
 ## Where your paint is kept
 
-Painting never changes your original image in place without a way back.
+Painting never changes your original image. The app keeps your paint separate and combines the two when it needs the finished texture.
 
-- **Layers.** Your texture opens with its existing image as a locked **Base** layer, and everything you paint goes on layers above it. Layers, masks and groups are stored in a paint file, `Paint\<texture name>.ltpaint`, inside the livery's workspace folder.
-- **The PNG.** Saving also writes the flattened result to the texture's PNG, so the 3D view, the compile and your other tools all see the finished picture.
-- **Backups.** The first time you save in a session, the previous paint file and PNG are copied to `Paint\backups`, and the last two are kept.
+- **Your original image.** The texture's PNG stays exactly as it was. It opens in Texture Paint as a locked **Base** layer, and everything you paint goes on layers above it.
+- **The paint file.** Layers, masks and groups are stored in `Paint\<texture name>.ltpaint`, inside the livery's workspace folder. It holds your paint only, not a copy of the base.
+- **The combined texture.** Each save also writes the base and your paint together as one image, `Paint\baked\<texture name>.PNG`, with the same name as your original. The 3D view, the thumbnails and the compile use this one, so your paint reaches the compiled livery while the original stays as it is. It is 8-bit, even when the original is 16-bit.
+- **Backups.** The first time you save in a session, the previous paint file is copied to `Paint\backups`, and the last two are kept. The combined image is rebuilt from the other two, so it needs no backup.
 
 The paint file belongs to the toolkit. To keep painting in Photoshop or another editor instead, link the texture to that file as described in [Creating liveries]({{ '/creating-liveries.html' | relative_url }}#linking-to-artwork-made-in-another-program).
 
@@ -172,12 +172,11 @@ Painting an albedo texture brings its composite along when it belongs to the sam
 - Save often with **Ctrl+S**. Every save keeps a backup.
 - Work from a selection or a mask when you need a clean edge. They are quicker to correct than a stroke.
 - Turn on **Paint through** only when you mean to. On a big texture it is much slower than painting what you can see.
-- When you are happy, leave with **Done**, then [compile]({{ '/compiling.html' | relative_url }}) as usual. The compile reads the flattened PNG, not the paint file.
+- When you are happy, leave with **Done**, then [compile]({{ '/compiling.html' | relative_url }}) as usual. The compile uses the combined texture, so your original PNG is left untouched.
 
 ## What isn't there yet
 
 - Painting isn't available for aircraft the simulator protects.
-- 16-bit PNGs aren't painted.
 - One brush stroke doesn't paint albedo and composite channels together. Switch channels to paint each.
 - No layer styles (such as colour overlay), guides or rulers, and you can't select several layers at once.
 - Moving a linked layer up or down in a document with groups doesn't restack it in the aircraft's other textures.
