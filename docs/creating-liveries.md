@@ -164,9 +164,9 @@ When you extract a composite from the base aircraft, you can also have those thr
 
 ### Linking to artwork made in another program
 
-A texture's **Image** section shows its base image and finds the Photoshop, Affinity, GIMP or Paint.NET file (`.psd`, `.afphoto`, `.af`, `.xcf`, `.pdn`) you paint it in. **Link a file...** chooses one yourself. A linked file is named by its type (for example "Linked PSD"), **Open** opens it in its program, **Change** picks a different file and **Unlink** removes the link. A texture you paint with [Texture painting]({{ '/texture-painting.html' | relative_url }}) shows its paint file in the **Paint** section instead. The search for a linked file runs in this order:
+A texture's **Image** section shows its base image and finds the Photoshop, Affinity, GIMP or Paint.NET file (`.psd`, `.afphoto`, `.af`, `.xcf`, `.pdn`) you paint it in. **Link a file...** chooses one yourself. A linked file is named by its type (for example "Linked PSD"); **Open** (or **Edit**, when the app knows the program) opens it, **Change...** picks a different file, and **Unlink** stops linking it, leaving the file itself alone. A file the app found by name can be unlinked too, and **Use** brings it back. Paint made with [Texture painting]({{ '/texture-painting.html' | relative_url }}) is listed in the **Paint** section below. The app looks for a linked file in this order:
 
-1. **A file you chose for this texture.** Select **Link a file...** (or **Change**) to choose any supported file in any folder, and **Unlink** to go back to the automatic search. Useful when an aircraft's own paintkit files are not named like its textures.
+1. **A file you chose for this texture** with **Link a file...** or **Change...**, in any folder. Useful when an aircraft's own paintkit files are not named like its textures.
 2. **A matching filename in the livery's Paintkit path**, set on the Textures folder. For a texture `FW190_EXTERIOR_1001_ALB.PNG`, the app finds `FW190_EXTERIOR_1001_ALB.psd`, `.afphoto`, `.af`, `.xcf` or `.pdn`. Files made by the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}) are found too, since it names its output `FW190_EXTERIOR_1001_ALB_Paintkit.psd`. A file named exactly after the texture wins over a `_Paintkit` one.
 3. **A matching filename beside the PNG**, when no Paintkit path is set.
 

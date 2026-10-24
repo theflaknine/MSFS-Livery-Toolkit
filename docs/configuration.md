@@ -59,7 +59,7 @@ Textures are never cached, so extracting textures and rendering thumbnails for t
 
 ## Sticker library
 
-**Sticker library folder** is where [Texture painting]({{ '/texture-painting.html' | relative_url }}) keeps your sticker images. It is an ordinary folder, by default `Documents\MSFS Livery Toolkit\Stickers`, so you can add, rename and share images in Windows Explorer too. Select **Browse...** to move it. Images already in the old folder are not moved for you.
+**Sticker library folder** is where [Texture painting]({{ '/texture-painting.html' | relative_url }}) keeps your sticker images. It is an ordinary folder, by default `Documents\MSFS Livery Toolkit\Stickers`, so you can add, rename and share images in Windows Explorer too. Type a path, or select **Browse...** to choose another folder.
 
 ## Appearance
 

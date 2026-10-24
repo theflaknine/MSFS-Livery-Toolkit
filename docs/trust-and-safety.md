@@ -29,7 +29,7 @@ If you'd rather verify the download yourself before running it, every release ha
 - **The official MSFS SDK tools already on your machine:** compiling a livery hands your artwork to Microsoft's own `fspackagetool.exe` (installed with the SDK via the sim's Dev Mode) and the community [MSFSLayoutGenerator](https://github.com/HughesMDflyer4/MSFSLayoutGenerator) tool. The toolkit doesn't do its own custom compiling: it drives the same official tools you'd otherwise run by hand, and that briefly opens and closes Microsoft Flight Simulator itself, the same way those tools always have.
 
 - **The app's own data folder** (`%LOCALAPPDATA%\MsfsLiveryToolkit`): its settings, session logs and the VFS model cache described below.
-- **Your sticker library folder**, if you use [Texture painting]({{ '/texture-painting.html' | relative_url }}): by default `Documents\MSFS Livery Toolkit\Stickers`, or wherever you set it in Settings. The app writes there only when you add an image to the library, and only inside that folder. Your painted layers are kept in your project's own workspace folder, with the rest of your artwork.
+- **Your sticker library folder**, if you use [Texture painting]({{ '/texture-painting.html' | relative_url }}): by default `Documents\MSFS Livery Toolkit\Stickers`, or wherever you set it in Settings. The app writes there only when you add, move, rename or delete images in the library, and only inside that folder. Your painted layers are kept in your project's own workspace folder, with the rest of your artwork.
 
 Nothing outside those five areas.
 
@@ -55,7 +55,7 @@ Only to check for updates. Once a day, when the app starts, it reads the public 
 
 One other request: when you open **What's new** or the **Donate** window, the app reads the donation figures shown on this site's home page from the site itself ([support.json](https://theflaknine.github.io/MSFS-Livery-Toolkit/support.json)), so the card in the app matches the home page. That request carries nothing about you either, and it is not covered by the startup switch, because it only happens when you open one of those yourself.
 
-One more, and only when you ask for it: **Add from URL...** in the Texture Paint sticker library downloads the one image at the link you type. Nothing is sent but the request for that address, and the image is saved into your sticker library. The app makes no other request when you paint.
+One more, and only when you ask for it: **Add from URL...** in the Texture Paint sticker library downloads the one image at the link you type, in a single request (a Wikimedia file page link is turned into the address of the file itself). Nothing about you is sent, only the request for that address and the app's name, and the image is saved into your sticker library. The app makes no other request when you paint.
 
 Nothing else in the app uses the network. Every place that looks like a "link" (the Help button, Donate, the SDK download link, the download buttons in What's new) is the app asking Windows to open your normal web browser to a page, exactly like clicking a link in a text editor. The app never uploads anything, and collects no telemetry or usage data of any kind.
 
