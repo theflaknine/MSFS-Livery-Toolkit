@@ -101,7 +101,13 @@ Paint only lands inside a selection. Select tools in either view:
 | Polygon lasso (click each corner, double-click or **Enter** to close) | Shift+L |
 | Magic wand (2D only) | W |
 
-In 3D a selection is a shape on the screen, and only the surface inside it takes paint. Each view keeps its own selection. **Ctrl+D** clears the selection in the view under the pointer, and **Ctrl+Shift+I** inverts it.
+In 3D a selection is a shape on the screen, and only the surface inside it takes paint. It stays on the screen, so it no longer lines up with the aircraft once you move the camera.
+
+Turn on **Wrap on model** in the options strip to wrap each shape onto the aircraft instead. The selection then stays on the surface as you turn the camera, and the 2D panel shows the same selection. The view stays orthographic while a select tool is in use. **Shift** adds to the selection and **Alt** subtracts, so you can turn the aircraft and trim it from another angle. **Select through** also selects surfaces hidden behind others, such as both sides of a fin, and with **Mirror** on the other side is selected too. Outside the selection the aircraft shows a red and dark checker, with a dashed line along the edge.
+
+A selection on a texture, made in either view, keeps the brush, eraser, clone stamp and Fill inside it in 3D as well as 2D. Stickers, text and stripes aren't affected. While a wrapped selection exists, parts it didn't reach take no paint.
+
+In 3D, **Ctrl+D** clears every selection and **Ctrl+Shift+I** inverts it. In 2D they act on the texture shown.
 
 ---
 
