@@ -9,7 +9,9 @@ nav_order: 3.5
 
 A livery does not have to be paint alone. A **mesh livery** also carries a small 3D model of its own, which the simulator merges into, or attaches to, the aircraft's model (see [Merging or attaching](#monolithic-aircraft-merging-or-attaching)): stripes, lettering or a registration as real geometry that stays crisp at any distance, or an extra part such as an aerial or a pod. Your model can even ride the aircraft's moving parts, so a stripe across a door opens with the door.
 
-You build the model in a 3D modelling tool that exports glTF for MSFS. Blender is a great free choice, and it is the one this page uses in its examples. The toolkit checks the model, compiles it with your livery, and writes everything the simulator needs to merge it.
+For a logo or a sign, you may not need a 3D modelling tool at all: [Mesh decals]({{ '/mesh-decals.html' | relative_url }}) places an SVG or PNG on the aircraft as geometry inside the toolkit.
+
+For anything else, you build the model in a 3D modelling tool that exports glTF for MSFS. Blender is a great free choice, and it is the one this page uses in its examples. The toolkit checks the model, compiles it with your livery, and writes everything the simulator needs to merge it.
 
 1. TOC
 {:toc}
@@ -127,7 +129,13 @@ The **Materials** folder under the Model node lists each material in your model.
 
 ![A decal material selected, with its colour and surface settings](assets/images/mesh-material.png)
 
-Your own file is never changed. The toolkit applies these settings to a copy while it builds, and **Reset** on any row puts back what you exported. On a textured decal the colour multiplies the texture, so it tints rather than replaces.
+Your own file is never changed. The toolkit applies these settings to a copy while it builds, and **Reset** on any row puts back what you exported. A changed setting says **Differs from your model** and shows what you exported. On a textured decal the colour multiplies the texture, so it tints rather than replaces.
+
+### Draw order
+
+Where decal materials overlap, the higher **Draw order** is on top, from -999 to 999. Each decal material's row in the tree shows its draw order as a badge; hover it to see whether the number is set in your model. Change it on the material's properties, and select **Reset draw orders** in the **Materials** section of the Model node to put back your model's own draw order on every material.
+
+If the livery also has [mesh decals]({{ '/mesh-decals.html' | relative_url }}), they are built into a model of their own beside yours, with draw orders of their own.
 
 ---
 

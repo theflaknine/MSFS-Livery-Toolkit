@@ -24,7 +24,7 @@ Everything in the project is one tree:
 - **Each livery** below it. One livery is *loaded* at a time: it is the one you are working on, the one drawn in the viewport, and it is marked by an accent bar down the left edge of its rows. Double-click another livery, or right-click it and choose **Load livery**, to switch.
 - **Under the loaded livery**, one node for each part of a livery:
   - **Aircraft model**: every part of the aircraft, with controls to hide parts from the preview and from your thumbnails. See [The viewport](#the-viewport).
-  - **Model**: your own 3D model, if the livery has one. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
+  - **Model**: your own 3D model, if the livery has one, and its **Mesh decals** folder. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}) and [Mesh decals]({{ '/mesh-decals.html' | relative_url }}).
   - **Textures**: one row per texture, each with a small thumbnail of your artwork. Hover a row for a larger preview. See [Creating liveries]({{ '/creating-liveries.html' | relative_url }}).
   - **Thumbnails**, **Registration number**, **Details** and **Availability**.
 - **Add new livery...** is always the last row under the project, and **Add textures...** the last row in every Textures folder.
