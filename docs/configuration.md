@@ -21,7 +21,7 @@ The **Settings** page holds the settings the toolkit needs to find your aircraft
 
 ## Aircraft
 
-- **Aircraft source folders:** the folders scanned for base aircraft. Your MSFS Community folders are detected automatically, so there is no need to add them; **Detect Community folders** finds them again if needed. Add any other folder, such as an add-on linker location, with **Add folder...**.
+- **Aircraft source folders:** the folders scanned for base aircraft. Your MSFS Community folders are detected automatically, so there is no need to add them; **Detect Community folders** finds them again if needed. Add any other folder, such as an add-on linker location, with **Add folder...**. If MSFS 2020 is installed, **Add MSFS 2020 aircraft** adds the folders that hold its stock and Marketplace aircraft.
 - **Excluded texture keywords:** textures whose name or folder contains one of these words are left out of the texture list when you add a livery or add textures, to filter out textures livery artists rarely need, such as "tire" or "gauge". Edit the list as you need; **Restore defaults** puts it back.
 
 ## Projects and output

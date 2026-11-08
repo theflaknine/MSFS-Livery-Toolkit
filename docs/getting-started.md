@@ -20,7 +20,7 @@ Grab the latest portable release using the button above. There is no installer: 
 
 Before you can discover aircraft or compile anything, open the **Settings** page and set up:
 
-- **Aircraft source folders:** the folders scanned for installed base aircraft. Use **Detect Community folders** to find them automatically, and / or **Add folder…** to point at a Community / add-on-linker location manually.
+- **Aircraft source folders:** the folders scanned for installed base aircraft. Use **Detect Community folders** to find them automatically, and / or **Add folder…** to point at a Community / add-on-linker location manually. On MSFS 2020, select **Add MSFS 2020 aircraft** to include its stock and Marketplace aircraft.
 - **At least one MSFS SDK path:** (2020 or 2024). The app auto-detects the default install locations; confirm or correct them here.
 
 If either is missing, the Home page shows a **"Let's get you set up"** banner with a shortcut to Settings, and *Discover aircraft* stays disabled until it's resolved.
