@@ -7,7 +7,7 @@ nav_order: 3.6
 # Mesh decals
 {: .no_toc }
 
-A **mesh decal** is a logo, sign or placard added to the aircraft as thin geometry just off its skin, instead of being painted into its textures. It stays sharp however close you get, and it needs no 3D modelling tool: you give the toolkit an SVG or a PNG, place it on the aircraft in the viewport, and the toolkit cuts it to the shape of the skin and builds it with your livery.
+A **mesh decal** is a logo, sign or placard added to the aircraft as thin geometry just off its skin, instead of being painted into its textures. An SVG decal stays sharp however close you get. A PNG decal is still an image, but it covers only its own small patch of the aircraft, so it can carry far more detail there than the aircraft's own texture. Neither needs a 3D modelling tool: you give the toolkit an SVG or a PNG, place it on the aircraft in the viewport, and the toolkit cuts it to the shape of the skin and builds it with your livery.
 
 ![A mesh decal placed on the aircraft, with its properties on the right](assets/images/mesh-decals-overview.png)
 
@@ -18,7 +18,7 @@ A **mesh decal** is a logo, sign or placard added to the aircraft as thin geomet
 
 ## Which aircraft
 
-Mesh decals work on **MSFS 2024 aircraft**, both monolithic and modular, including stock and Marketplace aircraft read through the Virtual File System. They are not available for MSFS 2020 aircraft, for aircraft the simulator protects, or for aircraft whose model has no node ids, the identifiers the simulator merges by (see [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}#when-the-toolkit-falls-back-to-attaching)). On those, the **Mesh decals** row is greyed out and says why. See [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}).
+Mesh decals work on **MSFS 2024 aircraft**, both monolithic and modular, including stock aircraft read through the Virtual File System. They are not available for MSFS 2020 aircraft, for aircraft the simulator protects (Marketplace purchases usually are), or for aircraft whose model has no node ids, the identifiers the simulator merges by (see [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}#when-the-toolkit-falls-back-to-attaching)). On those, the **Mesh decals** row is greyed out and says why. See [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}).
 
 ---
 
@@ -94,9 +94,9 @@ The **Eye** on a decal's row hides it in the viewport and leaves it out of the b
 
 ---
 
-## Stock and Marketplace aircraft
+## Stock aircraft
 
-The simulator can't run while a livery compiles, but a stock or Marketplace aircraft can only be read while it runs. So the toolkit cuts its mesh decals against a saved copy of the aircraft's model.
+The simulator can't run while a livery compiles, but a stock aircraft can only be read from the Virtual File System while it runs. So the toolkit cuts its mesh decals against a saved copy of the aircraft's model.
 
 The **Mesh decals** folder's **Compile** section shows the **Status**. The copy is saved while the livery is open with the simulator's VFS Projector on, and saved again after the simulator updates the aircraft. Until it says **Ready**, open the livery once with the VFS Projector on. **Clear cache...** in [Settings]({{ '/configuration.html' | relative_url }}#vfs-model-cache) removes it.
 
