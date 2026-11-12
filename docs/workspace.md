@@ -92,7 +92,11 @@ Elsewhere on the toolbar:
 - **Normal depth**: how strongly normal maps are applied. Turn it down until it matches what you see in MSFS.
 - **Model alignment**: how your livery's own model is placed. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
 - **Tree**: **By file** lists every part under its model file. **Node hierarchy** lists them the way the aircraft's developer built them, each part under the node it hangs from. Long chains of empty nodes are merged into one row, and hiding a part hides everything inside it.
-- **Statistics**: the triangle count, model files, meshes and estimated video memory, in the corner of the view. The memory figure always shows, and turns amber if the scene is getting heavy.
+- **Statistics**: a table in the corner of the view: the model, its geometry, textures and decals, and video memory. The **Video memory** figure in the top corner always shows. It is the app's real video memory use, read from Windows, and turns amber if the scene is getting heavy.
+
+### Centre of rotation
+
+The view normally turns about what it is looking at. To turn about one spot instead, such as a door you are working on, **Alt+middle-click** it, or right-click it and select **Orbit about here**. A marker shows the centre. **Full stop** frames the selection and turns about its centre. **Home**, or **Reset centre of rotation** on the right-click menu, puts it back.
 
 Glass is drawn see-through and glossy in every view, so windows never hide the cockpit.
 
@@ -146,9 +150,10 @@ The mouse and key hints are always along the bottom of the viewport. The full se
 |---|---|---|
 | Rotate | Middle button drag | Arrow keys |
 | Pan | Shift + middle button drag | Ctrl + arrow keys |
-| Zoom | Wheel | Z to zoom in, Shift+Z to zoom out |
+| Zoom | Wheel, or Ctrl + middle button drag | Z to zoom in, Shift+Z to zoom out |
 | Frame the whole aircraft | | Home |
-| Frame the selection | | Full stop |
+| Frame the selection, and turn about it | | Full stop |
+| Turn about a point | Alt + middle-click, or right-click > Orbit about here | |
 | Select | Left click, Ctrl-click to add or remove, drag a box | |
 | Hide or show the selection | Right-click menu | H |
 | Undo | | Ctrl+Z |

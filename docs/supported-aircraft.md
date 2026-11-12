@@ -66,7 +66,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
     <tr><th scope="row">Registration number</th><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>Yes <sup>7, 17</sup></td><td>No</td><td>No</td><td>Partly <sup>8</sup></td></tr>
     <tr><th scope="row">Availability (which configurations a livery appears under)</th><td>Not needed</td><td>Not needed</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>9</sup></td></tr>
     <tr><th scope="row">Mesh liveries (your own 3D model)</th><td>No <sup>12</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-    <tr><th scope="row">Mesh decals (logos and signs as geometry, from an SVG or PNG)</th><td>No <sup>15</sup></td><td>Yes <sup>18</sup></td><td>Yes <sup>18</sup></td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">Mesh decals (logos and signs from an SVG or PNG, and drawn areas, as geometry)</th><td>No <sup>15</sup></td><td>Yes <sup>18</sup></td><td>Yes <sup>18</sup></td><td>No</td><td>No</td><td>No</td></tr>
     <tr><th scope="row">Hide parts of the aircraft in the simulator</th><td>No <sup>15</sup></td><td>Yes</td><td>No <sup>16</sup></td><td>No</td><td>No</td><td>No</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Previews and thumbnails</th></tr>
     <tr><th scope="row">3D view in the Workspace, including click to add a texture</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>

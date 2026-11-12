@@ -276,7 +276,7 @@ The **Pen** draws a stripe onto the aircraft as a curve, which is how cheatlines
 
 1. Choose the **Pen** (**P**) and click points along the aircraft. **Alt+click** makes a sharp corner. **Shift** keeps a point level or straight up from the last.
 2. Press **Enter**, double-click, or click the first point to finish. The stripe is filled with the foreground colour.
-3. Switch to **Edit stripes** (**A**) and click a stripe to select it. Drag its points, and drag its width handles so the stripe tapers along its length. Click the curve to add a point, **Alt+click** a point to make it sharp or smooth again, **Shift** while dragging keeps a point level or straight up, and right-click a point to delete it.
+3. Switch to **Edit stripes** (**A**) and click a stripe to select it. Drag its points, and drag its width handles so the stripe tapers along its length. Click the curve to add a point, or **Alt+click** it to add a sharp corner. **Alt+click** a point to make it sharp or smooth again, **Shift** while dragging keeps a point level or straight up, and right-click a point to delete it.
 
 The Pen's options are for the next stripe:
 
