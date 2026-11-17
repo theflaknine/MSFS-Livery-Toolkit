@@ -7,6 +7,8 @@ nav_order: 2
 # Getting started
 {: .no_toc }
 
+New to the app? Install and set it up here, then follow [Your first livery]({{ '/first-livery.html' | relative_url }}) from start to finish.
+
 1. TOC
 {:toc}
 
