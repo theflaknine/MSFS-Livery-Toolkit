@@ -50,7 +50,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Finding and setting up</th></tr>
     <tr><th scope="row">Listed in Discover aircraft</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No <sup>1</sup></td><td>No <sup>2</sup></td><td>Yes <sup>11</sup></td></tr>
     <tr><th scope="row">Create projects and liveries</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
-    <tr><th scope="row">Stock and Marketplace aircraft</th><td>Untested <sup>3</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><th scope="row">Stock and Marketplace aircraft</th><td>Yes <sup>3</sup></td><td>Yes <sup>3</sup></td><td>Yes <sup>3</sup></td><td>No</td><td>No</td><td>Yes</td></tr>
     <tr><th scope="row">Proper aircraft name in the list</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>4</sup></td></tr>
     <tr><th scope="row">New project from an existing livery</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>13</sup></td></tr>
     <tr><th scope="row">Convert an MSFS 2020 livery to the aircraft's 2024 version</th><td>Not needed</td><td>Yes <sup>14</sup></td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
@@ -87,7 +87,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 
 1. **Encrypted MSFS 2020 aircraft are not supported.** MSFS 2020 protects its aircraft differently, and I have not been able to test one.
 2. **Encrypted 2024 mono aircraft are not listed.** Too little of them can be read to build a working livery. The Discover message tells you how many aircraft were left out for this reason.
-3. **Stock and Marketplace aircraft are read from the simulator's Virtual File System** while MSFS is running. Their 3D models can also be shown from the toolkit's own cache with the simulator closed; see [Working with the simulator closed]({{ '/workspace.html' | relative_url }}#working-with-the-simulator-closed). This is tested with MSFS 2024 only.
+3. **MSFS 2020 has no Virtual File System**: its stock and Marketplace aircraft are ordinary folders on your drive. Select **Add MSFS 2020 aircraft** in Settings and Discover aircraft finds them. **MSFS 2024's are read from the simulator's Virtual File System** while MSFS is running. Their 3D models can also be shown from the toolkit's own cache with the simulator closed; see [Working with the simulator closed]({{ '/workspace.html' | relative_url }}#working-with-the-simulator-closed).
 4. **An encrypted aircraft shows its folder name** until you pick its real name from the list MSFS 2024 reports while it's running. Your choice is remembered.
 5. **The texture list for an encrypted aircraft is built from its lower-detail models**, because the highest-detail ones can't be read. A texture used only by the highest-detail model may appear under the aircraft's other texture folders instead.
 6. **The files that say which textures each configuration needs are protected**, so the check can't tell what is missing. Check the livery in the simulator for pink areas instead.
