@@ -20,7 +20,7 @@ For anything else, you build the model in a 3D modelling tool that exports glTF 
 
 ## Which aircraft
 
-Mesh liveries work on **MSFS 2024 aircraft**, both monolithic and modular, including stock aircraft read through the Virtual File System. MSFS 2020 aircraft can carry mesh liveries too, but the toolkit does not build them for 2020 yet. Aircraft the simulator protects are not supported (Marketplace purchases usually are protected). See [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}).
+Mesh liveries work on **MSFS 2024 aircraft**, both monolithic and modular, including stock aircraft read through the Virtual File System, and on **MSFS 2020 aircraft**. A 2020 mesh livery needs the MSFS 2020 SDK to compile, even with texconv selected in Settings, because texconv can't compile a 3D model. Aircraft the simulator protects are not supported (Marketplace purchases usually are protected). See [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}).
 
 ---
 

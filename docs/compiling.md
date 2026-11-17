@@ -21,7 +21,7 @@ Liveries with a [mesh model]({{ '/mesh-liveries.html' | relative_url }}) have it
 
 ## Running a build
 
-1. Click **Compile**. The app locks navigation for the whole build to protect your data.
+1. Select **Compile project**, then **Compile** to confirm. The app locks navigation for the whole build to protect your data.
 2. A progress bar tracks status (for example "Building livery N of M").
 3. On success, use the quick actions to **Open build log** or **Open folder** for the built package.
 
@@ -30,7 +30,16 @@ If you click **Cancel**, the toolkit stops its build chain, but it won't force-t
 ## Other build actions
 
 - **Update layout.json only:** regenerates just `layout.json` (no texture recompile, no sim launch). The page shows that file's last-modified time. Every full compile also regenerates `layout.json` from scratch, so file sizes and verification hashes always stay in sync.
-- **Launch Microsoft Flight Simulator:** starts the sim directly (fast-launch, skipping intro videos) to test your livery in-game. If both a Steam and an MS Store copy of the required generation are installed, the app asks which to launch.
+- **Launch:** starts the sim directly (fast-launch, skipping intro videos) to test your livery in-game. If both a Steam and an MS Store copy of the required generation are installed, the app asks which to launch. An MSFS 2020 project gets a button for each simulator you have installed, **Launch MSFS 2020** and **Launch MSFS 2024**.
+
+## Enabling the package in MSFS Addons Linker
+
+The simulator loads your package only from its Community folder. If you use MSFS Addons Linker to manage that folder, the Compile page works with it once the project has been compiled.
+
+- A line under the Launch buttons shows the package's status in MSFS Addons Linker, with a dot coloured as MSFS Addons Linker shows it: **Enabled**, **Not enabled**, or **Not listed** (grey) when the package isn't in any of its **My Addons Folders**. For that last one, the line gives the folder to add, with a **Copy** button.
+- Select **Enable in MSFS Addons Linker when launching**, and **Launch** enables the package first, if it isn't already. The setting applies to every project. Disable the package in MSFS Addons Linker itself.
+
+The toolkit only reads MSFS Addons Linker's settings, never changes them: enabling the package makes the same link in the Community folder that MSFS Addons Linker would.
 
 ## Warnings that do not block compiling
 

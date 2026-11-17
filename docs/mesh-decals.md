@@ -18,7 +18,7 @@ A **mesh decal** is a logo, sign, placard or area of colour added to the aircraf
 
 ## Which aircraft
 
-Mesh decals work on **MSFS 2024 aircraft**, both monolithic and modular, including stock aircraft read through the Virtual File System. They are not available for MSFS 2020 aircraft, for aircraft the simulator protects (Marketplace purchases usually are), or for aircraft whose model has no node ids, the identifiers the simulator merges by (see [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}#when-the-toolkit-falls-back-to-attaching)). On those, the **Mesh decals** row is greyed out and says why. See [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}).
+Mesh decals work on **MSFS 2024 aircraft**, both monolithic and modular, including stock aircraft read through the Virtual File System, and on **MSFS 2020 aircraft**, where they need the MSFS 2020 SDK to compile. On a monolithic aircraft whose model has no node ids, the identifiers the simulator merges by, decals are attached instead of merged (see [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}#when-the-toolkit-falls-back-to-attaching)). They are not available for aircraft the simulator protects (Marketplace purchases usually are), or for modular aircraft with no node ids. On those, the **Mesh decals** row is greyed out and says why. See [Supported aircraft]({{ '/supported-aircraft.html' | relative_url }}).
 
 ---
 

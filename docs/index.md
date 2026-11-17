@@ -76,6 +76,7 @@ nav_order: 1
 
 <div class="home-cards">
 <a class="home-card" href="{{ '/getting-started.html' | relative_url }}"><span class="home-card-title">Getting started</span><span class="home-card-desc">First-run setup and creating your first project.</span></a>
+<a class="home-card" href="{{ '/first-livery.html' | relative_url }}"><span class="home-card-title">Your first livery</span><span class="home-card-desc">One livery from start to finish, on the Cessna 152.</span></a>
 <a class="home-card" href="{{ '/workspace.html' | relative_url }}"><span class="home-card-title">The Workspace</span><span class="home-card-desc">The project tree, the 3D viewport, and the keys that drive them.</span></a>
 <a class="home-card" href="{{ '/creating-liveries.html' | relative_url }}"><span class="home-card-title">Creating liveries</span><span class="home-card-desc">Choosing textures, editing compile flags, and linking your artwork.</span></a>
 <a class="home-card" href="{{ '/texture-painting.html' | relative_url }}"><span class="home-card-title">Texture painting</span><span class="home-card-desc">Painting your textures in 2D and on the aircraft in 3D.</span></a>
@@ -83,7 +84,7 @@ nav_order: 1
 <a class="home-card" href="{{ '/mesh-decals.html' | relative_url }}"><span class="home-card-title">Mesh decals</span><span class="home-card-desc">Logos and signs from an SVG or PNG, and drawn areas of colour, on the aircraft as geometry.</span></a>
 <a class="home-card" href="{{ '/paintkit-builder.html' | relative_url }}"><span class="home-card-title">Paintkit Builder</span><span class="home-card-desc">Building a layered Photoshop paintkit from any installed aircraft.</span></a>
 <a class="home-card" href="{{ '/compiling.html' | relative_url }}"><span class="home-card-title">Compiling</span><span class="home-card-desc">Building your package and testing it in the sim.</span></a>
-<a class="home-card" href="{{ '/configuration.html' | relative_url }}"><span class="home-card-title">Configuration</span><span class="home-card-desc">SDK paths, aircraft source folders, and settings.</span></a>
+<a class="home-card" href="{{ '/configuration.html' | relative_url }}"><span class="home-card-title">Settings</span><span class="home-card-desc">SDK paths, aircraft source folders, and settings.</span></a>
 <a class="home-card" href="{{ '/trust-and-safety.html' | relative_url }}"><span class="home-card-title">Trust &amp; safety</span><span class="home-card-desc">What the app does on your machine, and what it never does.</span></a>
 <a class="home-card" href="{{ '/ai-assisted-development.html' | relative_url }}"><span class="home-card-title">AI-assisted development</span><span class="home-card-desc">How this toolkit was designed, built, and verified.</span></a>
 <a class="home-card" href="{{ '/changelog.html' | relative_url }}"><span class="home-card-title">Changelog</span><span class="home-card-desc">What's new in each release, pulled live from GitHub.</span></a>

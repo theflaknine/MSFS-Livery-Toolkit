@@ -28,6 +28,8 @@ The Workspace changes to Texture Paint:
 - The page header reads **Workspace: Texture Paint**, with how many textures are open, whether there are unsaved changes, and **Save**, **Discard** and **Done**. The box above the 2D panel names the texture you are painting and switches to another. A dot marks a texture you have painted since you started.
 - **Compile**, switching livery and closing the project are locked until you leave. If you try, the app asks whether to save.
 
+The first time you open Texture Paint, a short guide, **How Texture Paint works**, takes you through it in a few cards. Open it again from the **?** in the Texture Paint header, or from **How Texture Paint works** in the **?** menu at the top of the window.
+
 **Ctrl+S** saves and stays in the mode. **Done** saves and leaves. **Discard** leaves and throws away everything since your last save, after asking. **Esc** steps back one level at a time: back to the Pick tool, then the selection clears, then it offers to leave.
 
 Only the textures you chose are painted; the rest of the aircraft is masked, so a stroke never strays onto them. A texture can be painted when:
@@ -57,7 +59,7 @@ Each view has its own toolbar down its left edge and its own **options bar** alo
 
 ![The 3D toolbar: the tools, Mirror, and the colour pair at the bottom](assets/images/paint-toolbar.png)
 
-**In the 2D panel**: the wheel zooms about the pointer, a middle-button drag pans, **Home** fits the texture and **1** shows it at 100%. In 3D, **Alt+click** a part to show its texture in the 2D panel.
+**In the 2D panel**: the wheel zooms about the pointer, a middle-button drag pans (with Substance 3D Painter navigation, an Alt drag pans too, and Alt + right drag zooms), **Home** fits the texture and **1** shows it at 100%. In 3D, **Alt+click** a part to show its texture in the 2D panel.
 
 **In 3D**: the view moves as in the [Workspace]({{ '/workspace.html' | relative_url }}#mouse-and-keyboard). The brush paints onto whatever the pointer is over, so one stroke can carry on across every texture you are painting.
 
@@ -208,8 +210,8 @@ Every selection tool has these options:
 |---|---|
 | **New** | A new shape replaces the selection. |
 | **Add** | A new shape adds to the selection. Or hold **Shift** for one shape. |
-| **Subtract** | A new shape takes away from the selection. Or hold **Alt**. |
-| **Intersect** | Only what is in both the selection and the new shape stays selected. Or hold **Shift+Alt**. |
+| **Subtract** | A new shape takes away from the selection. Or hold **Alt** (**Ctrl** with Substance 3D Painter navigation). |
+| **Intersect** | Only what is in both the selection and the new shape stays selected. Or hold **Shift+Alt** (**Shift+Ctrl** with Substance 3D Painter navigation). |
 | **Anti-alias** | Smooths the selection's edge. Clear it for a hard, pixel-exact edge. One setting for every selection tool in both views. |
 
 The **magic wand** also has **Tolerance**, how far each colour channel may be from the colour you click, from 0 to 255, and **Contiguous**: on, only pixels joined to the one you click; cleared, every pixel of that colour on the texture.

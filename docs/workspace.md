@@ -24,6 +24,7 @@ Everything in the project is one tree:
 - **Each livery** below it. One livery is *loaded* at a time: it is the one you are working on, the one drawn in the viewport, and it is marked by an accent bar down the left edge of its rows. Double-click another livery, or right-click it and choose **Load livery**, to switch.
 - **Under the loaded livery**, one node for each part of a livery:
   - **Aircraft model**: every part of the aircraft, with controls to hide parts from the preview and from your thumbnails. See [The viewport](#the-viewport).
+  - **Aircraft animations**: saved poses of the aircraft's own animations, such as gear down, controls centred or canopy open. Select a pose to show it in the viewport. Poses belong to the aircraft, so every livery and project on it shares them. The **?** in the sheet's header opens **How poses work**, a short guide.
   - **Model**: your own 3D model, if the livery has one, and its **Mesh decals** folder. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}) and [Mesh decals]({{ '/mesh-decals.html' | relative_url }}).
   - **Textures**: one row per texture, each with a small thumbnail of your artwork. Hover a row for a larger preview. See [Creating liveries]({{ '/creating-liveries.html' | relative_url }}).
   - **Thumbnails**, **Registration number**, **Details** and **Availability**.
@@ -43,9 +44,20 @@ Right-click the row the folder belongs to:
 
 Folder paths shown in the properties panel also have their own **Copy** and **Open** buttons.
 
+### Duplicating a livery
+
+Right-click a livery and select **Duplicate livery...**, then choose what kind of copy:
+
+- **Full copy:** copies the textures. The two liveries are independent from then on.
+- **Share this livery's textures:** the copy has no textures of its own and uses this livery's through its fallback, such as for a second registration on the same paint scheme.
+
+Give the copy a **Name** that no other livery in the project uses, and a **Registration**. A copy that shares textures can take them later: right-click it and select **Copy textures from** the original.
+
 ### Deleting a livery
 
 **Delete livery...** is the last item when you right-click a livery, behind a red confirmation. It removes the livery from the project, deletes its built folder and deletes its source artwork.
+
+If other liveries use its textures through their fallback, the confirmation names them, because they would show the base aircraft's textures in their place. **Copy textures and delete** copies the textures into those liveries first, **Delete only** deletes it as it is, and **Cancel** keeps it.
 
 ---
 
@@ -96,7 +108,7 @@ Elsewhere on the toolbar:
 
 ### Centre of rotation
 
-The view normally turns about what it is looking at. To turn about one spot instead, such as a door you are working on, **Alt+middle-click** it, or right-click it and select **Orbit about here**. A marker shows the centre. **Full stop** frames the selection and turns about its centre. **Home**, or **Reset centre of rotation** on the right-click menu, puts it back.
+The view normally turns about what it is looking at. To turn about one spot instead, such as a door you are working on, **Alt+middle-click** it, or right-click it and select **Orbit about here**. A marker shows the centre. **Full stop** frames the selection and turns about its centre. **Home**, **Shift+F**, or **Reset centre of rotation** on the right-click menu puts it back; Shift+F leaves the camera where it is.
 
 Glass is drawn see-through and glossy in every view, so windows never hide the cockpit.
 
@@ -144,15 +156,17 @@ Only the 3D models are kept, never textures, so **Extract from aircraft**, **Ext
 
 ## Mouse and keyboard
 
-The mouse and key hints are always along the bottom of the viewport. The full set:
+The mouse and key hints are always along the bottom of the viewport. The mouse controls follow Blender by default. If you are used to Substance 3D Painter, choose it under **Viewport navigation** in [Settings]({{ '/configuration.html' | relative_url }}#3d-models); it applies to the 3D view and the 2D paint panel alike. The full set:
 
-| Action | Mouse | Keyboard |
-|---|---|---|
-| Rotate | Middle button drag | Arrow keys |
-| Pan | Shift + middle button drag | Ctrl + arrow keys |
-| Zoom | Wheel, or Ctrl + middle button drag | Z to zoom in, Shift+Z to zoom out |
-| Frame the whole aircraft | | Home |
-| Frame the selection, and turn about it | | Full stop |
+| Action | Mouse (Blender) | Mouse (Substance 3D Painter) | Keyboard |
+|---|---|---|---|
+| Rotate | Middle button drag | Alt + left drag | Arrow keys |
+| Pan | Shift + middle button drag | Alt + middle drag | Ctrl + arrow keys |
+| Zoom | Wheel, or Ctrl + middle button drag | Wheel, or Alt + right drag | Z to zoom in, Shift+Z to zoom out |
+| Frame the whole aircraft | | | Home |
+| Frame the selection, or everything with nothing selected | | | F |
+| Frame the selection, and turn about it | | | Full stop |
+| Put the centre of rotation back | | | Shift+F |
 | Turn about a point | Alt + middle-click, or right-click > Orbit about here | |
 | Select | Left click, Ctrl-click to add or remove, drag a box | |
 | Hide or show the selection | Right-click menu | H |

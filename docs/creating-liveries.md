@@ -31,6 +31,16 @@ Select **Add new livery...**, the last row under the project. Adding a livery is
 
 **Add livery** is available from the textures step onwards, so the fallback step is yours to skip. Once the livery is added it is loaded, ready to paint.
 
+### Starting your livery
+
+While a new livery's textures have no images, **Start your livery** opens after Add livery with the ways to begin:
+
+- **Extract the aircraft's textures:** each texture gets the aircraft's own paint as a PNG, to paint over here or in your editor. On a stock or Marketplace aircraft this needs the simulator running with the VFS Projector on, and the tile says so.
+- **Start from blank:** plain placeholder images to paint from scratch.
+- **Add a decal from an image** and **Draw an area:** a [mesh decal]({{ '/mesh-decals.html' | relative_url }}) from an SVG or PNG, or a shape such as a belly colour, built as geometry. Shown only where the aircraft takes mesh decals.
+
+If you chose no textures, the two texture tiles open **Add textures** first, then extract or start blank on what you pick. **Do something else** closes the dialog. **Don't show this again** turns it off; turn it back on under **Dismissed messages** in [Settings]({{ '/configuration.html' | relative_url }}#dismissed-messages).
+
 {: .note }
 > A livery titled the same as one in another project, or in another add-on, can still clash in the simulator, and the app cannot check that far. A creator prefix in the title avoids it, as the SDK recommends.
 

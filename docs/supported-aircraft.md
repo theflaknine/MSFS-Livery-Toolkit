@@ -63,11 +63,11 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
     <tr><th scope="row">Extract UV map</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Livery settings</th></tr>
     <tr><th scope="row">Details (title, ATC id and other fields)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
-    <tr><th scope="row">Registration number</th><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>Yes <sup>7, 17</sup></td><td>No</td><td>No</td><td>Partly <sup>8</sup></td></tr>
+    <tr><th scope="row">Registration number</th><td>Yes <sup>7</sup></td><td>Yes <sup>7</sup></td><td>Yes <sup>7, 16</sup></td><td>No</td><td>No</td><td>Partly <sup>8</sup></td></tr>
     <tr><th scope="row">Availability (which configurations a livery appears under)</th><td>Not needed</td><td>Not needed</td><td>Yes</td><td>No</td><td>No</td><td>Partly <sup>9</sup></td></tr>
-    <tr><th scope="row">Mesh liveries (your own 3D model)</th><td>No <sup>12</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-    <tr><th scope="row">Mesh decals (logos and signs from an SVG or PNG, and drawn areas, as geometry)</th><td>No <sup>15</sup></td><td>Yes <sup>18</sup></td><td>Yes <sup>18</sup></td><td>No</td><td>No</td><td>No</td></tr>
-    <tr><th scope="row">Hide parts of the aircraft in the simulator</th><td>No <sup>15</sup></td><td>Yes</td><td>No <sup>16</sup></td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">Mesh liveries (your own 3D model)</th><td>Yes <sup>12</sup></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">Mesh decals (logos and signs from an SVG or PNG, and drawn areas, as geometry)</th><td>Yes <sup>12</sup></td><td>Yes</td><td>Yes <sup>17</sup></td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">Hide parts of the aircraft in the simulator</th><td>Yes <sup>12</sup></td><td>Yes</td><td>No <sup>15</sup></td><td>No</td><td>No</td><td>No</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Previews and thumbnails</th></tr>
     <tr><th scope="row">3D view in the Workspace, including click to add a texture</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr><th scope="row">Texture painting, in 2D and on the aircraft in 3D</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
@@ -96,13 +96,12 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
 9. **Configurations are shown by their folder names**, because the names you see in the simulator are stored in protected files.
 10. **MSFS 2020 only**, using a bundled texture converter instead of the SDK and the simulator. Turn it on in Settings.
 11. **Marked with a padlock** in the Discover aircraft list, so you can tell an encrypted aircraft from the others before you start.
-12. **The toolkit does not build mesh liveries for MSFS 2020 aircraft yet**, although the simulator supports them. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
+12. **Needs the MSFS 2020 SDK**, even with texconv selected, because texconv can't compile a 3D model. Only a livery with a model, mesh decals or hidden parts is compiled with the SDK; the rest still use texconv. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
 13. **A livery that adds its own 3D model can't be imported**, because that model is built on the aircraft's protected model files. Its textures, settings and registration can.
 14. **For a livery made for the aircraft's MSFS 2020 version.** The registration's look (its font, colour and position) is copied onto the 2024 aircraft's own panel settings.
-15. **Not available for MSFS 2020 aircraft yet.**
-16. **The simulator doesn't let a livery for a modular aircraft hide the aircraft's parts.** A modular livery has no model file of its own to hide them from, and the simulator ignores hiding instructions in a livery's model files. I tested this in the simulator.
-17. **Also on modular aircraft that paint a fixed registration of their own.** The livery adds its own painting in place of the aircraft's, so you can set your own number and style, or hide it. A few aircraft that paint one registration from two places can't use this yet.
-18. **Only on aircraft whose model has node ids**, the identifiers the simulator merges by. The Mesh decals row says when an aircraft has none. See [Mesh decals]({{ '/mesh-decals.html' | relative_url }}).
+15. **The simulator doesn't let a livery for a modular aircraft hide the aircraft's parts.** A modular livery has no model file of its own to hide them from, and the simulator ignores hiding instructions in a livery's model files. I tested this in the simulator.
+16. **Also on modular aircraft that paint a fixed registration of their own.** The livery adds its own painting in place of the aircraft's, so you can set your own number and style, or hide it. A few aircraft that paint one registration from two places can't use this yet.
+17. **Only on modular aircraft whose model has node ids**, the identifiers the simulator merges by. The Mesh decals row says when an aircraft has none. A monolithic aircraft with none still takes mesh decals: they are attached instead. See [Mesh decals]({{ '/mesh-decals.html' | relative_url }}).
 
 <style>
   /* The theme gives every cell a 7.5rem minimum, which pushed this 7-column table past the content width. */

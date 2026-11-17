@@ -1,10 +1,10 @@
 ---
-title: Configuration
+title: Settings
 layout: default
 nav_order: 6
 ---
 
-# Configuration
+# Settings
 
 The **Settings** page holds the settings the toolkit needs to find your aircraft and drive the SDK. Changes are saved automatically.
 
@@ -41,6 +41,8 @@ The **Settings** page holds the settings the toolkit needs to find your aircraft
 
 Loading reads every model file of the aircraft, which can take several seconds on a large one; the rest of the app stays usable meanwhile. An aircraft the simulator protects never loads.
 
+**Viewport navigation** sets the mouse controls for orbit, pan and zoom in the 3D view and the 2D paint panel: **Blender** or **Substance 3D Painter**. See [Mouse and keyboard]({{ '/workspace.html' | relative_url }}#mouse-and-keyboard).
+
 ### VFS model cache
 
 Stock and Marketplace aircraft can only be read while the simulator runs. **Cache 3D models of VFS aircraft** keeps the toolkit's own processed copy of each model it loads, so those aircraft still show in 3D, and their mesh liveries still build, with the simulator closed. The app asks the first time you load a VFS aircraft's model, and this switch changes your answer. See [Working with the simulator closed]({{ '/workspace.html' | relative_url }}#working-with-the-simulator-closed).
@@ -64,6 +66,12 @@ Textures are never cached, so extracting textures and rendering thumbnails for t
 ## Appearance
 
 **Monochrome icons** shows the Workspace's icons in the text colour instead of coloured by type.
+
+## Dismissed messages
+
+A message you turned off with **Don't show this again** is turned back on here.
+
+- **Start your livery:** the ways to start a new livery, shown after **Add livery** while its textures have no images. See [Starting your livery]({{ '/creating-liveries.html' | relative_url }}#starting-your-livery).
 
 ## Advanced
 
