@@ -60,17 +60,15 @@ This page takes one livery from start to finish on the Cessna 152, which comes f
   color: #eef1fa;
   font-weight: 600;
   font-size: 1rem;
-  transition: background .15s ease, transform .15s ease;
+  transition: background .15s ease;
 }
 .step-strip .step-label {
   font-size: .85rem;
   line-height: 1.3;
   color: #a6abca;
 }
-.step-strip .step:hover .step-num {
-  background: rgba(96, 205, 255, 0.25);
-  transform: translateY(-2px);
-}
+/* Fill only, no lift: a translateY lift was clipped at the top by the theme's content column. */
+.step-strip .step:hover .step-num { background: rgba(96, 205, 255, 0.25); }
 .step-strip .step:hover .step-label { color: #eef1fa; }
 
 /* Narrow screens: two rows of four and three, without the joining lines. */
@@ -170,7 +168,9 @@ When the extract finishes, **What next** opens. Paint in the app, in your own im
 
 ![The What next dialog's Paint the textures and Paint in your own editor tiles](assets/images/first-livery-paint-tile.png)
 
-**Paint the textures** paints in the app: straight onto the aircraft in 3D, on layers over the base PNG. Select **Done** to save and leave. To paint again later, select a texture in the tree, then **Paint texture** at the top of the Workspace. See [Texture painting]({{ '/texture-painting.html' | relative_url }}).
+**Paint the textures** paints in the app: straight onto the aircraft in 3D, on layers over the base PNG. Select **Done** to save and leave.
+
+It opens every texture you chose at once, so a stroke carries on where one texture meets the next. That matters on the MSFS 2024 Cessna 152, where a cheatline crosses several textures. To paint again later, select a texture in the tree, then **Paint texture** at the top of the Workspace. Select several textures (Ctrl + click) to paint them together: the button then reads **Paint 3 textures**, for example. See [Texture painting]({{ '/texture-painting.html' | relative_url }}).
 
 ![The Cessna 152 with a red and blue cheatline painted along the fuselage](assets/images/first-livery-painted.png)
 
