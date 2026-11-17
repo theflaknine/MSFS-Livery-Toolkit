@@ -96,7 +96,15 @@ On MSFS 2024, stock aircraft are read through the simulator's Virtual File Syste
 ## 1. Connect the VFS
 {: #connect }
 
-Start MSFS 2024. With Developer Mode on, select **Tools**, **Virtual File System**, **VFS Projector**, **Start**.
+Start MSFS 2024. With Developer Mode on:
+
+1. In the Developer Mode menu bar, select **Tools**, then **Virtual File System**.
+
+   ![The Developer Mode Tools menu with Virtual File System highlighted](assets/images/first-livery-vfs01.png)
+
+2. In the **Virtual File System** window, open **VFS Projector** and select **Start**. It shows **Projection started**.
+
+   ![The Virtual File System window with VFS Projector open, showing Projection started](assets/images/first-livery-vfs02.png)
 
 The **VFS** chip at the top right of the app shows when it's connected.
 
@@ -128,7 +136,9 @@ The project opens in the [Workspace]({{ '/workspace.html' | relative_url }}) and
 
 Adding a livery takes three steps, with the aircraft in 3D beside you.
 
-1. **Details.** Enter a **Title**, the name the simulator shows for your livery, and an **ATC id / registration**.
+1. **Details and variant.** Enter a **Title**, the name the simulator shows for your livery, and an **ATC id / registration**. If the aircraft has variants, as the MSFS 2024 Cessna 152 does, also choose the one you're painting: until you do, the line under **Next** says so.
+
+   ![Step 1 of Add livery: the Title and ATC id / registration boxes filled in, with Choose the aircraft variant you're painting under the Next button](assets/images/first-livery-add-livery.png)
 2. **Textures.** Choose the textures you want to change. The paint is in the textures marked **ALB** (albedo, the colour). Select a part of the aircraft in the 3D view to add its texture.
 3. **Fallback.** Optional. You can skip it.
 
@@ -147,22 +157,26 @@ The **Start your livery** dialog opens. Select **Extract the aircraft's textures
 
 Each texture you chose gets a PNG of the aircraft's own paint, its **Base PNG**, which you paint over in the next step. To start from plain images instead, select **Start from blank**.
 
+![One of the Cessna 152's extracted textures: white panels of the aircraft laid out flat, with small parts in the gaps between them](assets/images/first-livery-base-png.jpg){: width="320" }
+
+A texture is the aircraft's skin laid out flat: each piece is a panel of the aircraft, unfolded. Painting on the 3D model in step 5 saves you working out which piece is which.
+
 On MSFS 2024, extracting needs the simulator running with the VFS Projector on. When the app first loads the aircraft's 3D model, it asks whether to keep a copy. Select **Cache models**, and the aircraft still shows in the Workspace once the simulator is closed. See [Working with the simulator closed]({{ '/workspace.html' | relative_url }}#working-with-the-simulator-closed).
 
 ## 5. Paint
 {: #paint }
 
-Paint in the app, in your own image editor, or both.
+When the extract finishes, **What next** opens. Paint in the app, in your own image editor, or both.
 
-**In the app.** Select a texture in the tree, then **Paint texture** at the top of the Workspace. You paint straight onto the aircraft in 3D, on layers over the base PNG. Select **Done** to save and leave. See [Texture painting]({{ '/texture-painting.html' | relative_url }}).
+![The What next dialog's Paint the textures and Paint in your own editor tiles](assets/images/first-livery-paint-tile.png)
 
-![The Paint texture button](assets/images/first-livery-paint-button.png)
+**Paint the textures** paints in the app: straight onto the aircraft in 3D, on layers over the base PNG. Select **Done** to save and leave. To paint again later, select a texture in the tree, then **Paint texture** at the top of the Workspace. See [Texture painting]({{ '/texture-painting.html' | relative_url }}).
 
 ![The Cessna 152 with a red and blue cheatline painted along the fuselage](assets/images/first-livery-painted.png)
 
-**In your own editor.** Select the livery's **Textures** folder, then **Open image folder**. Edit the PNG files there and save them under the same names. If you work in a layered file such as a PSD, export the PNG from it each time; **Link a file...** on the texture remembers where that file is.
+**Paint in your own editor** opens the folder of the livery's PNG images. Edit them there and save them under the same names. Later, the livery's **Textures** folder has **Open image folder**. If you work in a layered file such as a PSD, export the PNG from it each time; **Link a file...** on the texture remembers where that file is.
 
-To paint on a template rather than the aircraft's own paint, make a paintkit for your editor with the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}), in the navigation pane.
+To paint on a template rather than the aircraft's own paint, select **Use a paintkit** in What next: choose a paintkit you already have, or make one with the [Paintkit Builder]({{ '/paintkit-builder.html' | relative_url }}).
 
 ## 6. Compile
 {: #compile }
@@ -186,6 +200,8 @@ The simulator opens and closes by itself while it builds. Don't close it while t
 1. Put the package folder in your Community folder, or add it with MSFS Addons Linker.
 2. Start the simulator. **Launch MSFS 2024** on the Compile page does it for you.
 3. Choose the Cessna 152, then your livery by its title.
+
+![The Cessna 152 in MSFS 2024 with the finished livery: a red and blue cheatline along a white fuselage](assets/images/first-livery-insim.jpg)
 
 Changed your artwork? Compile again, with the simulator closed.
 
