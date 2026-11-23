@@ -76,7 +76,7 @@ In the app, encrypted aircraft are marked with a padlock and described as *prote
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Paintkit Builder</th></tr>
     <tr><th scope="row">Layered paintkit with albedo, composite and normal layers</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
     <tr><th scope="row">UV wireframe and paintable-area layers</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-    <tr><th scope="row">3D paintkit (experimental)</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><th scope="row">3D paintkit</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
     <tr class="matrix-section"><th colspan="7" scope="colgroup">Compiling</th></tr>
     <tr><th scope="row">Compile with the MSFS SDK</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
     <tr><th scope="row">Compile without the SDK installed</th><td>Yes <sup>10</sup></td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>

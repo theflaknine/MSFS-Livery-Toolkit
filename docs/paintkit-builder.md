@@ -58,17 +58,13 @@ Two details worth knowing:
 ---
 
 ## The 3D paintkit
-{: .d-inline-block }
-
-Experimental
-{: .label .label-yellow }
 
 A `.gltf` model containing only the parts of the aircraft that use the textures you picked. Open it in
 Blender, or any other 3D painting software, to see where your artwork actually lands on the aircraft
 instead of working it out from a flat UV map.
 
-- **Each material is named after the paintkit it belongs to**, so it is obvious which `.psd` paints which
-  surface.
+- **Each material keeps the aircraft's own name**, and materials that share a texture stay separate, as they
+  are on the aircraft.
 - **The model arrives wearing the aircraft's current paintwork**, so you can see what you are starting
   from and paint over it.
 - **Parts stay separate.** Movable surfaces such as a rudder or an elevator keep their own place in the
@@ -87,13 +83,9 @@ where you model your own decals in Blender and they must follow the aircraft's m
   with none of its geometry, as their own file. **Build your mesh livery in this file**, using the paintkit
   model as a reference. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
 
-### What "experimental" means here
-
-On most aircraft the model is accurate. A few small parts can still look out of place, for example a
-propeller drawn in several animation states at once, or some ground equipment. The main airframe is not
-affected.
-
-It is worth knowing about before you rely on a small part being exactly where the model puts it.
+{: .note }
+> A few small parts can look out of place on some aircraft, for example a propeller drawn in several
+> animation states at once, or some ground equipment. The main airframe is not affected.
 
 ---
 
