@@ -119,7 +119,7 @@ Hover a tool for its name, its key and what its modifiers do. Most tools are in 
 
 ### Pick
 
-In 3D, Pick selects a part and shows its texture in the 2D panel. It also selects stickers and text, which you can then drag to move. In 2D, Pick selects a sticker or text, and drags one placed in 2D. **Delete** removes the selected sticker or text, and **Ctrl+J** duplicates it.
+In 3D, Pick selects a part and shows its texture in the 2D panel. It also selects stickers and text, which you can then drag to move, or change with their [handles](#handles-on-stickers-and-text). In 2D, Pick selects a sticker or text, and drags one placed in 2D. **Delete** removes the selected sticker or text, and **Ctrl+J** duplicates it.
 
 ### Brush and eraser
 
@@ -332,7 +332,7 @@ For a registration number the simulator sets for each aircraft, use [Registratio
 
 Before you click, **Ctrl+wheel** or **[** and **]** change the height, **Shift+wheel** turns the text by 15 degrees and **Ctrl+Shift+wheel** by 1 degree.
 
-To change a text later, select it with Pick or in the Objects strip. Its settings have the same values, plus **Opacity**. You can move it with Pick, size it with Ctrl+wheel, and turn it with Shift+wheel.
+To change a text later, select it with Pick or in the Objects strip. Its settings have the same values, plus **Opacity**. You can move it with Pick, size it with Ctrl+wheel, and turn it with Shift+wheel, or use its [handles](#handles-on-stickers-and-text). Resizing a text changes its letter height.
 
 - **Copy style** and **Paste style** give another text the same font, spacing, skew, colours, outline and opacity.
 - **Format painter** does the same in one step: select it, then click the text to change in the Objects list.
@@ -348,9 +348,9 @@ Stickers place a logo, badge or lettering image on the aircraft in 3D, or on the
 
 ![The sticker library on the left of the viewport, with a sticker placed on the fuselage](assets/images/paint-stickers.png)
 
-The **sticker library** is a pane at the left edge of the viewport. A folder tree lists **Recent**, **Samples** (plain shapes and placards that come with the app) and **My library**, with the images of the selected folder below. The buttons at the top add images, add from a link, and open more options, and the arrow folds the pane to a narrow bar. The app ships no national markings or insignia.
+The **sticker library** is a pane that floats over the left edge of the 3D view, so the aircraft doesn't move when it opens. A folder tree lists **Recent**, **Samples** (plain shapes, placards and details that come with the app) and **My library**, with the images of the selected folder below: pictures, SVGs and [library decals]({{ '/mesh-decals.html' | relative_url }}#the-decal-library), which paint their artwork. The buttons at the top add images, add from a link, and open more options, and the arrow folds the pane to a narrow bar. The app ships no national markings or insignia.
 
-- **Add images** with **Add images...**, **Paste image**, or **Add from URL...**, which takes a link to an image or an SVG and a name. A Wikimedia file page link works too. **New folder** and **Add folder...** organise the library; Add folder shows a folder from anywhere on your PC without moving it.
+- **Add images** with **Add images...**, **Paste image**, or **Add from URL...**, which takes a link to an image or an SVG and a name. A Wikimedia file page link works too. An SVG stays an SVG in the library, so it can also be a mesh decal; it is drawn as an image when you place it. **New folder** and **Add folder...** organise the library; Add folder shows a folder from anywhere on your PC without moving it.
 - **Place** one by choosing it, then clicking with the **Sticker** tool (**K**), or by dragging its tile onto the aircraft or the texture.
 
 The Sticker tool's options are for the next sticker:
@@ -365,9 +365,20 @@ The Sticker tool's options are for the next sticker:
 | **Mirror** | 3D only. Also places a true reflection on the other side of the aircraft. The image reads backwards there, so leave it off for lettering. |
 | **Projection** | 3D only. **Surface** lays the image along the surface under the pointer, the same from any angle. **View** projects it along your line of sight, so it stretches on a slanted surface. |
 
-To change a placed sticker, select it with Pick or in the Objects strip. You can drag it with Pick, and its settings have the same values plus **Replace from library**, which puts the image selected in the library in its place. A sticker follows its part if the model changes.
+To change a placed sticker, select it with Pick or in the Objects strip. You can drag it with Pick or use its [handles](#handles-on-stickers-and-text), and its settings have the same values plus **Replace from library**, which puts the image selected in the library in its place. A sticker follows its part if the model changes.
 
 By default the library is the folder `Documents\MSFS Livery Toolkit\Stickers`. It is an ordinary folder, so you can add, rename and share images in Explorer. Change its location in [Settings]({{ '/configuration.html' | relative_url }}#sticker-library). Only images you add are stored there; Add from URL is the one place Texture Paint uses the network, and only when you ask. See [Trust & safety]({{ '/trust-and-safety.html' | relative_url }}#does-it-phone-home).
+
+### Handles on stickers and text
+
+A selected sticker or text has handles, the same as a [mesh decal]({{ '/mesh-decals.html' | relative_url }}#placing-and-moving):
+
+- **In 3D**, with Pick: drag an **arrow** to move it over the surface, the **ring** to turn it, or the **square** to resize it. When it is large on screen, a square at each corner resizes it from the opposite corner.
+- **In the 2D panel**, with Pick or Move, on one placed in 2D: drag a **corner** to resize it from the opposite corner, or the round **knob** above it to turn it. Drag inside its frame to move it.
+
+Hold **Shift** on a corner to resize from the centre. Hold **Ctrl** for whole centimetres in 3D or whole pixels in 2D, or for 5 degree steps when turning. Resizing a text changes its letter height. **Esc** cancels a drag, and each drag is one step for **Ctrl+Z**. A mirrored copy has no handles of its own: it follows the one you change.
+
+![A sticker selected in 3D with its arrows, ring and resize square](assets/images/paint-sticker-handles.png)
 
 ---
 

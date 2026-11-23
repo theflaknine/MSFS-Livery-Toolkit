@@ -7,7 +7,7 @@ nav_order: 3.6
 # Mesh decals
 {: .no_toc }
 
-A **mesh decal** is a logo, sign, placard or area of colour added to the aircraft as thin geometry just off its skin, instead of being painted into its textures. An SVG decal or an area stays sharp however close you get. A PNG decal is still an image, but it covers only its own small patch of the aircraft, so it can carry far more detail there than the aircraft's own texture. None of them needs a 3D modelling tool: you give the toolkit an SVG or a PNG, or draw an area, and the toolkit cuts it to the shape of the skin and builds it with your livery.
+A **mesh decal** is a logo, sign, placard, line of text or area of colour added to the aircraft as thin geometry just off its skin, instead of being painted into its textures. An SVG decal, a text or an area stays sharp however close you get. A PNG decal is still an image, but it covers only its own small patch of the aircraft, so it can carry far more detail there than the aircraft's own texture. None of them needs a 3D modelling tool: you pick a decal from the library, give the toolkit an SVG or a PNG, type a text or draw an area, and the toolkit cuts it to the shape of the skin and builds it with your livery.
 
 ![A mesh decal placed on the aircraft, with its properties on the right](assets/images/mesh-decals-overview.png)
 
@@ -22,23 +22,33 @@ Mesh decals work on **MSFS 2024 aircraft**, both monolithic and modular, includi
 
 ---
 
-## SVG, PNG or area
+## SVG, PNG, text or area
 
 - **An SVG** becomes one solid colour per shape, with no texture, so its edges stay clean at any size. Solid colours and linear gradients are supported. This suits logos and lettering.
-- **A PNG** becomes one textured rectangle, much sharper than the aircraft's own texture, for small signs and placards. The image can be up to 4096 pixels on each side; the toolkit never resizes it.
+- **A PNG** becomes one textured rectangle, much sharper than the aircraft's own texture, for small signs and placards. The image can be up to 4096 pixels on each side; the toolkit never resizes it. A PNG from the library can also have its own [comp and normal maps](#comp-and-normal-maps).
+- **A text** is a line of lettering in any font installed in Windows, such as a registration. It is shapes like an SVG, so it stays sharp, and you can change the text at any time. See [Text](#text).
 - **An area** is one colour inside a curve you draw on the aircraft, such as a belly colour. Its edge is geometry, so it stays sharp however close you get, and it runs cleanly across texture seams. See [Drawing an area](#drawing-an-area).
 
 {: .note }
-> Convert any text to paths in your vector editor before you export the SVG, or the text can't be shown.
+> Convert any text to paths in your vector editor before you export an SVG, or the text can't be shown. For a line of text on its own, use [Add text](#text) instead.
 
 ---
 
 ## Adding a mesh decal
 
-1. Load the livery's aircraft in the viewport.
-2. In the [Workspace]({{ '/workspace.html' | relative_url }}) tree, open the livery's **Model** node, then the **Mesh decals** folder, and select **Add mesh decal...** (or right-click the folder), then **From image...**.
-3. In **Link or file**, paste a link to an SVG file or a Wikimedia Commons file page, or select **Browse...** to pick an SVG or PNG file. A link must be to an SVG; save a PNG and add the file instead. Give the decal a **Name**.
-4. Click the aircraft where the decal should go. **Esc** cancels.
+Load the livery's aircraft in the viewport. In the [Workspace]({{ '/workspace.html' | relative_url }}) tree, open the livery's **Model** node, then the **Mesh decals** folder, and select **Add mesh decal...** (or right-click the folder). Then choose:
+
+- **From library**: opens the [decal library](#the-decal-library) beside the 3D view.
+- **From image...**: an SVG from a link or a file, or a PNG from a file. See below.
+- **Draw area**: see [Drawing an area](#drawing-an-area).
+- **Add text**: see [Text](#text).
+
+![The Add mesh decal menu](assets/images/mesh-decals-add-menu.png)
+
+### From an image
+
+1. In **Link or file**, paste a link to an SVG file or a Wikimedia Commons file page, or select **Browse...** to pick an SVG or PNG file. A link must be to an SVG; save a PNG and add the file instead. Give the decal a **Name**.
+2. Click the aircraft where the decal should go. **Esc** cancels.
 
 ![The Add mesh decal dialog](assets/images/mesh-decals-add.png)
 
@@ -50,6 +60,68 @@ A mesh decal is flat shapes, so some SVG features can't be shown:
 
 - **A radial, repeating or partly transparent gradient** stops the SVG being added. Use linear gradients instead.
 - **Other features**, such as an SVG's own masks, are ignored. The dialog warns you first and lets you **Add anyway**, and the decal's **Differences from the SVG file** section lists what was ignored. To trim a decal, give it a [mask](#masks) instead.
+
+---
+
+## The decal library
+
+The decal library opens beside the 3D view while the **Mesh decals** folder or a decal is selected, and when you choose **From library**. It is the same folder as Texture Paint's [sticker library]({{ '/texture-painting.html' | relative_url }}#stickers), showing its PNG and SVG files and its library decals. **Samples** holds the decals that come with the app, and **My library** your own. The arrow folds the pane to a narrow bar, and it floats over the 3D view, so the aircraft doesn't move when it opens.
+
+![The decal library beside the 3D view, with the Details samples showing](assets/images/mesh-decals-library.png)
+
+- **Click** a tile, then click the aircraft where the decal should go. **Esc** cancels.
+- Or **drag** a tile onto the aircraft. Letting go off the aircraft, or outside the view, cancels it.
+
+A loose PNG or SVG in **My library** becomes a library decal the first time you place it: the file moves into a new folder of its own. To do this without placing it, right-click the file and select **Make decal**.
+
+### Library decals
+
+A library decal is a folder whose name ends in `.ltdecal`, holding its artwork and the width it starts at, and for a PNG, its finish and maps. You can share one by copying its folder. Right-click a library decal and select **Edit decal...** to change it:
+
+- **Width (metres)**: the width a new decal starts at on the aircraft.
+- **Finish** (PNG only): **Roughness** and **Metallic**, as on a [placed decal](#colours-finish-and-draw-order).
+- **Maps** (PNG only): a **Comp map** and a **Normal map**, each with **Add...**, **Change...** and **Remove**.
+- **Other PNG files**: PNGs in the folder that aren't the artwork or a map. Select **Use as comp** or **Use as normal** for each. The toolkit never guesses a map from its file name.
+
+Changes are saved at once. A decal you have already placed keeps its own copy until you refresh it (see below).
+
+Samples are read-only. Right-click one and select **View decal...** to see how it is set up, then **Copy to my library** on its sheet to make a copy you can change.
+
+![A sample decal's sheet: its width, a finish from its comp map, and its comp and normal maps](assets/images/mesh-decals-edit-decal.png)
+
+### Comp and normal maps
+
+A PNG library decal can have two maps of its own, shown in the 3D view and in the simulator:
+
+- **A comp map** gives the decal its own roughness, metal and ambient occlusion, packed one per colour channel as in the aircraft's own composite textures. It replaces the Finish settings, which then show **From the comp map**.
+- **A normal map** gives the decal its own bumps, such as the rim of a static port.
+
+Each map needs the artwork's proportions, and is resized to the artwork's size in the build. **Samples > Details** has four static ports with both maps, to show how they work.
+
+### A placed decal and the library
+
+A decal placed from the library shows **From library** with the library decal's name on its properties, and three buttons:
+
+- **Refresh from library** reads the library decal again, after you change its files or its settings.
+- **Replace from library** waits for you to select another tile, and puts that tile's artwork in place of this decal's. The decal keeps its place and width. **Esc** cancels.
+- **Save to library** saves the decal's artwork, maps, width and finish as a new library decal in **My library**, named after the decal. Setting a decal up on the aircraft and then saving it is the easy way to a good library decal.
+
+Refresh and Replace are each one step for **Ctrl+Z**. SVG and PNG decals have these buttons; texts and areas don't.
+
+---
+
+## Text
+
+**Add text**, on **Add mesh decal...**, adds a line of lettering as a mesh decal. The new text follows the pointer; click the aircraft to place it, then type the text on its properties.
+
+![A text mesh decal on the aircraft, with its Text and Colour settings](assets/images/mesh-decals-text.png)
+
+- **Text**: **Text**, **Font** (any font installed in Windows), **Letter height (cm)**, the height of a capital letter, **Letter spacing (%)** and **Skew**, which leans the letters, for a font with no italic.
+- **Colour**: **Fill**, **Outline**, **Outline thickness (cm)** (0 for none) and the outline's **Corners**, **Round** or **Sharp**.
+
+These are the same settings as text in [Texture Paint]({{ '/texture-painting.html' | relative_url }}#text). **Ctrl+wheel**, or **[** and **]**, changes the letter height. Everything else, from placing and masks to finish and draw order, works as for any mesh decal.
+
+The text is fixed when the livery is compiled. For a number the simulator sets for each aircraft, use [Registration numbers]({{ '/creating-liveries.html' | relative_url }}#registration-numbers) instead. If a text's font is no longer installed, only its font can be changed until you choose one that is.
 
 ---
 
@@ -102,6 +174,7 @@ With the decal selected, in the tree or by clicking it on the aircraft:
 
 - **Drag** it on the aircraft to move it.
 - **The handles**: drag an **arrow** to move it, a **ring** to turn it, or the **scale handle** to size it. Hold **Ctrl** for whole centimetres, or 5 degree steps when turning.
+- **The corners**: when a decal is large on screen, such as when you zoom in on one end of a long one, its outline has a square at each corner. Drag one to resize the decal from the opposite corner. Hold **Shift** to resize from the centre, or **Ctrl** for whole centimetres.
 - **Ctrl+wheel**, or **[** and **]**, changes its width.
 - **Shift+wheel** turns it 15 degrees, **Ctrl+Shift+wheel** 1 degree. At 0 degrees it is level, whatever the camera angle.
 - **Right-click** it in the 3D view for the same menu as its row.
@@ -109,6 +182,10 @@ With the decal selected, in the tree or by clicking it on the aircraft:
 - **Ctrl+Z** undoes the last change while a decal's row is selected.
 
 It shows as a see-through flat plate while it moves, then as the finished decal, cut to the skin, when you let go.
+
+The selected decal's triangles are drawn faintly over it, so you can see how heavy it is, and **Statistics** shows how many there are. To turn the wireframe off, clear **Display options > Overlays > Mesh decal wireframe** on the viewport's toolbar.
+
+![A selected mesh decal with its corner handles and its wireframe](assets/images/mesh-decals-corners.png)
 
 The **Placement** section has the exact values: **Width (metres)**, **Rotation (degrees)**, **Flip** horizontally and vertically, and for a PNG, **Sharpness** in pixels per metre. **Reposition on aircraft** moves the decal to the next place you click.
 
@@ -162,7 +239,7 @@ The mask moves, turns and resizes with the decal, and each outline and the mask 
 ![A mesh decal's Colours, Finish and draw order](assets/images/mesh-decals-sheet.png)
 
 - **Colours** (SVG only): exclude a colour to remove it from the decal, such as a panel behind a logo. The rest of the logo keeps its size and position.
-- **Finish**: select **Roughness** or **Metallic** to give the decal its own finish; cleared, it keeps the finish of the surface underneath. **Blend** sets how much of the value replaces the surface's own. With several colours, **Apply to** picks one colour or **All colours**. The viewport shows an approximation of the finish.
+- **Finish**: select **Roughness** or **Metallic** to give the decal its own finish; cleared, it keeps the finish of the surface underneath. **Blend** sets how much of the value replaces the surface's own. With several colours, **Apply to** picks one colour or **All colours**. The viewport shows an approximation of the finish. A PNG decal with a [comp map](#comp-and-normal-maps) takes its finish from the map instead.
 - **Draw order**: where decals overlap, the higher draw order is on top, from -999 to 999. The **Mesh decals** folder lists every decal with its draw order, and right-clicking a decal offers **Move up**, **Move down**, **Move to top** and **Move to bottom**. The viewport layers every decal by draw order, as the simulator does: your mesh decals, your own model's decals and the aircraft's. The **i** beside **Draw order** lists the decals this one overlaps, under **Draws over**, **Same draw order** and **Draws under**.
 
 The **Eye** on a decal's row hides it in the viewport and leaves it out of the build.

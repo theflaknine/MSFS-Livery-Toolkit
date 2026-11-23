@@ -104,7 +104,10 @@ Elsewhere on the toolbar:
 - **Normal depth**: how strongly normal maps are applied. Turn it down until it matches what you see in MSFS.
 - **Model alignment**: how your livery's own model is placed. See [Mesh liveries]({{ '/mesh-liveries.html' | relative_url }}).
 - **Tree**: **By file** lists every part under its model file. **Node hierarchy** lists them the way the aircraft's developer built them, each part under the node it hangs from. Long chains of empty nodes are merged into one row, and hiding a part hides everything inside it.
-- **Statistics**: a table in the corner of the view: the model, its geometry, textures and decals, and video memory. The **Video memory** figure in the top corner always shows. It is the app's real video memory use, read from Windows, and turns amber if the scene is getting heavy.
+- **Overlays**:
+  - **Statistics**: a table in the corner of the view: the model, its geometry, textures and decals, and video memory. With a mesh decal selected, it also shows that decal's triangle count. The **Video memory** figure in the top corner always shows. It is the app's real video memory use, read from Windows, and turns amber if the scene is getting heavy.
+  - **Mesh decal wireframe**: draws the selected [mesh decal's]({{ '/mesh-decals.html' | relative_url }}) triangles faintly over it. On by default, and only offered when the livery has mesh decals.
+  - **Floor**: a faint metre grid on the ground under the aircraft, for a pose that is on the ground.
 
 ### Centre of rotation
 
@@ -160,8 +163,12 @@ The mouse and key hints are always along the bottom of the viewport. The mouse c
 
 | Action | Mouse (Blender) | Mouse (Substance 3D Painter) | Keyboard |
 |---|---|---|---|
-| Rotate | Middle button drag | Alt + left drag | Arrow keys |
-| Pan | Shift + middle button drag | Alt + middle drag | Ctrl + arrow keys |
+| Rotate | Middle button drag | Alt + left drag | Arrow keys, or number pad 2, 4, 6 and 8 |
+| Pan | Shift + middle button drag | Alt + middle drag | Ctrl + arrow keys, or Ctrl + number pad 2, 4, 6 and 8 |
+| Front, right or top view | | | Number pad 1, 3 or 7 |
+| Back, left or bottom view | | | Ctrl + number pad 1, 3 or 7 |
+| The opposite of the current view | | | Number pad 9 |
+| Switch between perspective and orthographic | | | Number pad 5 |
 | Zoom | Wheel, or Ctrl + middle button drag | Wheel, or Alt + right drag | Z to zoom in, Shift+Z to zoom out |
 | Frame the whole aircraft | | | Home |
 | Frame the selection, or everything with nothing selected | | | F |
@@ -175,7 +182,7 @@ The mouse and key hints are always along the bottom of the viewport. The mouse c
 | Select the level above | | Alt+Up |
 | Clear the selection | Click empty space | Esc |
 
-The keyboard controls work on a trackpad, which has no middle button.
+The keyboard controls work on a trackpad, which has no middle button. The number pad works as in Blender, with either mouse setting, and needs NumLock on. A number pad view turns the camera about the centre of rotation and keeps its distance.
 
 ---
 
